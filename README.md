@@ -1,4 +1,4 @@
-# Nuxt Module
+# Nuxt SVGO
 
 ## Development
 

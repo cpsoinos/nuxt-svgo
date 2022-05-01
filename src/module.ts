@@ -1,6 +1,6 @@
 import { defineNuxtModule, addVitePlugin } from "@nuxt/kit";
+import { OptimizeOptions } from "svgo";
 import svgLoader from "vite-svg-loader";
-import type { OptimizeOptions } from "svgo";
 
 export interface ModuleOptions {
   svgoConfig?: OptimizeOptions;
@@ -11,7 +11,10 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: "nuxt-svgo",
-    configKey: "svgo",
+    configKey: "svgoOptions",
+    compatibility: {
+      nuxt: "^3.0.0",
+    },
   },
   defaults: {
     svgo: true,

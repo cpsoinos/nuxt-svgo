@@ -1,5 +1,5 @@
 {
-  "name": "my-module",
+  "name": "@coreyander/nuxt-svgo",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build",
+    "prepack": "unbuild",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
@@ -27,8 +27,10 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/svgo": "^2.6.3",
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.1",
-    "svgo": "^2.8.0"
+    "svgo": "^2.8.0",
+    "unbuild": "^0.7.4"
   }
 }
