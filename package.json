@@ -21,12 +21,14 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.1"
+    "@nuxt/kit": "^3.0.0-rc.1",
+    "vite-svg-loader": "^3.3.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.1"
+    "nuxt": "^3.0.0-rc.1",
+    "svgo": "^2.8.0"
   }
 }

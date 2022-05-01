@@ -1,24 +1,23 @@
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin } from '@nuxt/kit'
+import { defineNuxtModule, addVitePlugin } from "@nuxt/kit";
+import svgLoader from "vite-svg-loader";
+import type { OptimizeOptions } from "svgo";
 
 export interface ModuleOptions {
-  addPlugin: boolean
+  svgoConfig?: OptimizeOptions;
+  svgo?: boolean;
+  defaultImport?: "url" | "raw" | "component";
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: "nuxt-svgo",
+    configKey: "svgo",
   },
   defaults: {
-    addPlugin: true
+    svgo: true,
+    defaultImport: "component",
   },
-  setup (options, nuxt) {
-    if (options.addPlugin) {
-      const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
-    }
-  }
-})
+  setup(options) {
+    addVitePlugin(svgLoader(options));
+  },
+});
