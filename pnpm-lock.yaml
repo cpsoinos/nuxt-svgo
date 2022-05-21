@@ -12,6 +12,7 @@ specifiers:
   commitizen: ^4.2.4
   cz-conventional-changelog: ^3.3.0
   eslint: latest
+  git-cz: ^4.9.0
   husky: ^8.0.1
   nuxt: ^3.0.0-rc.1
   prettier: ^2.6.2
@@ -38,6 +39,7 @@ devDependencies:
   commitizen: 4.2.4
   cz-conventional-changelog: 3.3.0
   eslint: 8.16.0
+  git-cz: 4.9.0
   husky: 8.0.1
   nuxt: 3.0.0-rc.1
   prettier: 2.6.2
@@ -3956,6 +3958,11 @@ packages:
   /git-config-path/2.0.0:
     resolution: {integrity: sha512-qc8h1KIQbJpp+241id3GuAtkdyJ+IK+LIVtkiFTRKRrmddDzs3SI9CvP1QYmWBFvm1I/PWRwj//of8bgAc0ltA==}
     engines: {node: '>=4'}
+    dev: true
+
+  /git-cz/4.9.0:
+    resolution: {integrity: sha512-cSRL8IIOXU7UFLdbziCYqg8f8InwLwqHezkiRHNSph7oZqGv0togId1kMTfKil6gzK0VaSXeVBb4oDl0fQCHiw==}
+    hasBin: true
     dev: true
 
   /git-raw-commits/2.0.11:
