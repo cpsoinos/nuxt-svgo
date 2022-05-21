@@ -1,6 +1,6 @@
 {
   "name": "@cpsoinos/nuxt-svgo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -14,6 +14,13 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpsoinos/nuxt-svgo.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepack": "unbuild",
     "dev": "nuxi dev playground",
