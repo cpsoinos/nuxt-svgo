@@ -1,0 +1,5 @@
+dist
+**/node_modules
+playground/.nuxt
+**/*.d.ts
+**/pnpm-lock.yaml

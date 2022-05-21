@@ -1,10 +1,10 @@
-import { defineBuildConfig } from "unbuild";
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   declaration: true,
-  entries: ["src/module"],
+  entries: ['src/module'],
   rollup: {
-    emitCJS: true,
+    emitCJS: true
   },
-  externals: ["svgo", "@nuxt/kit", "@nuxt/types"],
-});
+  externals: ['svgo', '@nuxt/kit', '@nuxt/types']
+})

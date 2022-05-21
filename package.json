@@ -22,10 +22,17 @@
     "access": "public"
   },
   "scripts": {
+    "commit": "git-cz",
     "prepack": "unbuild",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "eslint --ext .js,.ts, --fix .",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
+    "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.1",
@@ -34,11 +41,15 @@
     "vue-loader": "^17.0.0"
   },
   "devDependencies": {
+    "@cpsoinos/eslint-config-typescript": "^0.0.1",
+    "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/svgo": "^2.6.3",
     "eslint": "latest",
+    "husky": "^8.0.1",
     "nuxt": "^3.0.0-rc.1",
+    "prettier": "^2.6.2",
     "svgo": "^2.8.0",
     "unbuild": "^0.7.4"
   }
