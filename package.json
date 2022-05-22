@@ -23,7 +23,7 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "prepack": "unbuild",
+    "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
@@ -36,7 +36,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.1",
+    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
     "svg-to-vue-component": "^0.3.8",
     "vite-svg-loader": "^3.3.0",
     "vue-loader": "^17.0.0"
