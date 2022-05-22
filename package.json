@@ -22,16 +22,16 @@
     "access": "public"
   },
   "scripts": {
+    "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
+    "ci:publish": "changeset publish",
+    "ci:version": "changeset version",
     "commit": "git-cz",
-    "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "lint": "eslint --ext .js,.ts, --fix .",
+    "dev": "nuxi dev playground",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
-    "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
-    "ci:version": "changeset version",
-    "ci:publish": "changeset publish",
+    "lint": "eslint --ext .js,.ts, --fix .",
+    "prepack": "nuxt-module-build",
     "prepare": "husky install"
   },
   "dependencies": {
