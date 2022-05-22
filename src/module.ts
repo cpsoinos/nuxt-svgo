@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     addVitePlugin(svgLoader(options))
 
     extendWebpackConfig((config) => {
-      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
+      const svgRule = config.module.rules.find((rule) => rule.test.test('svg'))
 
       if (svgRule) svgRule.test = /\.(png|jpe?g|gif|webp)$/
 
