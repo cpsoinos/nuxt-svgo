@@ -3,9 +3,9 @@ import { OptimizeOptions } from 'svgo'
 import svgLoader from 'vite-svg-loader'
 
 export interface ModuleOptions {
-  svgoConfig?: OptimizeOptions
-  svgo?: boolean
   defaultImport?: 'url' | 'raw' | 'component'
+  svgo?: boolean
+  svgoConfig?: OptimizeOptions
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -13,15 +13,15 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-svgo',
     configKey: 'svgoOptions',
     compatibility: {
-      nuxt: '^3.0.0',
-    },
+      nuxt: '^3.0.0'
+    }
   },
   defaults: {
     svgo: true,
-    defaultImport: 'component',
+    defaultImport: 'component'
   },
 
-  async setup(options) {
+  setup(options) {
     addVitePlugin(svgLoader(options))
 
     // webpack 4/5
@@ -35,9 +35,9 @@ export default defineNuxtModule<ModuleOptions>({
         issuer: /\.(vue|js|ts|svg)$/,
         use: ['vue-loader', 'svg-to-vue-component/loader'],
         options: {
-          svgoConfig: config.svgo ? config.svgoConfig : config.svgo,
-        },
+          svgoConfig: config.svgo ? config.svgoConfig : config.svgo
+        }
       })
     })
-  },
+  }
 })

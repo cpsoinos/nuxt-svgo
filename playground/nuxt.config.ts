@@ -1,10 +1,10 @@
-import { defineNuxtConfig } from "nuxt";
-import MyModule from "..";
+import { defineNuxtConfig } from 'nuxt'
+import NuxtSVGO from '..'
 
 export default defineNuxtConfig({
-  modules: [MyModule],
-  myModule: {
+  modules: [NuxtSVGO],
+  svgoOptions: {
     svgo: true,
-    defaultImport: "component",
-  },
-});
+    defaultImport: 'component'
+  }
+})
