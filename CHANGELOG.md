@@ -1,5 +1,11 @@
 # nuxt-svgo
 
+## 0.0.2
+
+### Patch Changes
+
+- 60c3911: remove types key from tsconfig
+
 ## 0.0.1
 
 ### Patch Changes
