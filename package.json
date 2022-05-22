@@ -1,6 +1,6 @@
 {
   "name": "@cpsoinos/nuxt-svgo",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cpsoinos/nuxt-svgo.git"
+    "url": "https://github.com/cpsoinos/nuxt-svgo.git"
   },
   "publishConfig": {
     "access": "public"
@@ -32,7 +32,8 @@
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "ci:version": "changeset version",
     "ci:publish": "changeset publish",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0-rc.1",
@@ -47,6 +48,7 @@
     "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
+    "@semantic-release/git": "^10.0.1",
     "@types/svgo": "^2.6.3",
     "commitizen": "^4.2.4",
     "eslint": "latest",
@@ -54,6 +56,7 @@
     "husky": "^8.0.1",
     "nuxt": "^3.0.0-rc.1",
     "prettier": "^2.6.2",
+    "semantic-release": "^19.0.2",
     "svgo": "^2.8.0",
     "unbuild": "^0.7.4"
   },
@@ -66,6 +69,24 @@
     "commitizen": {
       "path": "git-cz"
     }
+  },
+  "release": {
+    "branches": "main",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "dist/**/*.{js,css}",
+            "docs",
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
   },
   "packageManager": "pnpm@7.1.2"
 }
