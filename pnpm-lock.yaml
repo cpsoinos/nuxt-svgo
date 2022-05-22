@@ -9,6 +9,8 @@ specifiers:
   '@nuxt/module-builder': latest
   '@nuxtjs/eslint-config-typescript': latest
   '@semantic-release/git': ^10.0.1
+  '@semantic-release/github': ^8.0.4
+  '@semantic-release/npm': ^9.0.1
   '@types/svgo': ^2.6.3
   commitizen: ^4.2.4
   eslint: latest
@@ -37,6 +39,8 @@ devDependencies:
   '@nuxt/module-builder': 0.1.7
   '@nuxtjs/eslint-config-typescript': 10.0.0_eslint@8.16.0
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
+  '@semantic-release/github': 8.0.4_semantic-release@19.0.2
+  '@semantic-release/npm': 9.0.1_semantic-release@19.0.2
   '@types/svgo': 2.6.3
   commitizen: 4.2.4
   eslint: 8.16.0
@@ -5032,7 +5036,7 @@ packages:
     dependencies:
       available-typed-arrays: 1.0.5
       call-bind: 1.0.2
-      es-abstract: 1.19.5
+      es-abstract: 1.20.1
       foreach: 2.0.5
       has-tostringtag: 1.0.0
     dev: true
@@ -8714,7 +8718,7 @@ packages:
     dependencies:
       available-typed-arrays: 1.0.5
       call-bind: 1.0.2
-      es-abstract: 1.19.5
+      es-abstract: 1.20.1
       foreach: 2.0.5
       has-tostringtag: 1.0.0
       is-typed-array: 1.1.8

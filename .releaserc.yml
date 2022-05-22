@@ -10,3 +10,12 @@ plugins:
         chore(release): ${nextRelease.version} [skip ci]
 
         ${nextRelease.notes}
+  - - '@semantic-release/github'
+    - assets:
+        - path: dist/module.cjs
+          label: CommonJS
+        - path: dist/module.mjs
+          label: ES Module
+        - path: dist/module.d.ts
+          label: TypeScript Definitions
+  - '@semantic-release/npm'
