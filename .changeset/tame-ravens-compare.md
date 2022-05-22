@@ -1,5 +1,5 @@
 ---
-'@cpsoinos/nuxt-svgo': patch
+'nuxt-svgo': patch
 ---
 
 setup changeset
