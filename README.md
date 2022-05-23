@@ -73,33 +73,29 @@ Use your own custom SVGO options:
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  modules: [
-    [
-      'nuxt-svgo',
-      {
-        svgoConfig: {
-          multipass: true,
-          removeViewBox: false,
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  // customize default plugin options
-                  inlineStyles: {
-                    onlyMatchedOnce: false
-                  },
+  modules: ['nuxt-svgo'],
+  svgoOptions: {
+    svgoConfig: {
+      multipass: true,
+      removeViewBox: false,
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              // customize default plugin options
+              inlineStyles: {
+                onlyMatchedOnce: false
+              },
 
-                  // or disable plugins
-                  removeDoctype: false
-                }
-              }
+              // or disable plugins
+              removeDoctype: false
             }
-          ]
+          }
         }
-      }
-    ]
-  ]
+      ]
+    }
+  }
 })
 ```
 
@@ -110,7 +106,10 @@ Disable SVGO entirely:
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  modules: [['nuxt-svgo', { svgo: false }]]
+  modules: ['nuxt-svgo'],
+  svgoOptions: {
+    svgo: false
+  }
 })
 ```
 
