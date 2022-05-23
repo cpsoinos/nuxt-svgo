@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@changesets/changelog-github': ^0.4.4
   '@changesets/cli': ^2.22.0
   '@commitlint/cli': ^17.0.0
   '@commitlint/config-conventional': ^17.0.0
@@ -18,7 +19,6 @@ specifiers:
   prettier: ^2.6.2
   svg-to-vue-component: ^0.3.8
   svgo: ^2.8.0
-  unbuild: ^0.7.4
   vite-svg-loader: ^3.3.0
   vue-loader: ^17.0.0
 
@@ -29,6 +29,7 @@ dependencies:
   vue-loader: 17.0.0
 
 devDependencies:
+  '@changesets/changelog-github': 0.4.4
   '@changesets/cli': 2.22.0
   '@commitlint/cli': 17.0.0
   '@commitlint/config-conventional': 17.0.0
@@ -44,7 +45,6 @@ devDependencies:
   nuxt: 3.0.0-rc.1
   prettier: 2.6.2
   svgo: 2.8.0
-  unbuild: 0.7.4
 
 packages:
 
@@ -370,6 +370,16 @@ packages:
       '@changesets/types': 5.0.0
     dev: true
 
+  /@changesets/changelog-github/0.4.4:
+    resolution: {integrity: sha512-htSILqCkyYtTB5/LoVKwx7GCJQGxAiBcYbfUKWiz/QoDARuM01owYtMXhV6/iytJZq/Dqqz3PjMZUNB4MphpbQ==}
+    dependencies:
+      '@changesets/get-github-info': 0.5.0
+      '@changesets/types': 5.0.0
+      dotenv: 8.6.0
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /@changesets/cli/2.22.0:
     resolution: {integrity: sha512-4bA3YoBkd5cm5WUxmrR2N9WYE7EeQcM+R3bVYMUj2NvffkQVpU3ckAI+z8UICoojq+HRl2OEwtz+S5UBmYY4zw==}
     hasBin: true
@@ -434,6 +444,15 @@ packages:
       chalk: 2.4.2
       fs-extra: 7.0.1
       semver: 5.7.1
+    dev: true
+
+  /@changesets/get-github-info/0.5.0:
+    resolution: {integrity: sha512-vm5VgHwrxkMkUjFyn3UVNKLbDp9YMHd3vMf1IyJoa/7B+6VpqmtAaXyDS0zBLfN5bhzVCHrRnj4GcZXXcqrFTw==}
+    dependencies:
+      dataloader: 1.4.0
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /@changesets/get-release-plan/3.0.8:
@@ -2724,6 +2743,10 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
+  /dataloader/1.4.0:
+    resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
+    dev: true
+
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -2950,6 +2973,11 @@ packages:
   /dotenv/16.0.0:
     resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
     engines: {node: '>=12'}
+
+  /dotenv/8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
+    engines: {node: '>=10'}
+    dev: true
 
   /duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -7886,41 +7914,6 @@ packages:
       scule: 0.2.1
       typescript: 4.6.4
       untyped: 0.3.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /unbuild/0.7.4:
-    resolution: {integrity: sha512-gJvfMw4h5Q7xieMCeW/d3wtNKZDpFyDR9651s8kL+AGp95sMNhAFRLxy24AUKC3b5EQbB74vaDoU5R+XwsZC6A==}
-    hasBin: true
-    dependencies:
-      '@rollup/plugin-alias': 3.1.9_rollup@2.71.1
-      '@rollup/plugin-commonjs': 21.1.0_rollup@2.71.1
-      '@rollup/plugin-json': 4.1.0_rollup@2.71.1
-      '@rollup/plugin-node-resolve': 13.2.1_rollup@2.71.1
-      '@rollup/plugin-replace': 4.0.0_rollup@2.71.1
-      '@rollup/pluginutils': 4.2.1
-      chalk: 5.0.1
-      consola: 2.15.3
-      defu: 6.0.0
-      esbuild: 0.14.38
-      hookable: 5.1.1
-      jiti: 1.13.0
-      magic-string: 0.26.1
-      mkdirp: 1.0.4
-      mkdist: 0.3.10_typescript@4.6.4
-      mlly: 0.5.2
-      mri: 1.2.0
-      pathe: 0.2.0
-      pkg-types: 0.3.2
-      pretty-bytes: 6.0.0
-      rimraf: 3.0.2
-      rollup: 2.71.1
-      rollup-plugin-dts: 4.2.1_ucrswzumipog3rfswkcvuves4u
-      rollup-plugin-esbuild: 4.9.1_lq7i7lniz7dbjsssi7edpdfmuu
-      scule: 0.2.1
-      typescript: 4.6.4
-      untyped: 0.4.4
     transitivePeerDependencies:
       - supports-color
     dev: true
