@@ -37,7 +37,7 @@ yarn add nuxt-svgo -D
 pnpm add nuxt-svgo -D
 ```
 
-## Configuration
+## Usage
 
 Use the [default configuration](https://github.com/cpsoinos/nuxt-svgo/blob/689aa0c20622fc287b12cb361a29aa2977f7cfa2/src/module.ts#L19-L22) by adding `'nuxt-svgo'` to the `modules` section of your Nuxt config.
 
@@ -50,7 +50,23 @@ export default defineNuxtConfig({
 })
 ```
 
-You can use your own custom SVGO options, as well:
+Then, in any `.vue` file, import your asset and use it as a component:
+
+```vue
+<script setup lang="ts">
+import IconHome from '~/assets/icon-home.svg'
+</script>
+
+<template>
+  <div>
+    <IconHome class="w-5 h-5" />
+  </div>
+</template>
+```
+
+## Configuration
+
+Use your own custom SVGO options:
 
 ```typescript
 // nuxt.config.ts
@@ -87,7 +103,7 @@ export default defineNuxtConfig({
 })
 ```
 
-You can also disable SVGO entirely:
+Disable SVGO entirely:
 
 ```typescript
 // nuxt.config.ts
