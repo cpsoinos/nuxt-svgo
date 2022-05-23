@@ -1,6 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-  "changelog": "@changesets/changelog-github",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "cpsoinos/nuxt-svgo" }
+  ],
   "commit": true,
   "fixed": [],
   "linked": [],
