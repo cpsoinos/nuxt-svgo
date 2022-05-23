@@ -113,6 +113,11 @@ export default defineNuxtConfig({
 })
 ```
 
+## Development
+
+- Run `pnpm dev:prepare` to generate type stubs.
+- Use `pnpm dev` to start [playground](./playground) in development mode.
+
 ## Author
 
 **Corey Psoinos**
