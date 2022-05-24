@@ -64,8 +64,7 @@
     "git-cz": "^4.9.0",
     "husky": "^8.0.1",
     "nuxt": "^3.0.0-rc.1",
-    "prettier": "^2.6.2",
-    "svgo": "^2.8.0"
+    "prettier": "^2.6.2"
   },
   "commitlint": {
     "extends": [

@@ -1,6 +1,7 @@
 import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
-import { OptimizeOptions } from 'svgo'
 import svgLoader from 'vite-svg-loader'
+
+type OptimizeOptions = Parameters<typeof svgLoader>[0]['svgoConfig']
 
 export interface ModuleOptions {
   defaultImport?: 'url' | 'raw' | 'component'
