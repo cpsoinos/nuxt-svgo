@@ -1,6 +1,6 @@
 {
   "name": "nuxt-svgo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nuxt module to load optimized SVG files as Vue components",
   "keywords": [
     "nuxt",
