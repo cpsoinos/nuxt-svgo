@@ -7,15 +7,7 @@
 
 `nuxt-svgo` is a Nuxt module to load optimized SVG files as Vue components.
 
-## How it works
-
-### Vite
-
-If your Nuxt app uses Vite, this module adds [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader) to the underlying Vite configuration. All due credit for `vite-svg-loader` to its author, [@jpkleemans](https://github.com/jpkleemans).
-
-### Webpack
-
-If your Nuxt app uses Webpack, this module adds [svg-to-vue-component](https://github.com/egoist/svg-to-vue-component) to the underlying Webpack configuration. All due credit for `svg-to-vue-component` to its author, [@egoist](https://github.com/egoist).
+Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground?file=nuxt.config.ts)!
 
 ## Install
 
@@ -63,6 +55,16 @@ import IconHome from '~/assets/icon-home.svg'
   </div>
 </template>
 ```
+
+## How it works
+
+### Vite
+
+If your Nuxt app uses Vite, this module adds [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader) to the underlying Vite configuration. All due credit for `vite-svg-loader` to its author, [@jpkleemans](https://github.com/jpkleemans).
+
+### Webpack
+
+If your Nuxt app uses Webpack, this module adds [svg-to-vue-component](https://github.com/egoist/svg-to-vue-component) to the underlying Webpack configuration. All due credit for `svg-to-vue-component` to its author, [@egoist](https://github.com/egoist).
 
 ## Configuration
 
