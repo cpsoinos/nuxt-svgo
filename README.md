@@ -7,7 +7,7 @@
 
 `nuxt-svgo` is a Nuxt module to load optimized SVG files as Vue components.
 
-Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground)!
+Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground?file=nuxt.config.ts)!
 
 ## Install
 
