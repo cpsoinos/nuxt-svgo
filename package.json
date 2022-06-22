@@ -55,7 +55,7 @@
     "@changesets/cli": "^2.22.0",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
-    "@cpsoinos/eslint-config-typescript": "^0.0.1",
+    "@cpsoinos/eslint-config-typescript": "^0.2.2",
     "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
