@@ -22,7 +22,7 @@ jobs:
           node-version: 16
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.2
         id: pnpm-install
         with:
           version: 7.1.2
@@ -61,7 +61,7 @@ jobs:
           node-version: 16
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.2
         id: pnpm-install
         with:
           version: 7.0.1
