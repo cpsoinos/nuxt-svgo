@@ -33,10 +33,15 @@ export default defineNuxtModule<ModuleOptions>({
       config.module.rules.push({
         test: /\.svg$/,
         issuer: /\.(vue|js|ts|svg)$/,
-        use: ['vue-loader', 'svg-to-vue-component/loader'],
-        options: {
-          svgoConfig: config.svgo ? config.svgoConfig : config.svgo
-        }
+        use: [
+          'vue-loader',
+          {
+            loader: 'svg-to-vue-component/loader',
+            options: {
+              svgoConfig: options.svgo ? options.svgoConfig : options.svgo
+            }
+          }
+        ]
       })
     })
   }
