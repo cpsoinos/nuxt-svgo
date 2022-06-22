@@ -64,7 +64,7 @@ If your Nuxt app uses Vite, this module adds [vite-svg-loader](https://github.co
 
 ### Webpack
 
-If your Nuxt app uses Webpack, this module adds [svg-to-vue-component](https://github.com/egoist/svg-to-vue-component) to the underlying Webpack configuration. All due credit for `svg-to-vue-component` to its author, [@egoist](https://github.com/egoist).
+If your Nuxt app uses Webpack, this module adds [vue-svg-loader](https://github.com/damianstasik/vue-svg-loader) to the underlying Webpack configuration. All due credit for `vue-svg-loader` to its author, [@damianstasik](https://github.com/damianstasik).
 
 ## Configuration
 
