@@ -1,5 +1,11 @@
 # nuxt-svgo
 
+## 0.0.3
+
+### Patch Changes
+
+- [#32](https://github.com/cpsoinos/nuxt-svgo/pull/32) [`1ab6462`](https://github.com/cpsoinos/nuxt-svgo/commit/1ab6462a654b711f22a618230bbe91f5ba63df99) Thanks [@cpsoinos](https://github.com/cpsoinos)! - Fix webpack loader config
+
 ## 0.0.2
 
 ### Patch Changes
