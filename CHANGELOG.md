@@ -1,5 +1,11 @@
 # nuxt-svgo
 
+## 0.1.0
+
+### Minor Changes
+
+- [#34](https://github.com/cpsoinos/nuxt-svgo/pull/34) [`1a8a847`](https://github.com/cpsoinos/nuxt-svgo/commit/1a8a847ce6ee88b8a0672cc4d9b23cb62f437524) Thanks [@cpsoinos](https://github.com/cpsoinos)! - Use vue-svg-loader to fix compilation with webpack
+
 ## 0.0.3
 
 ### Patch Changes
