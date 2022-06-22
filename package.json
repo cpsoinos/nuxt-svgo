@@ -1,6 +1,7 @@
 {
   "name": "nuxt-svgo",
   "version": "0.0.2",
+  "packageManager": "pnpm@7.3.0",
   "description": "Nuxt module to load optimized SVG files as Vue components",
   "keywords": [
     "nuxt",
@@ -64,6 +65,7 @@
     "git-cz": "^4.9.0",
     "husky": "^8.0.1",
     "nuxt": "^3.0.0-rc.1",
+    "pnpm": "^7.3.0",
     "prettier": "^2.6.2"
   },
   "commitlint": {
@@ -75,6 +77,5 @@
     "commitizen": {
       "path": "git-cz"
     }
-  },
-  "packageManager": "pnpm@7.1.2"
+  }
 }
