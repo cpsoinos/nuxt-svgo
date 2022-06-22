@@ -12,7 +12,7 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-svgo',
-    configKey: 'svgoOptions',
+    configKey: 'svgo',
     compatibility: {
       nuxt: '^3.0.0'
     }

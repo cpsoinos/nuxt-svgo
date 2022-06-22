@@ -76,7 +76,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
-  svgoOptions: {
+  svgo: {
     svgoConfig: {
       multipass: true,
       removeViewBox: false,
