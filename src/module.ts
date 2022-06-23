@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
 import svgLoader from 'vite-svg-loader'
 
@@ -26,8 +27,9 @@ export default defineNuxtModule<ModuleOptions>({
     addVitePlugin(svgLoader(options))
 
     extendWebpackConfig((config) => {
+      // @ts-ignore
       const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
-
+      // @ts-ignore
       svgRule.test = /\.(png|jpe?g|gif|webp)$/
 
       config.module.rules.push({
@@ -36,9 +38,15 @@ export default defineNuxtModule<ModuleOptions>({
           'vue-loader',
           {
             loader: 'vue-svg-loader',
-            options: options.svgo ? options.svgoConfig : options.svgo
+            options: {
+              svgo: false
+            }
+          },
+          options.svgo && {
+            loader: 'svgo-loader',
+            options: options.svgoConfig || {}
           }
-        ]
+        ].filter(Boolean)
       })
     })
   }
