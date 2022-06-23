@@ -3,7 +3,7 @@ import NuxtSVGO from '..'
 
 export default defineNuxtConfig({
   modules: [NuxtSVGO],
-  svgoOptions: {
+  svgo: {
     svgo: true,
     defaultImport: 'component'
   }
