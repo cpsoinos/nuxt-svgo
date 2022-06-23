@@ -1,5 +1,15 @@
 # nuxt-svgo
 
+## 1.0.0
+
+### Major Changes
+
+- [#36](https://github.com/cpsoinos/nuxt-svgo/pull/36) [`a6c8ca0`](https://github.com/cpsoinos/nuxt-svgo/commit/a6c8ca01bc053d3ad0e4c9ea71891bda5906d9cb) Thanks [@cpsoinos](https://github.com/cpsoinos)! - Change Nuxt config key from 'svgoOptions' to 'svgo'. If you were using customized SVGO options, you'll need to update your `nuxt.config.ts` file to use `svgo` as the options key rather than `svgoOptions`. If you were using the default SVGO options, no change is necessary.
+
+### Minor Changes
+
+- [#36](https://github.com/cpsoinos/nuxt-svgo/pull/36) [`a6c8ca0`](https://github.com/cpsoinos/nuxt-svgo/commit/a6c8ca01bc053d3ad0e4c9ea71891bda5906d9cb) Thanks [@cpsoinos](https://github.com/cpsoinos)! - fix webpack SVG optimization with svgo-loader
+
 ## 0.1.0
 
 ### Minor Changes
