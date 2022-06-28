@@ -20,7 +20,8 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     svgo: true,
-    defaultImport: 'component'
+    defaultImport: 'component',
+    svgoConfig: {}
   },
 
   setup(options) {
