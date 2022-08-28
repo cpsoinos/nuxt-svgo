@@ -118,6 +118,19 @@ export default defineNuxtConfig({
 })
 ```
 
+## Usage with TypeScript
+
+When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix thix, you need to provide a type declaration to tell TypeScript how to handle SVG components. Here's an example, using a `custom.d.ts` file at the application's root:
+
+```ts
+// custom.d.ts
+declare module '*.svg' {
+  import type { DefineComponent } from 'vue'
+  const component: DefineComponent
+  export default component
+}
+```
+
 ## Development
 
 - Run `pnpm dev:prepare` to generate type stubs.
