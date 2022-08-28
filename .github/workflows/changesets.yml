@@ -17,9 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -30,7 +27,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-          version: 7.1.2
+          version: 7.9.5
           run_install: false
 
       - name: Get pnpm store directory
