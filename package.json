@@ -52,22 +52,22 @@
     "vue-svg-loader": "0.17.0-beta.2"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.4",
-    "@changesets/cli": "^2.22.0",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
+    "@changesets/changelog-github": "0.4.6",
+    "@changesets/cli": "2.24.3",
+    "@commitlint/cli": "17.1.1",
+    "@commitlint/config-conventional": "17.1.0",
     "@cpsoinos/eslint-config-typescript": "0.2.2",
-    "@cpsoinos/prettier-config": "^0.0.0",
+    "@cpsoinos/prettier-config": "0.0.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@types/svgo": "^2.6.3",
-    "commitizen": "^4.2.4",
+    "@types/svgo": "2.6.4",
+    "commitizen": "4.2.5",
     "eslint": "latest",
-    "git-cz": "^4.9.0",
-    "husky": "^8.0.1",
-    "nuxt": "^3.0.0-rc.1",
-    "pnpm": "^7.3.0",
-    "prettier": "^2.6.2"
+    "git-cz": "4.9.0",
+    "husky": "8.0.1",
+    "nuxt": "3.0.0-rc.8",
+    "pnpm": "7.9.5",
+    "prettier": "2.7.1"
   },
   "commitlint": {
     "extends": [
