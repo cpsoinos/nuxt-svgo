@@ -1,5 +1,11 @@
 # nuxt-svgo
 
+## 1.0.1
+
+### Patch Changes
+
+- [#50](https://github.com/cpsoinos/nuxt-svgo/pull/50) [`8819419`](https://github.com/cpsoinos/nuxt-svgo/commit/881941985ab1b3f54ea71f10c86cedb8872901a9) Thanks [@cpsoinos](https://github.com/cpsoinos)! - Update compatibility to '^3.0.0-rc.0'
+
 ## 1.0.0
 
 ### Major Changes
