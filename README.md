@@ -82,7 +82,6 @@ export default defineNuxtConfig({
   svgo: {
     svgoConfig: {
       multipass: true,
-      removeViewBox: false,
       plugins: [
         {
           name: 'preset-default',
@@ -94,7 +93,8 @@ export default defineNuxtConfig({
               },
 
               // or disable plugins
-              removeDoctype: false
+              removeDoctype: false,
+              removeViewBox: false
             }
           }
         }
