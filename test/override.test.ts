@@ -31,7 +31,7 @@ describe('default options', async () => {
     }
   })
 
-  it('renders the svg', async () => {
+  it('renders the svg without removing the viewBox', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
 
