@@ -112,7 +112,7 @@ import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
-  svgoOptions: {
+  svgo: {
     svgo: false
   }
 })
