@@ -1,5 +1,11 @@
 # nuxt-svgo
 
+## 1.1.0
+
+### Minor Changes
+
+- [#52](https://github.com/cpsoinos/nuxt-svgo/pull/52) [`b677235`](https://github.com/cpsoinos/nuxt-svgo/commit/b677235b9c326fd176ccb764c126b52079bb4db2) Thanks [@renovate](https://github.com/apps/renovate)! - Update Nuxt dependency version
+
 ## 1.0.1
 
 ### Patch Changes
