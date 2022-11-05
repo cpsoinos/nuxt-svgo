@@ -43,10 +43,8 @@
     "lint": "eslint --ext .js,.ts, --fix .",
     "prepack": "nuxt-module-build",
     "prepare": "husky install",
-    "test:fixtures": "NUXT_TELEMETRY_DISABLED=1 pnpm nuxi prepare test/fixtures/basic && JITI_ESM_RESOLVE=1 vitest run --dir test",
-    "test:fixtures:dev": "NUXT_TELEMETRY_DISABLED=1 NUXT_TEST_DEV=true pnpm test:fixtures",
-    "test:fixtures:webpack": "NUXT_TELEMETRY_DISABLED=1 TEST_WITH_WEBPACK=1 pnpm test:fixtures",
-    "test:unit": "JITI_ESM_RESOLVE=1 vitest run --dir packages"
+    "test": "NUXT_TELEMETRY_DISABLED=1 pnpm nuxi prepare test/fixtures/basic && JITI_ESM_RESOLVE=1 vitest run --dir test",
+    "test:dev": "NUXT_TELEMETRY_DISABLED=1 NUXT_TEST_DEV=true pnpm test:fixtures"
   },
   "dependencies": {
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
