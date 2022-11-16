@@ -68,7 +68,7 @@
     "eslint": "latest",
     "git-cz": "4.9.0",
     "husky": "8.0.1",
-    "nuxt": "3.0.0-rc.13",
+    "nuxt": "3.0.0-rc.14",
     "pnpm": "7.15.0",
     "prettier": "2.7.1",
     "vitest": "^0.24.5"
