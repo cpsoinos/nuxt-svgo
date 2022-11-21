@@ -56,8 +56,8 @@
   "devDependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2",
-    "@commitlint/cli": "17.2.0",
-    "@commitlint/config-conventional": "17.2.0",
+    "@commitlint/cli": "17.3.0",
+    "@commitlint/config-conventional": "17.3.0",
     "@cpsoinos/eslint-config-typescript": "0.2.3",
     "@cpsoinos/prettier-config": "0.0.0",
     "@nuxt/module-builder": "latest",
