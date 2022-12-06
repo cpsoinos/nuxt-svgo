@@ -64,7 +64,7 @@
     "@nuxt/test-utils": "3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/svgo": "2.6.4",
-    "commitizen": "4.2.5",
+    "commitizen": "4.2.6",
     "eslint": "latest",
     "git-cz": "4.9.0",
     "husky": "8.0.1",
