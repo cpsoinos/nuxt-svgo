@@ -35,7 +35,6 @@
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "ci:publish": "changeset publish",
     "ci:version": "changeset version",
-    "commit": "git-cz",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev": "nuxi dev playground",
@@ -56,31 +55,17 @@
   "devDependencies": {
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2",
-    "@commitlint/cli": "17.2.0",
-    "@commitlint/config-conventional": "17.2.0",
     "@cpsoinos/eslint-config-typescript": "0.2.3",
     "@cpsoinos/prettier-config": "0.0.0",
     "@nuxt/module-builder": "latest",
     "@nuxt/test-utils": "3.0.0-rc.13",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/svgo": "2.6.4",
-    "commitizen": "4.2.5",
     "eslint": "latest",
-    "git-cz": "4.9.0",
     "husky": "8.0.1",
     "nuxt": "3.0.0-rc.13",
     "pnpm": "7.15.0",
     "prettier": "2.7.1",
     "vitest": "^0.24.5"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
   }
 }
