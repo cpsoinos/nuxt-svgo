@@ -1,6 +1,6 @@
 {
   "name": "nuxt-svgo",
-  "version": "1.1.0",
+  "version": "1.1.1-development",
   "packageManager": "pnpm@7.15.0",
   "description": "Nuxt module to load optimized SVG files as Vue components",
   "keywords": [
@@ -33,8 +33,6 @@
   },
   "scripts": {
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
-    "ci:publish": "changeset publish",
-    "ci:version": "changeset version",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev": "nuxi dev playground",
@@ -43,7 +41,8 @@
     "prepack": "nuxt-module-build",
     "prepare": "husky install",
     "test": "NUXT_TELEMETRY_DISABLED=1 pnpm nuxi prepare test/fixtures/basic && JITI_ESM_RESOLVE=1 vitest run --dir test",
-    "test:dev": "NUXT_TELEMETRY_DISABLED=1 NUXT_TEST_DEV=true pnpm test:fixtures"
+    "test:dev": "NUXT_TELEMETRY_DISABLED=1 NUXT_TEST_DEV=true pnpm test:fixtures",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
@@ -53,8 +52,6 @@
     "vue-svg-loader": "0.17.0-beta.2"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.25.2",
     "@cpsoinos/eslint-config-typescript": "0.2.3",
     "@cpsoinos/prettier-config": "0.0.0",
     "@nuxt/module-builder": "latest",
@@ -66,6 +63,7 @@
     "nuxt": "3.0.0-rc.13",
     "pnpm": "7.15.0",
     "prettier": "2.7.1",
+    "semantic-release": "^19.0.5",
     "vitest": "^0.24.5"
   }
 }
