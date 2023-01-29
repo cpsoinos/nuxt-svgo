@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
-    "svgo-loader": "^3.0.1",
+    "svgo-loader": "^4.0.0",
     "vite-svg-loader": "^3.3.0",
     "vue-loader": "^17.0.0",
     "vue-svg-loader": "0.17.0-beta.2"
