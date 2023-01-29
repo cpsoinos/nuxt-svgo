@@ -5,31 +5,7 @@ import NuxtSVGO from '../src/module'
 
 describe('default options', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures', import.meta.url)),
-    nuxtConfig: {
-      modules: [NuxtSVGO],
-      svgo: {
-        svgoConfig: {
-          multipass: true,
-          plugins: [
-            {
-              name: 'preset-default',
-              params: {
-                overrides: {
-                  // customize default plugin options
-                  inlineStyles: {
-                    onlyMatchedOnce: false
-                  },
-
-                  // or disable plugins
-                  removeViewBox: false
-                }
-              }
-            }
-          ]
-        }
-      }
-    }
+    rootDir: fileURLToPath(new URL('./fixtures/override', import.meta.url))
   })
 
   it('renders the svg without removing the viewBox', async () => {
