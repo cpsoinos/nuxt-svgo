@@ -5,13 +5,7 @@ import NuxtSVGO from '../src/module'
 
 describe('svgo disabled', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures', import.meta.url)),
-    nuxtConfig: {
-      modules: [NuxtSVGO],
-      svgo: {
-        svgo: false
-      }
-    }
+    rootDir: fileURLToPath(new URL('./fixtures/svgo-disabled', import.meta.url))
   })
 
   it('renders the svg without optimizing', async () => {
