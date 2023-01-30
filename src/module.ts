@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
 import svgLoader from 'vite-svg-loader'
-import type { NuxtModule } from '@nuxt/schema'
 
 type OptimizeOptions = Parameters<typeof svgLoader>[0]['svgoConfig']
 
@@ -11,7 +10,7 @@ export interface ModuleOptions {
   svgoConfig?: OptimizeOptions
 }
 
-const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
+export default defineNuxtModule({
   meta: {
     name: 'nuxt-svgo',
     configKey: 'svgo',
@@ -54,5 +53,3 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     })
   }
 })
-
-export default nuxtSvgo

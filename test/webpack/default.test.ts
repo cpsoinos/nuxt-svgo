@@ -4,7 +4,9 @@ import { setup, $fetch } from '@nuxt/test-utils'
 
 describe('default options', async () => {
   await setup({
-    rootDir: fileURLToPath(new URL('./fixtures/default', import.meta.url))
+    rootDir: fileURLToPath(
+      new URL('../fixtures/webpack/default', import.meta.url)
+    )
   })
 
   it('renders the svg', async () => {
