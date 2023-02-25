@@ -64,6 +64,6 @@
     "pnpm": "7.26.1",
     "prettier": "2.7.1",
     "semantic-release": "^19.0.5",
-    "vitest": "^0.28.0"
+    "vitest": "^0.29.0"
   }
 }
