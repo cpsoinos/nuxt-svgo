@@ -149,7 +149,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2022 [Corey Psoinos](https://github.com/cpsoinos).
+Copyright © 2023 [Corey Psoinos](https://github.com/cpsoinos).
 
 This project is [MIT](https://github.com/cpsoinos/nuxt-svgo/blob/main/LICENSE) licensed.
 
