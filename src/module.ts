@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
+import { fileURLToPath } from "node:url";
+import { defineNuxtModule, addVitePlugin, extendWebpackConfig, createResolver, addComponent } from '@nuxt/kit'
 import svgLoader from 'vite-svg-loader'
 import type { NuxtModule } from '@nuxt/schema'
 
@@ -25,8 +26,17 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     defaultImport: 'component',
     svgoConfig: {}
   },
-
+  hooks: {
+    'components:dirs': (dirs) => {
+      const { resolve } = createResolver(import.meta.url)
+      // Add ./components dir to the list
+      dirs.push({
+        path: fileURLToPath("file://"+resolve('./components')),
+      })
+    }
+  },
   setup(options) {
+    
     addVitePlugin(svgLoader(options))
 
     extendWebpackConfig((config) => {
