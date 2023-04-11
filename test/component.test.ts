@@ -18,4 +18,10 @@ describe('component', async () => {
       '<svg width="24" height="24" class="nuxt-icon nuxt-icon--fill"><path d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6"></path></svg>'
     )
   })
+
+  it('it renders an span with a comment saying icon does not exist when icon name is not found', async () => {
+    const html = await $fetch('/')
+    console.log(html)
+    expect(html).toContain(`<span class="nuxt-icon nuxt-icon--fill"><!-- icon with name "nonexisting" not found --></span>`)
+  })
 })
