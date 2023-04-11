@@ -2,7 +2,7 @@
   <div>
     Nuxt module playground!
     <Home />
-    <nuxt-icon name="home" style="color: green; font-size: 40px;"/>
+    <nuxt-icon name="home" style="color: green; font-size: 40px" />
     sweet
     <nuxt-icon name="home" filled :fontControlled="false" />
     <nuxt-icon name="non-existing" />

@@ -16,11 +16,12 @@ const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
 })
 
 function EmptyIcon(name: string) {
-  return ({
+  return {
     setup() {
-      return () => h('span', { innerHTML: `<!-- icon with name "${name}" not found -->`})
+      return () =>
+        h('span', { innerHTML: `<!-- icon with name "${name}" not found -->` })
     }
-  })
+  }
 }
 </script>
 
@@ -38,7 +39,9 @@ const props = withDefaults(
   { filled: false, fontControlled: true }
 )
 
-const IconComponent = markRaw(iconsImport[`/assets/icons/${props.name}.svg`] || EmptyIcon(props.name))
+const IconComponent = markRaw(
+  iconsImport[`/assets/icons/${props.name}.svg`] || EmptyIcon(props.name)
+)
 
 watch(
   () => props.name,
