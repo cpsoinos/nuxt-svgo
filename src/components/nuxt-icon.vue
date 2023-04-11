@@ -1,19 +1,27 @@
 <template>
-  <IconComponent 
+  <IconComponent
     :class="{
-      'nuxt-icon' :fontControlled,
-      'nuxt-icon--fill': !filled 
+      'nuxt-icon': fontControlled,
+      'nuxt-icon--fill': !filled
     }"
   />
 </template>
 
 <script lang="ts">
+import { h } from '#imports'
 
 const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
   import: 'default',
-  eager: true,
-});
+  eager: true
+})
 
+function EmptyIcon(name: string) {
+  return ({
+    setup() {
+      return () => h('span', { innerHTML: `<!-- icon with name "${name}" not found -->`})
+    }
+  })
+}
 </script>
 
 <script setup lang="ts">
@@ -21,27 +29,35 @@ const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
 // with some modifications
 import { markRaw, watch } from '#imports'
 
-const props = withDefaults(defineProps<{
-  name: string;
-  fontControlled?: boolean;
-  filled?: boolean
-}>(), { filled: false, fontControlled: true })
+const props = withDefaults(
+  defineProps<{
+    name: string
+    fontControlled?: boolean
+    filled?: boolean
+  }>(),
+  { filled: false, fontControlled: true }
+)
 
+const IconComponent = markRaw(iconsImport[`/assets/icons/${props.name}.svg`] || EmptyIcon(props.name))
 
-const IconComponent = markRaw(iconsImport[`/assets/icons/${props.name}.svg`])
-
-watch(() => props.name, () => {
-  IconComponent.value = iconsImport[`/assets/icons/${props.name}.svg`];
-  if (!IconComponent.value) {
-    console.error(
-      `[nuxt-svgo] Icon '${props.name}' doesn't exist in 'assets/icons'`
-    )
-  } 
-})
+watch(
+  () => props.name,
+  () => {
+    const component = iconsImport[`/assets/icons/${props.name}.svg`]
+    if (!component) {
+      console.error(
+        `[nuxt-svgo] Icon '${props.name}' doesn't exist in 'assets/icons'`
+      )
+      IconComponent.value = EmptyIcon(props.name)
+    } else {
+      IconComponent.value = component
+    }
+  }
+)
 </script>
 
 <style>
-.nuxt-icon svg {
+.nuxt-icon {
   width: 1em;
   height: 1em;
   margin-bottom: 0.125em;
