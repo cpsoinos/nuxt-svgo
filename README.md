@@ -69,6 +69,8 @@ If your Nuxt app uses Webpack, this module adds [vue-svg-loader](https://github.
 All due credit for `vue-svg-loader` to its author, [@damianstasik](https://github.com/damianstasik).
 All due credit for `svgo-loader` to its author, [@svg](https://github.com/svg).
 
+Make sure peer dependencies of this module (`vue-svg-loader`,`svgo-loader`, `vue-loader`) are installed if you are using webpack.
+
 ## Configuration
 
 Use your own custom SVGO options:
