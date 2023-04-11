@@ -22,6 +22,8 @@ describe('component', async () => {
   it('it renders an span with a comment saying icon does not exist when icon name is not found', async () => {
     const html = await $fetch('/')
     console.log(html)
-    expect(html).toContain(`<span class="nuxt-icon nuxt-icon--fill"><!-- icon with name "nonexisting" not found --></span>`)
+    expect(html).toContain(
+      `<span class="nuxt-icon nuxt-icon--fill"><!-- icon with name "nonexisting" not found --></span>`
+    )
   })
 })
