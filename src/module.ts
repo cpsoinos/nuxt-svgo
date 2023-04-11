@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  addVitePlugin,
+  extendWebpackConfig,
+  createResolver
+} from '@nuxt/kit'
 import svgLoader from 'vite-svg-loader'
 
 type OptimizeOptions = Parameters<typeof svgLoader>[0]['svgoConfig']
@@ -25,7 +30,7 @@ export default defineNuxtModule({
     svgoConfig: {}
   },
 
-  setup(options) {
+  setup(options, nuxt) {
     addVitePlugin(svgLoader(options))
 
     extendWebpackConfig((config) => {
@@ -34,20 +39,25 @@ export default defineNuxtModule({
       // @ts-ignore
       svgRule.test = /\.(png|jpe?g|gif|webp)$/
 
-      config.module.rules.push({
+      const { resolve } = createResolver(import.meta.url)
+      const runtimeDir = resolve('./runtime')
+      nuxt.options.build.transpile.push(runtimeDir)
+
+      config.module?.rules?.push({
         test: /\.svg$/,
         use: [
-          'vue-loader',
-          {
-            loader: 'vue-svg-loader',
-            options: {
-              svgo: false
-            }
-          },
-          options.svgo && {
-            loader: 'svgo-loader',
-            options: options.svgoConfig || {}
-          }
+          resolve(runtimeDir, 'webpack-vue-svg-loader')
+          // 'vue-loader',
+          // {
+          //   loader: 'vue-svg-loader',
+          //   options: {
+          //     svgo: false
+          //   }
+          // },
+          // options.svgo && {
+          //   loader: 'svgo-loader',
+          //   options: options.svgoConfig || {}
+          // }
         ].filter(Boolean)
       })
     })

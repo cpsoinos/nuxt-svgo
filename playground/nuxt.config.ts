@@ -2,6 +2,7 @@ import NuxtSVGO from '..'
 
 export default defineNuxtConfig({
   modules: [NuxtSVGO],
+  builder: 'webpack',
   svgo: {
     svgoConfig: {
       multipass: true,
