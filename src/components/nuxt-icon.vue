@@ -12,7 +12,10 @@ import { h } from '#imports'
 
 const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
   import: 'default',
-  eager: true
+  eager: true,
+  query: {
+    component: '',
+  }
 })
 
 function EmptyIcon(name: string) {
