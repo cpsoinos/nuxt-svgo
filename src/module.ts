@@ -32,17 +32,16 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     defaultImport: 'component',
     svgoConfig: {}
   },
-  hooks: {
-    'components:dirs': (dirs) => {
-      const { resolve } = createResolver(import.meta.url)
-      // Add ./components dir to the list
-      dirs.push({
-        path: fileURLToPath('file://' + resolve('./components'))
-      })
-    }
-  },
   setup(options) {
+    const { resolve } = createResolver(import.meta.url)
+
     addVitePlugin(svgLoader(options))
+
+    addComponent({
+      name: 'nuxt-icon',
+      global: true,
+      filePath: resolve('./runtime/components/nuxt-icon.vue')
+    })
 
     extendWebpackConfig((config) => {
       // @ts-ignore
