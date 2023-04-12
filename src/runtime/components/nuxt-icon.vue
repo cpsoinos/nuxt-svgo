@@ -62,7 +62,7 @@ watch(
 )
 </script>
 
-<style>
+<style scoped>
 .nuxt-icon {
   width: 1em;
   height: 1em;
