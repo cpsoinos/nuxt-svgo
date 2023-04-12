@@ -14,7 +14,7 @@ const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
   import: 'default',
   eager: true,
   query: {
-    component: '',
+    component: ''
   }
 })
 
