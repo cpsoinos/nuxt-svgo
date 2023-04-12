@@ -18,7 +18,7 @@ const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
   }
 })
 
-function EmptyIcon(name: string) {
+function IconNotFound(name: string) {
   return {
     setup() {
       return () =>
@@ -43,7 +43,7 @@ const props = withDefaults(
 )
 
 const IconComponent = markRaw(
-  iconsImport[`/assets/icons/${props.name}.svg`] || EmptyIcon(props.name)
+  iconsImport[`/assets/icons/${props.name}.svg`] || IconNotFound(props.name)
 )
 
 watch(
@@ -54,7 +54,7 @@ watch(
       console.error(
         `[nuxt-svgo] Icon '${props.name}' doesn't exist in 'assets/icons'`
       )
-      IconComponent.value = EmptyIcon(props.name)
+      IconComponent.value = IconNotFound(props.name)
     } else {
       IconComponent.value = component
     }
