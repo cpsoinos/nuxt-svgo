@@ -59,7 +59,7 @@
     "husky": "8.0.1",
     "nuxt": "3.3.3",
     "pnpm": "8.2.0",
-    "prettier": "2.7.1",
+    "prettier": "2.8.7",
     "semantic-release": "^19.0.5",
     "vitest": "^0.30.1"
   },
