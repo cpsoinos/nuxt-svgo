@@ -7,6 +7,14 @@ describe('component', async () => {
     rootDir: fileURLToPath(new URL('./fixtures/component', import.meta.url))
   })
 
+  it('works regardless of `defaultImport` settings', async () => {
+    const html = await $fetch('/')
+    console.log(html)
+    expect(html).toContain(
+      `<span class="nuxt-icon nuxt-icon--fill"><!-- icon with name "nonexisting" not found --></span>`
+    )
+  })
+
   it('renders the svg from assets/icons folder', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
