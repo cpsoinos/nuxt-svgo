@@ -71,6 +71,6 @@ watch(
 }
 .nuxt-icon--fill,
 .nuxt-icon--fill * {
-  fill: currentColor !important;
+  fill: currentColor;
 }
 </style>
