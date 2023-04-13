@@ -5,9 +5,7 @@
       'nuxt-icon--fill': !filled
     }"
   >
-    <component
-      :is="IconComponent"
-    />
+    <component :is="IconComponent" />
   </span>
 </template>
 
