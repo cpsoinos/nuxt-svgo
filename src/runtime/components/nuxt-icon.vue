@@ -1,5 +1,6 @@
 <template>
-  <component :is="IconComponent"
+  <component
+    :is="IconComponent"
     :class="{
       'nuxt-icon': fontControlled,
       'nuxt-icon--fill': !filled
@@ -33,17 +34,17 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     filled: {
-      type: Boolean, 
+      type: Boolean,
       required: false,
-      default: false,
+      default: false
     },
     fontControlled: {
-      type: Boolean, 
+      type: Boolean,
       required: false,
-      default: true,
+      default: true
     }
   },
   setup(props) {
@@ -67,7 +68,7 @@ export default {
     )
 
     return {
-      IconComponent,
+      IconComponent
     }
   }
 }
