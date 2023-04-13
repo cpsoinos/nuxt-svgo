@@ -1,5 +1,15 @@
 # nuxt-svgo
 
+## 1.2.0
+
+### Minor Changes
+
+- 30eb734: feat: Add auto import using a component
+
+### Patch Changes
+
+- ce1bd44: fix: update dependencies and upgrade svgo
+
 ## 1.1.0
 
 ### Minor Changes
