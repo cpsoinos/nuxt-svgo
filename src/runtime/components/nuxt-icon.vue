@@ -1,11 +1,14 @@
 <template>
-  <component
-    :is="IconComponent"
+  <span
     :class="{
       'nuxt-icon': fontControlled,
       'nuxt-icon--fill': !filled
     }"
-  />
+  >
+    <component
+      :is="IconComponent"
+    />
+  </span>
 </template>
 
 <script lang="ts">
