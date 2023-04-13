@@ -7,8 +7,10 @@
   />
 </template>
 
-<script lang="ts">
-import { h } from '#imports'
+<script setup lang="ts">
+// file imported from https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue
+// with some modifications
+import { h, markRaw, watch } from '#imports'
 
 const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
   import: 'default',
@@ -26,12 +28,6 @@ function IconNotFound(name: string) {
     }
   }
 }
-</script>
-
-<script setup lang="ts">
-// file imported from https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue
-// with some modifications
-import { markRaw, watch } from '#imports'
 
 const props = withDefaults(
   defineProps<{
