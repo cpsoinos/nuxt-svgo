@@ -133,6 +133,52 @@ declare module '*.svg' {
 }
 ```
 
+## `nuxt-icon` component
+
+### Notes
+
+Due to how this component works, it only works on projects with vite (webpack is not supported)
+
+This component is very similar to `nuxt-icons` module's component, in fact the code was [originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but it has been modified to work in SSR.
+
+### Usage
+
+1. Create `icons` folder in `assets`: `assets/icons`
+2. Drop your icons with the `.svg` extension into the `icons` folder
+3. In your project, use `<nuxt-icon name="">`, where name is the name of your svg icon from the folder
+
+If you need to use the original color from the svg file (for example, if your icon has defs) you need to use the filled attribute
+
+`<nuxt-icon name="myLogoIcon" filled />`
+
+### Subfolders
+
+If you would like to use some more complicated folder arrangement you will have to use paths from /icons
+
+If you have a svg icon in nested directories such as:
+
+```
+📁icons
+  └📁admin
+  ⠀⠀└ badge.svg
+  └📁user
+  ⠀⠀└ badge.svg
+```
+
+then the icons's name will be based on its own path directory and filename. Therefore, the icon's name will be:
+
+```html
+<nuxt-icon name="admin/badge">
+  and <nuxt-icon name="user/badge"></nuxt-icon
+></nuxt-icon>
+```
+
+### Component props
+
+- `name`: name of the icon to be used
+- `filled`: use icon's original colors when `true`
+- `fontControlled`: you can disable the default behavior of scaling by font size by setting this prop to `false`
+
 ## Development
 
 - Run `pnpm dev:prepare` to generate type stubs.

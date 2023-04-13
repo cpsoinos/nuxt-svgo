@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { defineNuxtModule, addVitePlugin, extendWebpackConfig } from '@nuxt/kit'
+import { fileURLToPath } from 'node:url'
+import {
+  defineNuxtModule,
+  addVitePlugin,
+  extendWebpackConfig,
+  createResolver,
+  addComponent
+} from '@nuxt/kit'
 import svgLoader from 'vite-svg-loader'
 import type { NuxtModule } from '@nuxt/schema'
 
@@ -25,9 +32,16 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     defaultImport: 'component',
     svgoConfig: {}
   },
-
   setup(options) {
+    const { resolve } = createResolver(import.meta.url)
+
     addVitePlugin(svgLoader(options))
+
+    addComponent({
+      name: 'nuxt-icon',
+      global: true,
+      filePath: resolve('./runtime/components/nuxt-icon.vue')
+    })
 
     extendWebpackConfig((config) => {
       // @ts-ignore
