@@ -149,7 +149,7 @@ This component is very similar to `nuxt-icons` module's component, in fact the c
 
 If you need to use the original color from the svg file (for example, if your icon has defs) you need to use the filled attribute
 
-<nuxt-icon name="myLogoIcon" filled />
+`<nuxt-icon name="myLogoIcon" filled />`
 
 ### Subfolders
 
