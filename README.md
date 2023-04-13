@@ -168,7 +168,9 @@ If you have a svg icon in nested directories such as:
 then the icons's name will be based on its own path directory and filename. Therefore, the icon's name will be:
 
 ```html
-<nuxt-icon name="admin/badge"> and <nuxt-icon name="user/badge">
+<nuxt-icon name="admin/badge">
+  and <nuxt-icon name="user/badge"></nuxt-icon
+></nuxt-icon>
 ```
 
 ### Component props
