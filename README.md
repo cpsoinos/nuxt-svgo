@@ -139,7 +139,7 @@ declare module '*.svg' {
 
 Due to how this component works, it only works on projects with vite (webpack is not supported)
 
-This component is very similar to `nuxt-icons` module's component, in fact the code was originally copied over from `nuxt-icons` module, but it has been modified to work in SSR.
+This component is very similar to `nuxt-icons` module's component, in fact the code was [originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but it has been modified to work in SSR.
 
 ### Usage
 
