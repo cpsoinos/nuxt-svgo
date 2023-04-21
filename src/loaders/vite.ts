@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import { createResolver } from '@nuxt/kit'
+import type { Plugin } from 'vite'
 
 export interface SvgLoaderOptions {
   defaultImport?: 'url' | 'raw' | 'component' | 'skipsvgo' | 'componentext'
@@ -12,7 +13,7 @@ export interface SvgLoaderOptions {
   svgoConfig?: Config
 }
 
-export function svgLoader(options?: SvgLoaderOptions) {
+export function svgLoader(options?: SvgLoaderOptions): Plugin {
   const { svgoConfig = {}, svgo, defaultImport } = options || {}
   const { resolve } = createResolver(import.meta.url)
   const componentPath = resolve('../runtime/components/nuxt-icon.vue')
