@@ -54,7 +54,6 @@ Then, in any `.vue` file, import your asset and use it as a component:
 <script setup lang="ts">
 import IconHome from '~/assets/icon-home.svg'
 </script>
-
 ```
 
 Or, if you use **vite**, in any `.vue` file, simply use your icon's name with `svgo` prefix as component name:
@@ -92,17 +91,17 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    simpleAutoImport: './assets/other-icons/'
+    simpleAutoImport: true
   }
 })
 ```
 
 ### Subfolders
 
-The icons's component name will follow nuxt's prefix convention. Therefore, if prefix is turned on for your components, the component name for example `assets/icons/admin/badge.svg` will be `svgo-admin-badge`:
+The icons's component name will follow nuxt's component prefix convention. Therefore, if prefix is turned on for your components, the component name for example `assets/icons/admin/badge.svg` will be `svgo-admin-badge`:
 
 ```html
-<svgo-admin-badge /> and <svgo-user-badge />
+<svgo-admin-badge />
 ```
 
 ## How it works
@@ -186,12 +185,13 @@ declare module '*.svg' {
 
 ## `nuxt-icon` component
 
-[originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but later heavily modified to support tree shaking and SSR.
+[originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but later heavily modified to support tree shaking and SSR. This is not intended to be used directly. However you can import your Icons directly and pass it to the component using `icon` property
 
 ### Component props
 
 - `filled`: use icon's original colors when `true`
 - `fontControlled`: you can disable the default behavior of scaling by font size by setting this prop to `false`
+- `icon`: the component that `nuxt-icon` will render as. this is used internally to provide control over the icon.
 
 ## Development
 
