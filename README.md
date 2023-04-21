@@ -98,7 +98,7 @@ export default defineNuxtConfig({
 
 ### Subfolders
 
-The icons's component name will follow nuxt's component prefix convention. Therefore, if prefix is turned on for your components, the component name for example `assets/icons/admin/badge.svg` will be `svgo-admin-badge`:
+The icons's component name will follow Nuxt's component prefix convention. Therefore, if prefix is turned on for your components, the component name for `assets/icons/admin/badge.svg`, for example, will be `svgo-admin-badge`:
 
 ```html
 <svgo-admin-badge />
