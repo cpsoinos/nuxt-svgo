@@ -70,8 +70,8 @@ export function svgLoader(options?: SvgLoaderOptions) {
         code =
           `import {NuxtIcon} from "#components";\nimport {h} from "vue";\n` +
           code
-        // saving original component render to reuse it later in the proxied render function
-        code += `\nconst oc = {render};\nexport default { render() { return h(NuxtIcon, {IconComponent: oc}) } }`
+        
+        code += `\nexport default { render() { return h(NuxtIcon, {IconComponent: {render}}) } }`
         return code
       } else {
         return `${code}\nexport default { render: render }`
