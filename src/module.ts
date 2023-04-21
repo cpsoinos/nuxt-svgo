@@ -5,17 +5,15 @@ import {
   addVitePlugin,
   extendWebpackConfig,
   createResolver,
+  addComponentsDir,
   addComponent
 } from '@nuxt/kit'
-import svgLoader from 'vite-svg-loader'
 import type { NuxtModule } from '@nuxt/schema'
+import { SvgLoaderOptions, svgLoader } from './loaders/vite'
 
-type OptimizeOptions = Parameters<typeof svgLoader>[0]['svgoConfig']
-
-export interface ModuleOptions {
-  defaultImport?: 'url' | 'raw' | 'component'
-  svgo?: boolean
-  svgoConfig?: OptimizeOptions
+export type ModuleOptions = SvgLoaderOptions & {
+  autoImportPath?: string
+  simpleAutoImport?: boolean
 }
 
 const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
@@ -30,18 +28,34 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   defaults: {
     svgo: true,
     defaultImport: 'component',
-    svgoConfig: {}
+    svgoConfig: {},
+    autoImportPath: './assets/icons/',
+    simpleAutoImport: false
   },
-  setup(options) {
-    const { resolve } = createResolver(import.meta.url)
-
-    addVitePlugin(svgLoader(options))
+  async setup(options) {
+    const { resolvePath, resolve } = createResolver(import.meta.url)
 
     addComponent({
       name: 'nuxt-icon',
-      global: true,
       filePath: resolve('./runtime/components/nuxt-icon.vue')
     })
+
+    addVitePlugin(svgLoader(options))
+
+    if (options.autoImportPath) {
+      addComponentsDir({
+        path: await resolvePath(options.autoImportPath),
+        global: true,
+        extensions: ['svg'],
+        prefix: 'svgo',
+        watch: true,
+        extendComponent(component) {
+          component.filePath =
+            component.filePath +
+            (options.simpleAutoImport ? '?component' : '?componentext')
+        }
+      })
+    }
 
     extendWebpackConfig((config) => {
       // @ts-ignore
