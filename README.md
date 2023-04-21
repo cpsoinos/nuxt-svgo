@@ -185,7 +185,7 @@ declare module '*.svg' {
 
 ## `nuxt-icon` component
 
-[originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but later heavily modified to support tree shaking and SSR. This is not intended to be used directly. However you can import your Icons directly and pass it to the component using `icon` property
+Originally copied over from the [nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but later heavily modified to support tree shaking and SSR. This is not intended to be used directly. However, you can import your icons directly and pass them to the component using the `icon` prop.
 
 ### Component props
 
