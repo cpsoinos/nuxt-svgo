@@ -193,6 +193,19 @@ Originally copied over from the [nuxt-icons module](https://github.com/gitFoxCod
 - `fontControlled`: you can disable the default behavior of scaling by font size by setting this prop to `false`
 - `icon`: the component that `nuxt-icon` will render as. this is used internally to provide control over the icon.
 
+## Migrating from v1.x to v2.x
+
+If you were using the `nuxt-icon` component before, you have to change your code like this:
+
+```html
+<!-- from: -->
+<nuxt-icon name="home" filled />
+<nuxt-icon name="special/home" filled />
+<!-- to: -->
+<svgo-home filled />
+<svgo-special-home filled />
+```
+
 ## Development
 
 - Run `pnpm dev:prepare` to generate type stubs.
