@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { fileURLToPath } from 'node:url'
 import {
   defineNuxtModule,
   addVitePlugin,
