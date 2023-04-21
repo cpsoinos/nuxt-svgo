@@ -15,6 +15,13 @@ describe('component', async () => {
     )
   })
 
+  it('renders the svg as nuxt-icon component', async () => {
+    const html = await $fetch('/')
+
+    expect(html).toContain(`nuxt-icon`)
+    expect(html).toContain(`nuxt-icon--fill`)
+  })
+
   it('renders the svg from assets/icons folder', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
