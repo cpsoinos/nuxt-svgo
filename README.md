@@ -45,15 +45,64 @@ export default defineNuxtConfig({
 Then, in any `.vue` file, import your asset and use it as a component:
 
 ```vue
-<script setup lang="ts">
-import IconHome from '~/assets/icon-home.svg'
-</script>
-
 <template>
   <div>
     <IconHome class="w-5 h-5" />
   </div>
 </template>
+
+<script setup lang="ts">
+import IconHome from '~/assets/icon-home.svg'
+</script>
+
+```
+
+Or, if you use **vite**, in any `.vue` file, simply use your icon's name with `svgo` prefix as component name:
+
+```vue
+<template>
+  <div>
+    <SvgoHome class="w-5 h-5" />
+    <!-- Or -->
+    <svgo-home class="w-5 h-5" />
+  </div>
+</template>
+```
+
+It automatically imports your icons from `assets/icons/` folder by default. you can configure this by passing `autoImportPath` in your config:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    autoImportPath: './assets/other-icons/'
+  }
+})
+```
+
+If you want to use auto import but you don't want to use the `nuxt-icon` component (used by default), You can do so by using `simpleAutoImport: true`:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    simpleAutoImport: './assets/other-icons/'
+  }
+})
+```
+
+### Subfolders
+
+The icons's component name will follow nuxt's prefix convention. Therefore, if prefix is turned on for your components, the component name for example `assets/icons/admin/badge.svg` will be `svgo-admin-badge`:
+
+```html
+<svgo-admin-badge /> and <svgo-user-badge />
 ```
 
 ## How it works
@@ -61,6 +110,8 @@ import IconHome from '~/assets/icon-home.svg'
 ### Vite
 
 If your Nuxt app uses Vite, this module adds [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader) to the underlying Vite configuration. All due credit for `vite-svg-loader` to its author, [@jpkleemans](https://github.com/jpkleemans).
+
+We use a modified copy of this vite plugin for auto loading icons with extra control using a `nuxt-icon` component.
 
 ### Webpack
 
@@ -135,47 +186,10 @@ declare module '*.svg' {
 
 ## `nuxt-icon` component
 
-### Notes
-
-Due to how this component works, it only works on projects with vite (webpack is not supported)
-
-This component is very similar to `nuxt-icons` module's component, in fact the code was [originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but it has been modified to work in SSR.
-
-### Usage
-
-1. Create `icons` folder in `assets`: `assets/icons`
-2. Drop your icons with the `.svg` extension into the `icons` folder
-3. In your project, use `<nuxt-icon name="">`, where name is the name of your svg icon from the folder
-
-If you need to use the original color from the svg file (for example, if your icon has defs) you need to use the filled attribute
-
-`<nuxt-icon name="myLogoIcon" filled />`
-
-### Subfolders
-
-If you would like to use some more complicated folder arrangement you will have to use paths from /icons
-
-If you have a svg icon in nested directories such as:
-
-```
-📁icons
-  └📁admin
-  ⠀⠀└ badge.svg
-  └📁user
-  ⠀⠀└ badge.svg
-```
-
-then the icons's name will be based on its own path directory and filename. Therefore, the icon's name will be:
-
-```html
-<nuxt-icon name="admin/badge">
-  and <nuxt-icon name="user/badge"></nuxt-icon
-></nuxt-icon>
-```
+[originally copied over from nuxt-icons module](https://github.com/gitFoxCode/nuxt-icons/blob/89e53649e5868c31fc97869918ede96504ae1a04/src/runtime/components/nuxt-icon.vue), but later heavily modified to support tree shaking and SSR.
 
 ### Component props
 
-- `name`: name of the icon to be used
 - `filled`: use icon's original colors when `true`
 - `fontControlled`: you can disable the default behavior of scaling by font size by setting this prop to `false`
 
