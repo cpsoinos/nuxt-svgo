@@ -70,8 +70,8 @@ export function svgLoader(options?: SvgLoaderOptions) {
         code =
           `import {NuxtIcon} from "#components";\nimport {h} from "vue";\n` +
           code
-        
-        code += `\nexport default { render() { return h(NuxtIcon, {IconComponent: {render}}) } }`
+
+        code += `\nexport default { render() { return h(NuxtIcon, {icon: {render}}) } }`
         return code
       } else {
         return `${code}\nexport default { render: render }`

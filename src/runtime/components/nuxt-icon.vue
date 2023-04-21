@@ -1,6 +1,6 @@
 <template>
   <component
-    :is="IconComponent"
+    :is="icon"
     :class="{
       'nuxt-icon': fontControlled,
       'nuxt-icon--fill': !filled
@@ -24,7 +24,7 @@ export default {
       required: false,
       default: true
     },
-    IconComponent: {
+    icon: {
       type: Object,
       required: true
     }
