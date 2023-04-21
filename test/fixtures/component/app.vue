@@ -1,9 +1,8 @@
 <template>
   <div>
     Nuxt module playground!
-    <nuxt-icon name="home" />
-    <nuxt-icon name="half/home" />
-    <nuxt-icon name="nonexisting" />
+    <svgo-home />
+    <svgo-half-home />
   </div>
 </template>
 
