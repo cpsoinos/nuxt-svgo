@@ -27,7 +27,19 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   defaults: {
     svgo: true,
     defaultImport: 'component',
-    svgoConfig: {},
+    svgoConfig: {
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              removeViewBox: false
+            }
+          }
+        },
+        'removeDimensions'
+      ]
+    },
     autoImportPath: './assets/icons/',
     simpleAutoImport: false
   },
