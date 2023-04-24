@@ -1,4 +1,11 @@
 {
   "extends": ["config:base"],
-  "npmrc": "auto-install-peers=true\nshamefully-hoist=true\nstrict-peer-dependencies=false"
+  "npmrc": "auto-install-peers=true\nshamefully-hoist=true\nstrict-peer-dependencies=false",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
 }
