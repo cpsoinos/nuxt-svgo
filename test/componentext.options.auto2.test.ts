@@ -1,16 +1,19 @@
 import { fileURLToPath } from 'node:url'
 import { describe, it, expect } from 'vitest'
 import { setup, $fetch, stopServer } from '@nuxt/test-utils'
+import type { NuxtConfig } from 'nuxt/schema'
+import type { ModuleOptions } from '../src/module'
 
-describe('component (different auto import)', () => {
+describe('componentext (different auto import)', () => {
   describe('test group', async () => {
     await setup({
       rootDir: fileURLToPath(new URL('./fixtures/component', import.meta.url)),
       nuxtConfig: {
         svgo: {
+          defaultImport: 'componentext',
           autoImportPath: './assets/other-icons/'
-        }
-      }
+        } as ModuleOptions
+      } as NuxtConfig
     })
 
     it('renders the svg as expected', async () => {

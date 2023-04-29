@@ -206,6 +206,36 @@ If you were using the `nuxt-icon` component before, you have to change your code
 <svgo-special-home filled />
 ```
 
+## Migrating from v2.x to v3.x
+
+v3 now uses an opinionated default config for svgo by default, to make it work like before simply pass `{}` to `svgoConfig` option:
+
+```ts
+export default defineNuxtConfig({
+  // ...
+  svgo: {
+    svgoConfig: {}
+  }
+})
+```
+
+also since v3 `simpleAutoImport` option is removed and `defaultImport` is changed to `componentext`. if you were using the following code, and relying on the `defaultImport`, change it:
+
+```vue
+<template>
+  <div>
+    <IconHome class="w-5 h-5" />
+  </div>
+</template>
+
+<script setup lang="ts">
+// change this:
+import IconHome from '~/assets/icon-home.svg'
+// to this:
+import IconHome from '~/assets/icon-home.svg?component'
+</script>
+```
+
 ## Development
 
 - Run `pnpm dev:prepare` to generate type stubs.

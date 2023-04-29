@@ -13,7 +13,7 @@ export interface SvgLoaderOptions {
 }
 
 export function svgLoader(options?: SvgLoaderOptions) {
-  const { svgoConfig = {}, svgo, defaultImport } = options || {}
+  const { svgoConfig, svgo, defaultImport } = options || {}
   const { resolve } = createResolver(import.meta.url)
   const componentPath = resolve('../runtime/components/nuxt-icon.vue')
 
@@ -66,7 +66,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
         transformAssetUrls: false
       })
 
-      if (query === 'componentext') {
+      if (importType === 'componentext') {
         code =
           `import {NuxtIcon} from "#components";\nimport {h} from "vue";\n` +
           code

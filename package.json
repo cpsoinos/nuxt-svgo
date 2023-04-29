@@ -58,7 +58,7 @@
     "cross-env": "^7.0.3",
     "eslint": "latest",
     "husky": "8.0.3",
-    "nuxt": "3.3.3",
+    "nuxt": "3.4.3",
     "pnpm": "8.3.1",
     "prettier": "2.8.8",
     "semantic-release": "^19.0.5",
@@ -72,8 +72,7 @@
   "pnpm": {
     "overrides": {
       "json5@<1.0.2": ">=1.0.2",
-      "nth-check@<2.0.1": ">=2.0.1",
-      "vite": "^4.3.0-beta.5"
+      "nth-check@<2.0.1": ">=2.0.1"
     }
   }
 }
