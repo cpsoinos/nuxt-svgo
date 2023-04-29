@@ -8,11 +8,25 @@ import {
   addComponent
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
+import type { Config } from 'svgo'
 import { SvgLoaderOptions, svgLoader } from './loaders/vite'
+
+export const defaultSvgoConfig: Config = {
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false
+        }
+      }
+    },
+    'removeDimensions'
+  ]
+}
 
 export type ModuleOptions = SvgLoaderOptions & {
   autoImportPath?: string
-  simpleAutoImport?: boolean
 }
 
 const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
@@ -26,10 +40,9 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   },
   defaults: {
     svgo: true,
-    defaultImport: 'component',
-    svgoConfig: {},
+    defaultImport: 'componentext',
     autoImportPath: './assets/icons/',
-    simpleAutoImport: false
+    svgoConfig: undefined
   },
   async setup(options) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
@@ -39,7 +52,12 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
       filePath: resolve('./runtime/components/nuxt-icon.vue')
     })
 
-    addVitePlugin(svgLoader(options))
+    addVitePlugin(
+      svgLoader({
+        ...options,
+        svgoConfig: options.svgoConfig || defaultSvgoConfig
+      })
+    )
 
     if (options.autoImportPath) {
       addComponentsDir({
@@ -47,12 +65,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
         global: true,
         extensions: ['svg'],
         prefix: 'svgo',
-        watch: true,
-        extendComponent(component) {
-          component.filePath =
-            component.filePath +
-            (options.simpleAutoImport ? '?component' : '?componentext')
-        }
+        watch: true
       })
     }
 
@@ -74,7 +87,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
           },
           options.svgo && {
             loader: 'svgo-loader',
-            options: options.svgoConfig || {}
+            options: options.svgoConfig || defaultSvgoConfig
           }
         ].filter(Boolean)
       })
