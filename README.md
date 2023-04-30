@@ -91,7 +91,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    simpleAutoImport: true
+    simpleAutoImport: true, // Deprecated
+    defaultImport: 'component'
   }
 })
 ```
