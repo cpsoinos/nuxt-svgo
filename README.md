@@ -82,7 +82,7 @@ export default defineNuxtConfig({
 })
 ```
 
-If you want to use auto import but you don't want to use the `nuxt-icon` component (used by default), You can do so by using `simpleAutoImport: true`:
+If you want to use auto import but you don't want to use the `nuxt-icon` component (used by default), You can do so by using `defaultImport: 'component'`:
 
 ```typescript
 // nuxt.config.ts
@@ -91,7 +91,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    simpleAutoImport: true
+    defaultImport: 'component'
   }
 })
 ```
