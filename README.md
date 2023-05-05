@@ -96,6 +96,20 @@ export default defineNuxtConfig({
 })
 ```
 
+By default module registers all icons inside `autoImportPath` globally. This may be unwanted behavior as it generated chunks for each icon to be used globally, which will result in huge amount of files if you have many icons. If you want to disable global registeration simply use `global: false` in module options:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    global: false
+  }
+})
+```
+
 ### Subfolders
 
 The icons's component name will follow Nuxt's component prefix convention. Therefore, if prefix is turned on for your components, the component name for `assets/icons/admin/badge.svg`, for example, will be `svgo-admin-badge`:
