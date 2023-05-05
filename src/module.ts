@@ -27,6 +27,7 @@ export const defaultSvgoConfig: Config = {
 
 export type ModuleOptions = SvgLoaderOptions & {
   autoImportPath?: string
+  global?: boolean
 }
 
 const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
@@ -42,7 +43,8 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     svgo: true,
     defaultImport: 'componentext',
     autoImportPath: './assets/icons/',
-    svgoConfig: undefined
+    svgoConfig: undefined,
+    global: true
   },
   async setup(options) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
@@ -62,7 +64,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     if (options.autoImportPath) {
       addComponentsDir({
         path: await resolvePath(options.autoImportPath),
-        global: true,
+        global: options.global,
         extensions: ['svg'],
         prefix: 'svgo',
         watch: true
