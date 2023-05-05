@@ -96,7 +96,7 @@ export default defineNuxtConfig({
 })
 ```
 
-By default module registers all icons inside `autoImportPath` globally. This may be unwanted behavior as it generated chunks for each icon to be used globally, which will result in huge amount of files if you have many icons. If you want to disable global registeration simply use `global: false` in module options:
+By default module registers all icons inside `autoImportPath` globally. This may be unwanted behavior as it generates chunks for each icon to be used globally, which will result in huge amount of files if you have many icons. If you want to disable global registration simply use `global: false` in module options:
 
 ```typescript
 // nuxt.config.ts
