@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 overrides:
   json5@<1.0.2: '>=1.0.2'
   nth-check@<2.0.1: '>=2.0.1'
@@ -7,7 +11,7 @@ overrides:
 dependencies:
   '@nuxt/kit':
     specifier: npm:@nuxt/kit-edge@latest
-    version: /@nuxt/kit-edge@3.5.4-28100197.199595f3(rollup@3.21.8)
+    version: /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9(rollup@3.21.8)
   '@vue/compiler-sfc':
     specifier: ^3.2.47
     version: 3.2.47
@@ -33,7 +37,7 @@ devDependencies:
     version: 0.0.0
   '@nuxt/module-builder':
     specifier: latest
-    version: 0.4.0(@nuxt/kit-edge@3.5.4-28100197.199595f3)(nuxi@3.5.3)
+    version: 0.4.0(@nuxt/kit-edge@3.6.0-28108658.05a8c2d9)(nuxi@3.5.3)
   '@nuxt/test-utils':
     specifier: 3.5.3
     version: 3.5.3(rollup@3.21.8)(vitest@0.30.1)(vue@3.3.4)
@@ -53,8 +57,8 @@ devDependencies:
     specifier: 3.5.3
     version: 3.5.3(@types/node@17.0.30)(eslint@8.42.0)(rollup@3.21.8)(typescript@4.9.4)
   pnpm:
-    specifier: 8.5.1
-    version: 8.5.1
+    specifier: 8.6.2
+    version: 8.6.2
   prettier:
     specifier: 2.8.8
     version: 2.8.8
@@ -752,11 +756,11 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/kit-edge@3.5.4-28100197.199595f3(rollup@3.21.8):
-    resolution: {integrity: sha512-0rXiSsmKp7UqNU97Z7yhIb+/AZqivYfV/kYLghD9FeJod5seag75bE0cZKYRYhiJ97WBZp3SnGZDUFG5eUtrww==}
+  /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9(rollup@3.21.8):
+    resolution: {integrity: sha512-VKb25qnnZy1+xZsprcfD4zfKiwLWGzJ7Halju6dkYhQC2/pW3aNEMCpC59c83QdAizzE5Hazdh+/kXA29k5DXw==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge@3.5.4-28100197.199595f3(rollup@3.21.8)
+      '@nuxt/schema': /@nuxt/schema-edge@3.6.0-28108658.05a8c2d9(rollup@3.21.8)
       c12: 1.4.1
       consola: 3.1.0
       defu: 6.1.2
@@ -771,7 +775,7 @@ packages:
       scule: 1.0.0
       semver: 7.5.1
       unctx: 2.3.1
-      unimport: 3.0.7(rollup@3.21.8)
+      unimport: 3.0.8(rollup@3.21.8)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
@@ -796,21 +800,21 @@ packages:
       scule: 1.0.0
       semver: 7.5.1
       unctx: 2.3.1
-      unimport: 3.0.7(rollup@3.21.8)
+      unimport: 3.0.8(rollup@3.21.8)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: true
 
-  /@nuxt/module-builder@0.4.0(@nuxt/kit-edge@3.5.4-28100197.199595f3)(nuxi@3.5.3):
+  /@nuxt/module-builder@0.4.0(@nuxt/kit-edge@3.6.0-28108658.05a8c2d9)(nuxi@3.5.3):
     resolution: {integrity: sha512-B+UAYgFV1Hkc2ZcD7GaiKZ3SNHhyxFlXzZoBWTc9ulE0Z/+rq6RTa9fNm13BZyGhVhDCl5FN/wF/yYa1O/D2iw==}
     hasBin: true
     peerDependencies:
       '@nuxt/kit': ^3.5.0
       nuxi: ^3.5.0
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.5.4-28100197.199595f3(rollup@3.21.8)
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.0-28108658.05a8c2d9(rollup@3.21.8)
       consola: 3.1.0
       mlly: 1.3.0
       mri: 1.2.0
@@ -822,8 +826,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema-edge@3.5.4-28100197.199595f3(rollup@3.21.8):
-    resolution: {integrity: sha512-fgFgsJzAVC3JS43cDAYulXWjWTP/x7qRf9PdMg4QWUY3SY2Pgq2q+fofLqDRsf2c+DnKS5fkUj2ZrA/kk2BaBw==}
+  /@nuxt/schema-edge@3.6.0-28108658.05a8c2d9(rollup@3.21.8):
+    resolution: {integrity: sha512-AqH1DRjd4CRENwQYmE539MlFkYtS3mE6vRp5/EJpr0/nE6ppnGUQYeFJLolSHCzeeAFOjuW9tM39aKsCaOpoyA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
       defu: 6.1.2
@@ -833,7 +837,7 @@ packages:
       postcss-import-resolver: 2.0.0
       std-env: 3.3.3
       ufo: 1.1.2
-      unimport: 3.0.7(rollup@3.21.8)
+      unimport: 3.0.8(rollup@3.21.8)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
@@ -850,7 +854,7 @@ packages:
       postcss-import-resolver: 2.0.0
       std-env: 3.3.3
       ufo: 1.1.2
-      unimport: 3.0.7(rollup@3.21.8)
+      unimport: 3.0.8(rollup@3.21.8)
       untyped: 1.3.2
     transitivePeerDependencies:
       - rollup
@@ -1759,7 +1763,7 @@ packages:
       eslint: 8.42.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0(eslint@8.42.0)
-      semver: 7.5.0
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -3710,7 +3714,7 @@ packages:
       debug: 4.3.4
       enhanced-resolve: 5.10.0
       eslint: 8.42.0
-      eslint-plugin-import: 2.26.0(@typescript-eslint/parser@5.47.1)(eslint-import-resolver-typescript@3.5.2)(eslint@8.42.0)
+      eslint-plugin-import: 2.26.0(@typescript-eslint/parser@5.47.1)(eslint@8.42.0)
       get-tsconfig: 4.2.0
       globby: 13.1.4
       is-core-module: 2.11.0
@@ -3742,6 +3746,32 @@ packages:
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
       eslint-import-resolver-typescript: 3.5.2(eslint-plugin-import@2.26.0)(eslint@8.42.0)
+      find-up: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /eslint-module-utils@2.7.3(@typescript-eslint/parser@5.47.1)(eslint-import-resolver-node@0.3.6):
+    resolution: {integrity: sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.47.1(eslint@8.42.0)(typescript@4.9.4)
+      debug: 3.2.7
+      eslint-import-resolver-node: 0.3.6
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -3845,6 +3875,37 @@ packages:
       eslint: 8.42.0
       eslint-import-resolver-node: 0.3.6
       eslint-module-utils: 2.7.3(@typescript-eslint/parser@5.47.1)(eslint-import-resolver-node@0.3.6)(eslint-import-resolver-typescript@3.5.2)
+      has: 1.0.3
+      is-core-module: 2.11.0
+      is-glob: 4.0.3
+      minimatch: 3.1.2
+      object.values: 1.1.5
+      resolve: 1.22.1
+      tsconfig-paths: 3.14.1
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+    dev: true
+
+  /eslint-plugin-import@2.26.0(@typescript-eslint/parser@5.47.1)(eslint@8.42.0):
+    resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.47.1(eslint@8.42.0)(typescript@4.9.4)
+      array-includes: 3.1.4
+      array.prototype.flat: 1.3.0
+      debug: 2.6.9
+      doctrine: 2.1.0
+      eslint: 8.42.0
+      eslint-import-resolver-node: 0.3.6
+      eslint-module-utils: 2.7.3(@typescript-eslint/parser@5.47.1)(eslint-import-resolver-node@0.3.6)
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -5861,7 +5922,7 @@ packages:
       std-env: 3.3.3
       ufo: 1.1.2
       unenv: 1.5.1
-      unimport: 3.0.7(rollup@3.21.8)
+      unimport: 3.0.8(rollup@3.21.8)
       unstorage: 1.6.0
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -6561,8 +6622,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.5.1:
-    resolution: {integrity: sha512-W6elL7Nww0a/MCICkzpkbxW6f99TQuX4DuJoDjWp39X08PKDkEpg4cgj3d6EtgYADcdQWl/eM8NdlLJVE3RgpA==}
+  /pnpm@8.6.2:
+    resolution: {integrity: sha512-Dmgwe+T34Xr6UYaTLXSphPS7ok4h2EPkaHQEH6j7USoAk21CzueAdD1nQLkWJwDnZkJucho0LbKntJ+9B5xlUQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
@@ -8122,6 +8183,24 @@ packages:
 
   /unimport@3.0.7(rollup@3.21.8):
     resolution: {integrity: sha512-2dVQUxJEGcrSZ0U4qtwJVODrlfyGcwmIOoHVqbAFFUx7kPoEN5JWr1cZFhLwoAwTmZOvqAm3YIkzv1engIQocg==}
+    dependencies:
+      '@rollup/pluginutils': 5.0.2(rollup@3.21.8)
+      escape-string-regexp: 5.0.0
+      fast-glob: 3.2.12
+      local-pkg: 0.4.3
+      magic-string: 0.30.0
+      mlly: 1.3.0
+      pathe: 1.1.1
+      pkg-types: 1.0.3
+      scule: 1.0.0
+      strip-literal: 1.0.1
+      unplugin: 1.3.1
+    transitivePeerDependencies:
+      - rollup
+    dev: true
+
+  /unimport@3.0.8(rollup@3.21.8):
+    resolution: {integrity: sha512-AOt6xj3QMwqcTZRPB+NhFkyVEjCKnpTVoPm5x6424zz2NYYtCfym2bpJofzPHIJKPNIh5ko2/t2q46ZIMgdmbw==}
     dependencies:
       '@rollup/pluginutils': 5.0.2(rollup@3.21.8)
       escape-string-regexp: 5.0.0
