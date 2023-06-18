@@ -47,7 +47,10 @@ Then, in any `.vue` file, import your asset and use it as a component:
 ```vue
 <template>
   <div>
-    <IconHome class="w-5 h-5" />
+     <!-- font size controls width & height by default: -->
+    <IconHome class="text-xl" />
+     <!-- you can disable it: -->
+    <IconHome class="w-5 h-5" :fontControlled="false" />
   </div>
 </template>
 
@@ -61,9 +64,9 @@ Or, if you use **vite**, in any `.vue` file, simply use your icon's name with `s
 ```vue
 <template>
   <div>
-    <SvgoHome class="w-5 h-5" />
+    <SvgoHome class="text-xl" />
     <!-- Or -->
-    <svgo-home class="w-5 h-5" />
+    <svgo-home class="text-xl" />
   </div>
 </template>
 ```
@@ -238,7 +241,7 @@ also since v3 `simpleAutoImport` option is removed and `defaultImport` is change
 ```vue
 <template>
   <div>
-    <IconHome class="w-5 h-5" />
+    <IconHome class="text-xl" />
   </div>
 </template>
 
