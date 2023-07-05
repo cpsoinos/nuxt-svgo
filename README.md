@@ -187,6 +187,30 @@ export default defineNuxtConfig({
 })
 ```
 
+## Import queries
+
+Here are the possible queries when importing a SVG file:
+
+- `url_encode`: loads optimized svg as data uri (uses svgo + `mini-svg-data-uri`)
+- `raw`: loads contents as text
+- `skipsvgo`: loads contents as a component (unoptimized, without `nuxt-icon`)
+- `component`: loads optimized svg as a component
+- `componentext`: loads optimized svg with `nuxt-icon` component
+
+for example:
+
+```vue
+<template>
+  <div>
+    <IconHome />
+  </div>
+</template>
+
+<script setup lang="ts">
+import IconHome from '~/assets/icon-home.svg?componentext' // the default
+</script>
+```
+
 ## Usage with TypeScript
 
 When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix thix, you need to provide a type declaration to tell TypeScript how to handle SVG components. Here's an example, using a `custom.d.ts` file at the application's root:
