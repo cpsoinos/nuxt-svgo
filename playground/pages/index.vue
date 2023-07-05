@@ -6,8 +6,13 @@
     sweet
     <svgo-home filled :fontControlled="false" />
   </div>
+  <div>
+    url encoded svg:
+    <img :src="HomeUri" />
+  </div>
 </template>
 
 <script setup>
 import Home from '~/assets/home.svg'
+import HomeUri from '~/assets/home-ns.svg?url_encode'
 </script>

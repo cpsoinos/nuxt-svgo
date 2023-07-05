@@ -47,9 +47,9 @@ Then, in any `.vue` file, import your asset and use it as a component:
 ```vue
 <template>
   <div>
-     <!-- font size controls width & height by default: -->
+    <!-- font size controls width & height by default: -->
     <IconHome class="text-xl" />
-     <!-- you can disable it: -->
+    <!-- you can disable it: -->
     <IconHome class="w-5 h-5" :fontControlled="false" />
   </div>
 </template>
@@ -186,6 +186,34 @@ export default defineNuxtConfig({
   }
 })
 ```
+
+## Import queries
+
+Here are the possible queries when importing a SVG file:
+
+- `url_encode`: loads optimized svg as data uri (uses svgo + `mini-svg-data-uri`)
+- `raw`: loads contents as text
+- `skipsvgo`: loads contents as a component (unoptimized, without `nuxt-icon`)
+- `component`: loads optimized svg as a component
+- `componentext`: loads optimized svg with `nuxt-icon` component
+
+for example:
+
+```vue
+<template>
+  <div>
+    <IconHome />
+  </div>
+</template>
+
+<script setup lang="ts">
+import IconHome from '~/assets/icon-home.svg?componentext' // the default
+</script>
+```
+
+## Important note for `url_encode` query
+
+`xmlns="http://www.w3.org/2000/svg"` attribute is required for uri data to work. in some rare cases, it may not be there. make sure it exists when using `url_encode` query or the image will not be shown.
 
 ## Usage with TypeScript
 

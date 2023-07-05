@@ -1,13 +1,20 @@
-// this file has been copied from: https://github.com/jpkleemans/vite-svg-loader/blob/43e1d25a60e80c7a22721e458265fe196da4b997/index.js#L1
+// this file has been copied from: https://github.com/jpkleemans/vite-svg-loader/blob/6a416f22453dd761a49e3a77d3a539fdd834c207/index.js
 // with modifications and ts conversion.
 
 import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import { createResolver } from '@nuxt/kit'
+import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
-  defaultImport?: 'url' | 'raw' | 'component' | 'skipsvgo' | 'componentext'
+  defaultImport?:
+    | 'url'
+    | 'url_encode'
+    | 'raw'
+    | 'component'
+    | 'skipsvgo'
+    | 'componentext'
   svgo?: boolean
   svgoConfig?: Config
 }
@@ -17,13 +24,13 @@ export function svgLoader(options?: SvgLoaderOptions) {
   const { resolve } = createResolver(import.meta.url)
   const componentPath = resolve('../runtime/components/nuxt-icon.vue')
 
-  const svgRegex = /\.svg(\?(raw|component|skipsvgo|componentext))?$/
+  const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
 
   return {
     name: 'svg-loader',
     enforce: 'pre' as const,
 
-    async load(id) {
+    async load(id: string) {
       if (!id.match(svgRegex)) {
         return
       }
@@ -58,6 +65,15 @@ export function svgLoader(options?: SvgLoaderOptions) {
           path
         }).data
       }
+
+      if (importType === 'url_encode') {
+        return `export default "${urlEncodeSvg(svg)}"`
+      }
+
+      // To prevent compileTemplate from removing the style tag
+      svg = svg
+        .replace(/<style/g, '<component is="style"')
+        .replace(/<\/style/g, '</component')
 
       let { code } = compileTemplate({
         id: JSON.stringify(id),
