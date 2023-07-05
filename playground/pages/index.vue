@@ -8,7 +8,7 @@
   </div>
   <div>
     url encoded svg:
-    <img :src="HomeUri"/>
+    <img :src="HomeUri" />
   </div>
 </template>
 

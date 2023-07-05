@@ -211,6 +211,10 @@ import IconHome from '~/assets/icon-home.svg?componentext' // the default
 </script>
 ```
 
+## Important note for `url_encode` query
+
+`xmlns="http://www.w3.org/2000/svg"` attribute is required for uri data to work. in some rare cases, it may not be there. make sure it exists when using `url_encode` query or the image will not be shown.
+
 ## Usage with TypeScript
 
 When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix thix, you need to provide a type declaration to tell TypeScript how to handle SVG components. Here's an example, using a `custom.d.ts` file at the application's root:
