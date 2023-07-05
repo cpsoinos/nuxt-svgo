@@ -70,9 +70,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
         return `export default "${urlEncodeSvg(svg)}"`
       }
 
-      
       // To prevent compileTemplate from removing the style tag
-      svg = svg.replace(/<style/g, '<component is="style"').replace(/<\/style/g, '</component')
+      svg = svg
+        .replace(/<style/g, '<component is="style"')
+        .replace(/<\/style/g, '</component')
 
       let { code } = compileTemplate({
         id: JSON.stringify(id),
