@@ -5,9 +5,10 @@ import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import { createResolver } from '@nuxt/kit'
+import urlEncodeSvg from "mini-svg-data-uri"
 
 export interface SvgLoaderOptions {
-  defaultImport?: 'url' | 'raw' | 'component' | 'skipsvgo' | 'componentext'
+  defaultImport?: 'url' | 'url_encode' | 'raw' | 'component' | 'skipsvgo' | 'componentext'
   svgo?: boolean
   svgoConfig?: Config
 }
@@ -17,13 +18,13 @@ export function svgLoader(options?: SvgLoaderOptions) {
   const { resolve } = createResolver(import.meta.url)
   const componentPath = resolve('../runtime/components/nuxt-icon.vue')
 
-  const svgRegex = /\.svg(\?(raw|component|skipsvgo|componentext))?$/
+  const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
 
   return {
     name: 'svg-loader',
     enforce: 'pre' as const,
 
-    async load(id) {
+    async load(id: string) {
       if (!id.match(svgRegex)) {
         return
       }
@@ -57,6 +58,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
           ...svgoConfig,
           path
         }).data
+      }
+
+      if (importType === 'url_encode') {
+        return `export default "${urlEncodeSvg(svg)}"`
       }
 
       let { code } = compileTemplate({

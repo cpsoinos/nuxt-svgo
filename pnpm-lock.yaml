@@ -11,10 +11,13 @@ overrides:
 dependencies:
   '@nuxt/kit':
     specifier: npm:@nuxt/kit-edge@latest
-    version: /@nuxt/kit-edge@3.6.2-28139740.9f5130d0(rollup@3.25.1)
+    version: /@nuxt/kit-edge@3.6.2-28141106.5d7d4d75(rollup@3.25.1)
   '@vue/compiler-sfc':
     specifier: ^3.2.47
     version: 3.2.47
+  mini-svg-data-uri:
+    specifier: ^1.4.4
+    version: 1.4.4
   svgo:
     specifier: ^3.0.2
     version: 3.0.2
@@ -37,7 +40,7 @@ devDependencies:
     version: 0.0.0
   '@nuxt/module-builder':
     specifier: latest
-    version: 0.4.0(@nuxt/kit-edge@3.6.2-28139740.9f5130d0)(nuxi@3.6.1)
+    version: 0.4.0(@nuxt/kit-edge@3.6.2-28141106.5d7d4d75)(nuxi@3.6.1)
   '@nuxt/test-utils':
     specifier: 3.6.1
     version: 3.6.1(rollup@3.25.1)(vitest@0.30.1)(vue@3.3.4)
@@ -959,15 +962,15 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/kit-edge@3.6.2-28139740.9f5130d0(rollup@3.25.1):
-    resolution: {integrity: sha512-IpcEY3yLgRR/+T1O942I3ZwX/ifcok4C6LhNOJ+2aFsKcEJxKntMob1oarqHwr766T589N1adoh+j+d+IdLADw==}
+  /@nuxt/kit-edge@3.6.2-28141106.5d7d4d75(rollup@3.25.1):
+    resolution: {integrity: sha512-abcnodE1gD58fjOwnRPPYMdVzEFlshxvybht1+gvbbWWBJW1aF+BAeFg9ueToJGwnodyIu9Ud60l6zse1j2kqA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
-      '@nuxt/schema': /@nuxt/schema-edge@3.6.2-28139740.9f5130d0(rollup@3.25.1)
+      '@nuxt/schema': /@nuxt/schema-edge@3.6.2-28141106.5d7d4d75(rollup@3.25.1)
       c12: 1.4.2
       consola: 3.2.2
       defu: 6.1.2
-      globby: 13.2.0
+      globby: 13.2.1
       hash-sum: 2.0.0
       ignore: 5.2.4
       jiti: 1.18.2
@@ -990,7 +993,7 @@ packages:
     dependencies:
       '@nuxt/schema': 3.6.1(rollup@3.25.1)
       c12: 1.4.2
-      consola: 3.1.0
+      consola: 3.2.2
       defu: 6.1.2
       globby: 13.2.0
       hash-sum: 2.0.0
@@ -1010,15 +1013,15 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/module-builder@0.4.0(@nuxt/kit-edge@3.6.2-28139740.9f5130d0)(nuxi@3.6.1):
+  /@nuxt/module-builder@0.4.0(@nuxt/kit-edge@3.6.2-28141106.5d7d4d75)(nuxi@3.6.1):
     resolution: {integrity: sha512-B+UAYgFV1Hkc2ZcD7GaiKZ3SNHhyxFlXzZoBWTc9ulE0Z/+rq6RTa9fNm13BZyGhVhDCl5FN/wF/yYa1O/D2iw==}
     hasBin: true
     peerDependencies:
       '@nuxt/kit': ^3.5.0
       nuxi: ^3.5.0
     dependencies:
-      '@nuxt/kit': /@nuxt/kit-edge@3.6.2-28139740.9f5130d0(rollup@3.25.1)
-      consola: 3.1.0
+      '@nuxt/kit': /@nuxt/kit-edge@3.6.2-28141106.5d7d4d75(rollup@3.25.1)
+      consola: 3.2.2
       mlly: 1.4.0
       mri: 1.2.0
       nuxi: 3.6.1
@@ -1029,8 +1032,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema-edge@3.6.2-28139740.9f5130d0(rollup@3.25.1):
-    resolution: {integrity: sha512-pRAhnrqZrBtFC9l/JvEQC92/0u3UDyse35Isk2HZSsWKNVtd/PLLtNd5Tb4MjInwCgWLTW3gbE2lUSFxp04adg==}
+  /@nuxt/schema-edge@3.6.2-28141106.5d7d4d75(rollup@3.25.1):
+    resolution: {integrity: sha512-5JxTxepJhl7mLA2xxduQu5kpGwOFYGj/WdpesW8/tB/Cp2THMS60AtFNQR4QSG2D7/NSb3JcAsHYRTT4t8kuuA==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
       defu: 6.1.2
@@ -1071,7 +1074,7 @@ packages:
       '@nuxt/kit': 3.6.1(rollup@3.25.1)
       chalk: 5.2.0
       ci-info: 3.8.0
-      consola: 3.1.0
+      consola: 3.2.2
       create-require: 1.1.1
       defu: 6.1.2
       destr: 1.2.2
@@ -1141,7 +1144,7 @@ packages:
       '@vitejs/plugin-vue-jsx': 3.0.1(vite@4.3.9)(vue@3.3.4)
       autoprefixer: 10.4.14(postcss@8.4.24)
       clear: 0.1.0
-      consola: 3.1.0
+      consola: 3.2.2
       cssnano: 6.0.1(postcss@8.4.24)
       defu: 6.1.2
       esbuild: 0.18.10
@@ -4424,15 +4427,6 @@ packages:
       - supports-color
     dev: true
 
-  /espree@9.5.2:
-    resolution: {integrity: sha512-7OASN1Wma5fum5SrNhFMAMJxOUAbhyfQ8dQ//PJaJbNw0URTPWqIghHWt1MmAANKhHZIYOHruW4Kw4ruUWOdGw==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      acorn: 8.9.0
-      acorn-jsx: 5.3.2(acorn@8.9.0)
-      eslint-visitor-keys: 3.4.1
-    dev: true
-
   /espree@9.6.0:
     resolution: {integrity: sha512-1FH/IiruXZ84tpUlm0aCUEwMl2Ho5ilqVh0VvQXw+byAz/4SAciyHLlfmL5WYqsvD38oymdUwBss0LtK8m4s/A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -4559,6 +4553,7 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
+    dev: true
 
   /fast-glob@3.3.0:
     resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
@@ -4947,6 +4942,17 @@ packages:
     dependencies:
       dir-glob: 3.0.1
       fast-glob: 3.2.12
+      ignore: 5.2.4
+      merge2: 1.4.1
+      slash: 4.0.0
+    dev: true
+
+  /globby@13.2.1:
+    resolution: {integrity: sha512-DPCBxctI7dN4EeIqjW2KGqgdcUMbrhJ9AzON+PlxCtvppWhubTLD4+a0GFxiym14ZvacUydTPjLPc2DlKz7EIg==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      dir-glob: 3.0.1
+      fast-glob: 3.3.0
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0
@@ -6008,6 +6014,11 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: false
+
   /minimatch@3.0.8:
     resolution: {integrity: sha512-6FsRAQsxQ61mw+qP1ZzbL9Bc78x2p5OqNgNpnoAFLTrX8n5Kxph0CsnhmKKNXTWjXqU5L0pGPR7hYk+XWZr60Q==}
     dependencies:
@@ -6175,7 +6186,7 @@ packages:
       chalk: 5.2.0
       chokidar: 3.5.3
       citty: 0.1.1
-      consola: 3.1.0
+      consola: 3.2.2
       cookie-es: 1.0.0
       defu: 6.1.2
       destr: 2.0.0
@@ -8415,7 +8426,7 @@ packages:
       '@rollup/plugin-replace': 5.0.2(rollup@3.25.1)
       '@rollup/pluginutils': 5.0.2(rollup@3.25.1)
       chalk: 5.2.0
-      consola: 3.1.0
+      consola: 3.2.2
       defu: 6.1.2
       esbuild: 0.17.19
       globby: 13.2.0
@@ -8460,7 +8471,7 @@ packages:
   /unenv@1.5.1:
     resolution: {integrity: sha512-tQHlmQUPyIoyGc2bF8phugmQd6wVatkVe5FqxxhM1vHfmPKWTiogSVTHA0mO8gNztDKZLpBEJx3M3CJrTZyExg==}
     dependencies:
-      consola: 3.1.0
+      consola: 3.2.2
       defu: 6.1.2
       mime: 3.0.0
       node-fetch-native: 1.2.0
@@ -8958,7 +8969,7 @@ packages:
       eslint: 8.44.0
       eslint-scope: 7.2.0
       eslint-visitor-keys: 3.4.1
-      espree: 9.5.2
+      espree: 9.6.0
       esquery: 1.5.0
       lodash: 4.17.21
       semver: 7.5.3
