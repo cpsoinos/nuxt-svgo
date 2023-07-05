@@ -1,4 +1,4 @@
-// this file has been copied from: https://github.com/jpkleemans/vite-svg-loader/blob/43e1d25a60e80c7a22721e458265fe196da4b997/index.js#L1
+// this file has been copied from: https://github.com/jpkleemans/vite-svg-loader/blob/6a416f22453dd761a49e3a77d3a539fdd834c207/index.js
 // with modifications and ts conversion.
 
 import { readFile } from 'node:fs/promises'
@@ -69,6 +69,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
       if (importType === 'url_encode') {
         return `export default "${urlEncodeSvg(svg)}"`
       }
+
+      
+      // To prevent compileTemplate from removing the style tag
+      svg = svg.replace(/<style/g, '<component is="style"').replace(/<\/style/g, '</component')
 
       let { code } = compileTemplate({
         id: JSON.stringify(id),
