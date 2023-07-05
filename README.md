@@ -47,9 +47,9 @@ Then, in any `.vue` file, import your asset and use it as a component:
 ```vue
 <template>
   <div>
-     <!-- font size controls width & height by default: -->
+    <!-- font size controls width & height by default: -->
     <IconHome class="text-xl" />
-     <!-- you can disable it: -->
+    <!-- you can disable it: -->
     <IconHome class="w-5 h-5" :fontControlled="false" />
   </div>
 </template>

@@ -5,10 +5,16 @@ import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import { createResolver } from '@nuxt/kit'
-import urlEncodeSvg from "mini-svg-data-uri"
+import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
-  defaultImport?: 'url' | 'url_encode' | 'raw' | 'component' | 'skipsvgo' | 'componentext'
+  defaultImport?:
+    | 'url'
+    | 'url_encode'
+    | 'raw'
+    | 'component'
+    | 'skipsvgo'
+    | 'componentext'
   svgo?: boolean
   svgoConfig?: Config
 }
