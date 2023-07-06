@@ -187,7 +187,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Import queries
+## Import queries (Vite.js only)
 
 Here are the possible queries when importing a SVG file:
 
