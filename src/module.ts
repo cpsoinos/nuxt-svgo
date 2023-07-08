@@ -12,25 +12,16 @@ import type { Config } from 'svgo'
 import { SvgLoaderOptions, svgLoader } from './loaders/vite'
 
 /**
- * taken from: https://github.com/svg/svgo/blob/73f7002ab614554446e26acf1552c2505448b96f/plugins/prefixIds.js#L13
- * with edits for avoiding same file name collisions
- * extract basename from path
+ * taken from: https://stackoverflow.com/a/8831937/3542461
  */
-function getUniqueBasename(path: string) {
-  // extract everything after latest slash or backslash
-  const matched = path.match(/[/\\]?([^/\\]+)$/)
-  if (matched) {
-    return matched[1] + (path.match(/[/\\]/g)?.length || 0)
+function hashCode(str: string) {
+  let hash = 0;
+  for (let i = 0, len = str.length; i < len; i++) {
+      const chr = str.charCodeAt(i);
+      hash = (hash << 5) - hash + chr;
+      hash |= 0; // Convert to 32bit integer
   }
-  return ''
-}
-
-/**
- * taken from: https://github.com/svg/svgo/blob/73f7002ab614554446e26acf1552c2505448b96f/plugins/prefixIds.js#L26
- * escapes a string for being used as ID
- */
-function escapeIdentifierName(str: string) {
-  return str.replace(/[. ]/g, '_')
+  return hash;
 }
 
 export const defaultSvgoConfig: Config = {
@@ -48,7 +39,7 @@ export const defaultSvgoConfig: Config = {
       name: 'prefixIds',
       params: {
         prefix(_, info) {
-          return escapeIdentifierName(getUniqueBasename(info.path))
+          return 'i' + hashCode(info.path)
         }
       }
     }
