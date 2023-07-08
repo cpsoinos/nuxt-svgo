@@ -47,7 +47,6 @@ export const defaultSvgoConfig: Config = {
 }
 
 export type ModuleOptions = SvgLoaderOptions & {
-  autoImportPath?: string
   global?: boolean
 }
 

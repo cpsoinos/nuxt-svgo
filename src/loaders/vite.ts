@@ -7,21 +7,28 @@ import { optimize as optimizeSvg, Config } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
+  autoImportPath?: string,
   defaultImport?:
     | 'url'
     | 'url_encode'
     | 'raw'
     | 'component'
     | 'skipsvgo'
-    | 'componentext'
-  svgo?: boolean
+    | 'componentext',
+  /** should the svg loader plugin work only if an import query is explicitly used? 
+   * this only affects SVGs outside of `autoImportPath` */
+  explicitImportsOnly?: boolean,
+  svgo?: boolean,
   svgoConfig?: Config
 }
 
 export function svgLoader(options?: SvgLoaderOptions) {
-  const { svgoConfig, svgo, defaultImport } = options || {}
+  const { svgoConfig, svgo, defaultImport, explicitImportsOnly, autoImportPath } = options || {}
+
+  const autoImportPathNormalized = autoImportPath && autoImportPath.replaceAll(/^\.*([/\\])?|([/\\])$/g, '');
 
   const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
+  const explicitRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))+$/
 
   return {
     name: 'svg-loader',
@@ -33,6 +40,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
       }
 
       const [path, query] = id.split('?', 2)
+
+      if (explicitImportsOnly && autoImportPathNormalized && !path.includes(autoImportPathNormalized)) {
+        if (!id.match(explicitRegex)) return;
+      }
 
       const importType = query || defaultImport
 
