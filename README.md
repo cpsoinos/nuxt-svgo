@@ -31,7 +31,7 @@ pnpm add nuxt-svgo -D
 
 ## Usage
 
-Use the [default configuration](https://github.com/cpsoinos/nuxt-svgo/blob/689aa0c20622fc287b12cb361a29aa2977f7cfa2/src/module.ts#L19-L22) by adding `'nuxt-svgo'` to the `modules` section of your Nuxt config.
+Use the [default configuration](https://github.com/cpsoinos/nuxt-svgo/blob/b30c65b5e3d034a1cb198bf351355de34d02ac92/src/module.ts#L14-L26) by adding `'nuxt-svgo'` to the `modules` section of your Nuxt config.
 
 ```typescript
 // nuxt.config.ts
@@ -109,6 +109,20 @@ export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
     global: false
+  }
+})
+```
+
+to disable auto importing, simply set `autoImportPath` to `false`:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    autoImportPath: false
   }
 })
 ```

@@ -4,10 +4,10 @@
 import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
-import { createResolver } from '@nuxt/kit'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
+  autoImportPath?: string
   defaultImport?:
     | 'url'
     | 'url_encode'
@@ -15,16 +15,28 @@ export interface SvgLoaderOptions {
     | 'component'
     | 'skipsvgo'
     | 'componentext'
+  /** should the svg loader plugin work only if an import query is explicitly used?
+   * this only affects SVGs outside of `autoImportPath` */
+  explicitImportsOnly?: boolean
   svgo?: boolean
   svgoConfig?: Config
 }
 
 export function svgLoader(options?: SvgLoaderOptions) {
-  const { svgoConfig, svgo, defaultImport } = options || {}
-  const { resolve } = createResolver(import.meta.url)
-  const componentPath = resolve('../runtime/components/nuxt-icon.vue')
+  const {
+    svgoConfig,
+    svgo,
+    defaultImport,
+    explicitImportsOnly,
+    autoImportPath
+  } = options || {}
+
+  const autoImportPathNormalized =
+    autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
 
   const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
+  const explicitImportRegex =
+    /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))+$/
 
   return {
     name: 'svg-loader',
@@ -36,6 +48,19 @@ export function svgLoader(options?: SvgLoaderOptions) {
       }
 
       const [path, query] = id.split('?', 2)
+
+      if (explicitImportsOnly) {
+        const isExplicitlyQueried = id.match(explicitImportRegex)
+        if (!isExplicitlyQueried) {
+          if (autoImportPathNormalized) {
+            if (!path.includes(autoImportPathNormalized)) {
+              return
+            }
+          } else {
+            return
+          }
+        }
+      }
 
       const importType = query || defaultImport
 

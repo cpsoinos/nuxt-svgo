@@ -11,6 +11,19 @@ import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
 import { SvgLoaderOptions, svgLoader } from './loaders/vite'
 
+/**
+ * taken from: https://stackoverflow.com/a/8831937/3542461
+ */
+function hashCode(str: string) {
+  let hash = 0
+  for (let i = 0, len = str.length; i < len; i++) {
+    const chr = str.charCodeAt(i)
+    hash = (hash << 5) - hash + chr
+    hash |= 0 // Convert to 32bit integer
+  }
+  return hash
+}
+
 export const defaultSvgoConfig: Config = {
   plugins: [
     {
@@ -21,12 +34,19 @@ export const defaultSvgoConfig: Config = {
         }
       }
     },
-    'removeDimensions'
+    'removeDimensions',
+    {
+      name: 'prefixIds',
+      params: {
+        prefix(_, info) {
+          return 'i' + hashCode(info.path)
+        }
+      }
+    }
   ]
 }
 
 export type ModuleOptions = SvgLoaderOptions & {
-  autoImportPath?: string
   global?: boolean
 }
 

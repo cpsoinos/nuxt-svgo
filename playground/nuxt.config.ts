@@ -1,8 +1,10 @@
 import NuxtSVGO from '..'
+import { defaultSvgoConfig } from '../src/module'
 
 export default defineNuxtConfig({
   modules: [NuxtSVGO],
   svgo: {
+    explicitImportsOnly: false,
     svgoConfig: {
       multipass: true,
       plugins: [
@@ -19,7 +21,8 @@ export default defineNuxtConfig({
               removeViewBox: false
             }
           }
-        }
+        },
+        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length - 1]
       ]
     }
   }
