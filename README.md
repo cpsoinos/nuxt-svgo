@@ -300,12 +300,16 @@ import IconHome from '~/assets/icon-home.svg?component'
 - Run `pnpm dev:prepare` to generate type stubs.
 - Use `pnpm dev` to start [playground](./playground) in development mode.
 
-## Author
+## Authors
 
 **Corey Psoinos**
 
 - Twitter: [@CoreyPsoinos](https://twitter.com/CoreyPsoinos)
 - Github: [@cpsoinos](https://github.com/cpsoinos)
+
+**Javad Mnjd**
+
+- Github: [@jd1378](https://github.com/jd1378)
 
 ## Show your support
 
