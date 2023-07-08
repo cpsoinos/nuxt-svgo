@@ -4,7 +4,6 @@
 import { readFile } from 'node:fs/promises'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
-import { createResolver } from '@nuxt/kit'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
@@ -21,8 +20,6 @@ export interface SvgLoaderOptions {
 
 export function svgLoader(options?: SvgLoaderOptions) {
   const { svgoConfig, svgo, defaultImport } = options || {}
-  const { resolve } = createResolver(import.meta.url)
-  const componentPath = resolve('../runtime/components/nuxt-icon.vue')
 
   const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
 
