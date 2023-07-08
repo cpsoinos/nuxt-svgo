@@ -10,6 +10,12 @@
     url encoded svg:
     <img :src="HomeUri" />
   </div>
+  <div>
+    with clashing ids (left visible, right invisible):
+    <br/>
+    <svgo-homeid />
+    <svgo-sub-homeid />
+  </div>
 </template>
 
 <script setup>

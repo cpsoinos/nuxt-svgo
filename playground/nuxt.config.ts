@@ -1,4 +1,5 @@
 import NuxtSVGO from '..'
+import {defaultSvgoConfig} from '../src/module'
 
 export default defineNuxtConfig({
   modules: [NuxtSVGO],
@@ -19,7 +20,8 @@ export default defineNuxtConfig({
               removeViewBox: false
             }
           }
-        }
+        },
+        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length-1]
       ]
     }
   }

@@ -11,6 +11,28 @@ import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
 import { SvgLoaderOptions, svgLoader } from './loaders/vite'
 
+/**
+ * taken from: https://github.com/svg/svgo/blob/73f7002ab614554446e26acf1552c2505448b96f/plugins/prefixIds.js#L13
+ * with edits for avoiding same file name collisions
+ * extract basename from path 
+ */
+function getUniqueBasename(path: string) {
+  // extract everything after latest slash or backslash
+  const matched = path.match(/[/\\]?([^/\\]+)$/);
+  if (matched) {
+    return matched[1] + (path.match(/[/\\]/g)?.length || 0);
+  }
+  return '';
+};
+
+/**
+ * taken from: https://github.com/svg/svgo/blob/73f7002ab614554446e26acf1552c2505448b96f/plugins/prefixIds.js#L26
+ * escapes a string for being used as ID
+ */
+function escapeIdentifierName(str: string) {
+  return str.replace(/[. ]/g, '_');
+};
+
 export const defaultSvgoConfig: Config = {
   plugins: [
     {
@@ -21,7 +43,15 @@ export const defaultSvgoConfig: Config = {
         }
       }
     },
-    'removeDimensions'
+    'removeDimensions',
+    {
+      name: 'prefixIds',
+      params: {
+        prefix(_, info) {
+          return escapeIdentifierName(getUniqueBasename(info.path));
+        },
+      }
+    }
   ]
 }
 
