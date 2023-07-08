@@ -32,10 +32,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
   } = options || {}
 
   const autoImportPathNormalized =
-    autoImportPath && autoImportPath.replaceAll(/^\.*([/\\])?|([/\\])$/g, '')
+    autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
 
   const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
-  const explicitRegex =
+  const explicitImportRegex =
     /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))+$/
 
   return {
@@ -49,12 +49,17 @@ export function svgLoader(options?: SvgLoaderOptions) {
 
       const [path, query] = id.split('?', 2)
 
-      if (
-        explicitImportsOnly &&
-        autoImportPathNormalized &&
-        !path.includes(autoImportPathNormalized)
-      ) {
-        if (!id.match(explicitRegex)) return
+      if (explicitImportsOnly) {
+        const isExplicitlyQueried = id.match(explicitImportRegex)
+        if (!isExplicitlyQueried) {
+          if (autoImportPathNormalized) {
+            if (!path.includes(autoImportPathNormalized)) {
+              return
+            }
+          } else {
+            return
+          }
+        }
       }
 
       const importType = query || defaultImport
