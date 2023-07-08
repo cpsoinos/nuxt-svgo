@@ -113,6 +113,20 @@ export default defineNuxtConfig({
 })
 ```
 
+to disable auto importing, simply set `autoImportPath` to `false`:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    autoImportPath: false
+  }
+})
+```
+
 ### Subfolders
 
 The icons's component name will follow Nuxt's component prefix convention. Therefore, if prefix is turned on for your components, the component name for `assets/icons/admin/badge.svg`, for example, will be `svgo-admin-badge`:
