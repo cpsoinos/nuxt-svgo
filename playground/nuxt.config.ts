@@ -1,5 +1,5 @@
 import NuxtSVGO from '..'
-import {defaultSvgoConfig} from '../src/module'
+import { defaultSvgoConfig } from '../src/module'
 
 export default defineNuxtConfig({
   modules: [NuxtSVGO],
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
             }
           }
         },
-        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length-1]
+        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length - 1]
       ]
     }
   }

@@ -12,7 +12,7 @@
   </div>
   <div>
     with clashing ids (left visible, right invisible):
-    <br/>
+    <br />
     <svgo-homeid />
     <svgo-sub-homeid />
   </div>
