@@ -64,7 +64,8 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     defaultImport: 'componentext',
     autoImportPath: './assets/icons/',
     svgoConfig: undefined,
-    global: true
+    global: true,
+    customComponent: 'NuxtIcon'
   },
   async setup(options) {
     const { resolvePath, resolve } = createResolver(import.meta.url)

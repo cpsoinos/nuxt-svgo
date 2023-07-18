@@ -99,6 +99,23 @@ export default defineNuxtConfig({
 })
 ```
 
+You can also use your own custom component instead of the built-in `nuxt-icon` component using the `customComponent` option.
+This custom component must have `icon` property, just like the `nuxt-icon` component [provided by nuxt-svgo](https://github.com/cpsoinos/nuxt-svgo/blob/main/src/runtime/components/nuxt-icon.vue).
+
+Example:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    customComponent: 'YourComponent'
+  }
+})
+```
+
 By default module registers all icons inside `autoImportPath` globally. This may be unwanted behavior as it generates chunks for each icon to be used globally, which will result in huge amount of files if you have many icons. If you want to disable global registration simply use `global: false` in module options:
 
 ```typescript
