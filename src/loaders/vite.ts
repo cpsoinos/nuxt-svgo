@@ -8,6 +8,8 @@ import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
   autoImportPath?: string
+  /** The name of component in CapitalCase that will be used in `componentext` import type. defaults to `NuxtIcon` */
+  customComponent: string
   defaultImport?:
     | 'url'
     | 'url_encode'
@@ -28,8 +30,16 @@ export function svgLoader(options?: SvgLoaderOptions) {
     svgo,
     defaultImport,
     explicitImportsOnly,
-    autoImportPath
+    autoImportPath,
+    customComponent
   } = options || {}
+
+  const normalizedCustomComponent = customComponent.includes('-')
+    ? customComponent
+        .split('-')
+        .map((c) => c[0].toUpperCase() + c.substring(1).toLowerCase())
+        .join('')
+    : customComponent
 
   const autoImportPathNormalized =
     autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
@@ -109,10 +119,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
 
       if (importType === 'componentext') {
         code =
-          `import {NuxtIcon} from "#components";\nimport {h} from "vue";\n` +
+          `import {${normalizedCustomComponent}} from "#components";\nimport {h} from "vue";\n` +
           code
 
-        code += `\nexport default { render() { return h(NuxtIcon, {icon: {render}}) } }`
+        code += `\nexport default { render() { return h(${normalizedCustomComponent}, {icon: {render}}) } }`
         return code
       } else {
         return `${code}\nexport default { render: render }`
