@@ -152,6 +152,31 @@ The icons's component name will follow Nuxt's component prefix convention. There
 <svgo-admin-badge />
 ```
 
+### `componentPrefix`
+
+You can change the default prefix (`svgo`) to your custom prefix using `componentPrefix` option:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    componentPrefix: 'i'
+  }
+})
+```
+
+```jsx
+// in your template
+<template>
+  <div>
+    <i-home />
+  </div>
+</template>
+```
+
 ## How it works
 
 ### Vite
