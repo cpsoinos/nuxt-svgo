@@ -7,7 +7,7 @@ import { optimize as optimizeSvg, Config } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
-  autoImportPath?: string
+  autoImportPath?: string | boolean
   /** The name of component in CapitalCase that will be used in `componentext` import type. defaults to `NuxtIcon` */
   customComponent: string
   defaultImport?:
