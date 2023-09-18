@@ -3652,7 +3652,7 @@ packages:
       css-what: 6.1.0
       domhandler: 5.0.3
       domutils: 3.0.1
-      nth-check: 2.0.1
+      nth-check: 2.1.1
 
   /css-tree@1.0.0-alpha.37:
     resolution: {integrity: sha512-DMxWJg0rnz7UgxKT0Q1HU/L9BeJI0M6ksor0OgqOnF+aRCDWg/N2641HmVyU9KVIu0OVVWOb2IpC9A+BJRnejg==}
@@ -4571,7 +4571,7 @@ packages:
       ignore: 5.2.4
       is-core-module: 2.13.0
       minimatch: 3.1.2
-      resolve: 1.22.1
+      resolve: 1.22.4
       semver: 7.5.4
     dev: true
 
@@ -6768,11 +6768,6 @@ packages:
       set-blocking: 2.0.0
     dev: true
 
-  /nth-check@2.0.1:
-    resolution: {integrity: sha512-it1vE95zF6dTT9lBsYbxvqh0Soy4SPowchj0UBGj/V6cTPnXXtQOPUbhZ6CmGzAD/rW22LQK6E96pcdJXk4A4w==}
-    dependencies:
-      boolbase: 1.0.0
-
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
@@ -7850,15 +7845,6 @@ packages:
 
   /resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
-    dev: true
-
-  /resolve@1.22.1:
-    resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
-    hasBin: true
-    dependencies:
-      is-core-module: 2.13.0
-      path-parse: 1.0.7
-      supports-preserve-symlinks-flag: 1.0.0
     dev: true
 
   /resolve@1.22.4:
@@ -9192,39 +9178,6 @@ packages:
       vscode-uri: 3.0.3
     dev: true
 
-  /vite@4.3.3(@types/node@17.0.30):
-    resolution: {integrity: sha512-MwFlLBO4udZXd+VBcezo3u8mC77YQk+ik+fbc0GZWGgzfbPP+8Kf0fldhARqvSYmtIWoAJ5BXPClUbMTlqFxrA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 17.0.30
-      esbuild: 0.17.19
-      postcss: 8.4.29
-      rollup: 3.29.1
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: true
-
   /vite@4.4.9(@types/node@17.0.30):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -9315,7 +9268,7 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.4.0
       tinypool: 0.4.0
-      vite: 4.3.3(@types/node@17.0.30)
+      vite: 4.4.9(@types/node@17.0.30)
       vite-node: 0.30.1(@types/node@17.0.30)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
