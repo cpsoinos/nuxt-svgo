@@ -249,6 +249,7 @@ Here are the possible queries when importing a SVG file:
 
 - `url_encode`: loads optimized svg as data uri (uses svgo + `mini-svg-data-uri`)
 - `raw`: loads contents as text
+- `raw_optimized`: loads optimized svg as text
 - `skipsvgo`: loads contents as a component (unoptimized, without `nuxt-icon`)
 - `component`: loads optimized svg as a component
 - `componentext`: loads optimized svg with `nuxt-icon` component

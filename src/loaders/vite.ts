@@ -14,6 +14,7 @@ export interface SvgLoaderOptions {
     | 'url'
     | 'url_encode'
     | 'raw'
+    | 'raw_optimized'
     | 'component'
     | 'skipsvgo'
     | 'componentext'
@@ -44,9 +45,9 @@ export function svgLoader(options?: SvgLoaderOptions) {
   const autoImportPathNormalized =
     autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
 
-  const svgRegex = /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))?$/
+  const svgRegex = /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
   const explicitImportRegex =
-    /\.svg(\?(url_encode|raw|component|skipsvgo|componentext))+$/
+    /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))+$/
 
   return {
     name: 'svg-loader',
@@ -103,6 +104,10 @@ export function svgLoader(options?: SvgLoaderOptions) {
 
       if (importType === 'url_encode') {
         return `export default "${urlEncodeSvg(svg)}"`
+      }
+
+      if (importType === 'raw_optimized') {
+        return `export default ${JSON.stringify(svg)}`
       }
 
       // To prevent compileTemplate from removing the style tag
