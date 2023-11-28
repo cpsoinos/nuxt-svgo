@@ -117,7 +117,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
         .replace(/<style/g, '<component is="style"')
         .replace(/<\/style/g, '</component')
 
-      const svgName = basename(path, extname(path));
+      const svgName = basename(path, extname(path))
 
       let { code } = compileTemplate({
         id: JSON.stringify(id),
