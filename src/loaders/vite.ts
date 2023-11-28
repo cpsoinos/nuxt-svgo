@@ -45,7 +45,8 @@ export function svgLoader(options?: SvgLoaderOptions) {
   const autoImportPathNormalized =
     autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
 
-  const svgRegex = /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
+  const svgRegex =
+    /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
   const explicitImportRegex =
     /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))+$/
 
@@ -115,6 +116,8 @@ export function svgLoader(options?: SvgLoaderOptions) {
         .replace(/<style/g, '<component is="style"')
         .replace(/<\/style/g, '</component')
 
+      const svgName = path.split('/').pop()?.split('.')[0]
+
       let { code } = compileTemplate({
         id: JSON.stringify(id),
         source: svg,
@@ -127,7 +130,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
           `import {${normalizedCustomComponent}} from "#components";\nimport {h} from "vue";\n` +
           code
 
-        code += `\nexport default { render() { return h(${normalizedCustomComponent}, {icon: {render}}) } }`
+        code += `\nexport default { render() { return h(${normalizedCustomComponent}, {icon: {render}, name: "${svgName}"}) } }`
         return code
       } else {
         return `${code}\nexport default { render: render }`
