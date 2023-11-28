@@ -2,6 +2,7 @@
 // with modifications and ts conversion.
 
 import { readFile } from 'node:fs/promises'
+import { extname, basename } from 'node:path'
 import { compileTemplate } from '@vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
@@ -116,7 +117,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
         .replace(/<style/g, '<component is="style"')
         .replace(/<\/style/g, '</component')
 
-      const svgName = path.split('/').pop()?.split('.')[0]
+      const svgName = extname(path) === '.svg' ? basename(path, '.svg') : '';
 
       let { code } = compileTemplate({
         id: JSON.stringify(id),
