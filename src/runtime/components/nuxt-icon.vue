@@ -27,6 +27,10 @@ export default {
     icon: {
       type: Object,
       required: true
+    },
+    name: {
+      type: String,
+      required: false
     }
   }
 }
