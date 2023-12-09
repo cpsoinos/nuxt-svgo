@@ -60,8 +60,8 @@ devDependencies:
     specifier: 3.8.0
     version: 3.8.0(eslint@8.50.0)(rollup@3.29.1)(typescript@4.9.4)(vite@4.5.0)
   pnpm:
-    specifier: 8.11.0
-    version: 8.11.0
+    specifier: 8.12.0
+    version: 8.12.0
   prettier:
     specifier: 2.8.8
     version: 2.8.8
@@ -8578,8 +8578,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.11.0:
-    resolution: {integrity: sha512-nfh8FsmNsntOBR14fmfyIH7EfoCcywe/e17ErNzRYTNVg5o40LkAFEkj1qcFdwC3TSoMyxVYvrJBZHoSBqmnqw==}
+  /pnpm@8.12.0:
+    resolution: {integrity: sha512-J5J4+Dvngvb6rvusvMxQMwHE7Cza/UCYPnwmru7nw4Jw9cjmNbQ0ZGkbiXq+FnW0DAbfbtrd6SJTK3NoqppSZw==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
