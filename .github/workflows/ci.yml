@@ -25,7 +25,6 @@ jobs:
         uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: 8.2.0
           run_install: false
 
       - name: Get pnpm store directory
@@ -64,7 +63,6 @@ jobs:
         uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: 8.2.0
           run_install: false
 
       - name: Get pnpm store directory
@@ -103,7 +101,6 @@ jobs:
         uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: 8.2.0
           run_install: false
 
       - name: Get pnpm store directory
@@ -142,7 +139,6 @@ jobs:
         uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: 8.2.0
           run_install: false
 
       - name: Get pnpm store directory
@@ -181,7 +177,6 @@ jobs:
         uses: pnpm/action-setup@v2.4.0
         id: pnpm-install
         with:
-          version: 8.2.0
           run_install: false
 
       - name: Get pnpm store directory
