@@ -38,7 +38,7 @@
     "dev": "nuxi dev playground",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "lint": "eslint --ext .js,.ts, --fix .",
-    "typecheck": "vue-tsc --noEmit --skipLibCheck --pretty --project .",
+    "typecheck": "vue-tsc --noEmit",
     "prepack": "nuxt-module-build",
     "prepare": "husky install",
     "test": "cross-env NUXT_TELEMETRY_DISABLED=1 JITI_ESM_RESOLVE=1 pnpm nuxi prepare test/fixtures/basic && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test",
