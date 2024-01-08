@@ -1,6 +1,6 @@
 {
   "name": "nuxt-svgo",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "packageManager": "pnpm@8.14.0",
   "description": "Nuxt module to load optimized SVG files as Vue components",
   "keywords": [
@@ -46,7 +46,6 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.4.0",
-    "@vue/compiler-sfc": "^3.2.47",
     "mini-svg-data-uri": "^1.4.4",
     "svgo": "^3.0.2"
   },
@@ -69,7 +68,8 @@
   "peerDependencies": {
     "svgo-loader": "^4.0.0",
     "vue-loader": "^17.0.0",
-    "vue-svg-loader": "0.17.0-beta.2"
+    "vue-svg-loader": "0.17.0-beta.2",
+    "vue": "^3.2.13"
   },
   "peerDependenciesMeta": {
     "svgo-loader": {
