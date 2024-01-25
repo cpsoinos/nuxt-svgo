@@ -9,7 +9,7 @@ import {
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
-import { SvgLoaderOptions, svgLoader } from './loaders/vite'
+import { type SvgLoaderOptions, svgLoader } from './loaders/vite'
 
 /**
  * taken from: https://stackoverflow.com/a/8831937/3542461
@@ -39,7 +39,7 @@ export const defaultSvgoConfig: Config = {
       name: 'prefixIds',
       params: {
         prefix(_, info) {
-          return 'i' + hashCode(info.path)
+          return 'i' + hashCode(info.path!)
         }
       }
     }
@@ -52,7 +52,7 @@ export type ModuleOptions = SvgLoaderOptions & {
   global?: boolean
 }
 
-const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
+const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-svgo',
     configKey: 'svgo',
@@ -96,12 +96,22 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     }
 
     extendWebpackConfig((config) => {
-      // @ts-ignore
-      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
+      const svgRule = config.module?.rules?.find((rule) => {
+        if (
+          typeof rule === 'object' &&
+          !!rule &&
+          'test' in rule &&
+          rule.test instanceof RegExp
+        ) {
+          return rule.test.test('.svg')
+        } else {
+          return false
+        }
+      })
       // @ts-ignore
       svgRule.test = /\.(png|jpe?g|gif|webp)$/
 
-      config.module.rules.push({
+      config.module?.rules?.push({
         test: /\.svg$/,
         use: [
           'vue-loader',
