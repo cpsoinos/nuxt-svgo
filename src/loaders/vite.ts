@@ -3,7 +3,7 @@
 
 import { readFile } from 'node:fs/promises'
 import { extname, basename } from 'node:path'
-import { compileTemplate } from '@vue/compiler-sfc'
+import { compileTemplate } from 'vue/compiler-sfc'
 import { optimize as optimizeSvg, Config } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
