@@ -14,16 +14,16 @@ export default defineNuxtConfig({
             overrides: {
               // customize default plugin options
               inlineStyles: {
-                onlyMatchedOnce: false
+                onlyMatchedOnce: false,
               },
 
               // or disable plugins
-              removeViewBox: false
-            }
-          }
+              removeViewBox: false,
+            },
+          },
         },
-        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length - 1]
-      ]
-    }
-  }
+        defaultSvgoConfig.plugins![defaultSvgoConfig.plugins!.length - 1],
+      ],
+    },
+  },
 })

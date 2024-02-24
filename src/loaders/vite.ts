@@ -27,14 +27,8 @@ export interface SvgLoaderOptions {
 }
 
 export function svgLoader(options?: SvgLoaderOptions) {
-  const {
-    svgoConfig,
-    svgo,
-    defaultImport,
-    explicitImportsOnly,
-    autoImportPath,
-    customComponent
-  } = options || {}
+  const { svgoConfig, svgo, defaultImport, explicitImportsOnly, autoImportPath, customComponent } =
+    options || {}
 
   const normalizedCustomComponent = customComponent.includes('-')
     ? customComponent
@@ -43,11 +37,9 @@ export function svgLoader(options?: SvgLoaderOptions) {
         .join('')
     : customComponent
 
-  const autoImportPathNormalized =
-    autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
+  const autoImportPathNormalized = autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
 
-  const svgRegex =
-    /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
+  const svgRegex = /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
   const explicitImportRegex =
     /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))+$/
 
@@ -88,7 +80,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
       } catch (ex) {
         console.warn(
           '\n',
-          `${id} couldn't be loaded by vite-svg-loader, fallback to default loader`
+          `${id} couldn't be loaded by vite-svg-loader, fallback to default loader`,
         )
         return
       }
@@ -100,7 +92,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
       if (svgo !== false && query !== 'skipsvgo') {
         svg = optimizeSvg(svg, {
           ...svgoConfig,
-          path
+          path,
         }).data
       }
 
@@ -113,9 +105,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
       }
 
       // To prevent compileTemplate from removing the style tag
-      svg = svg
-        .replace(/<style/g, '<component is="style"')
-        .replace(/<\/style/g, '</component')
+      svg = svg.replace(/<style/g, '<component is="style"').replace(/<\/style/g, '</component')
 
       const svgName = basename(path, extname(path))
 
@@ -123,7 +113,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
         id: JSON.stringify(id),
         source: svg,
         filename: path,
-        transformAssetUrls: false
+        transformAssetUrls: false,
       })
 
       if (importType === 'componentext') {
@@ -136,7 +126,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
       } else {
         return `${code}\nexport default { render: render }`
       }
-    }
+    },
   }
 }
 

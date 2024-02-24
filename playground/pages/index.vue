@@ -19,6 +19,6 @@
 </template>
 
 <script setup>
-import Home from '~/assets/home.svg'
-import HomeUri from '~/assets/home-ns.svg?url_encode'
+  import Home from '~/assets/home.svg'
+  import HomeUri from '~/assets/home-ns.svg?url_encode'
 </script>
