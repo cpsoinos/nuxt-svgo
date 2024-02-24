@@ -40,7 +40,7 @@
     "lint": "eslint --ext .js,.ts, --fix .",
     "typecheck": "vue-tsc --noEmit",
     "prepack": "nuxt-module-build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "cross-env NUXT_TELEMETRY_DISABLED=1 JITI_ESM_RESOLVE=1 pnpm nuxi prepare test/fixtures/basic && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test",
     "semantic-release": "semantic-release"
   },
@@ -57,7 +57,7 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "cross-env": "^7.0.3",
     "eslint": "latest",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "nuxt": "3.9.0",
     "pnpm": "8.15.4",
     "prettier": "3.2.5",
