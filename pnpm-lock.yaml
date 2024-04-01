@@ -63,8 +63,8 @@ devDependencies:
     specifier: 3.9.0
     version: 3.9.0(eslint@8.50.0)(rollup@3.29.1)(typescript@5.4.2)(vite@5.1.6)(vue-tsc@1.8.27)
   pnpm:
-    specifier: 8.15.5
-    version: 8.15.5
+    specifier: 8.15.6
+    version: 8.15.6
   prettier:
     specifier: 3.2.5
     version: 3.2.5
@@ -9065,8 +9065,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm@8.15.5:
-    resolution: {integrity: sha512-sFGjLH5pWDO4SSbTspuMylclS1ifBknYmcbp0O22cLkex+KkNFm65zdZu1zmGcMmbxFr+THOItHvF1mn5Fqpbw==}
+  /pnpm@8.15.6:
+    resolution: {integrity: sha512-d7iem+d6Kwatj0A6Gcrl4il29hAj+YrTI9XDAZSVjrwC7gpq5dE+5FT2E05OjK8poF8LGg4dKxe8prah8RWfhg==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
