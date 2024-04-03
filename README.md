@@ -11,22 +11,8 @@ Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground?file=nux
 
 ## Install
 
-### Using `npm`
-
 ```sh
-npm install nuxt-svgo --save-dev
-```
-
-### Using `yarn`
-
-```sh
-yarn add nuxt-svgo -D
-```
-
-### Using `pnpm`
-
-```sh
-pnpm add nuxt-svgo -D
+npx nuxi@latest module add nuxt-svgo
 ```
 
 ## Usage
