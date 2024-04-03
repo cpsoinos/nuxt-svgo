@@ -14,19 +14,19 @@ Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground?file=nux
 ### Using `npm`
 
 ```sh
-npm install nuxt-svgo --save-dev
+npx nuxi@latest module add nuxt-svgo
 ```
 
 ### Using `yarn`
 
 ```sh
-yarn add nuxt-svgo -D
+npx nuxi@latest module add nuxt-svgo
 ```
 
 ### Using `pnpm`
 
 ```sh
-pnpm add nuxt-svgo -D
+npx nuxi@latest module add nuxt-svgo
 ```
 
 ## Usage
