@@ -60,7 +60,7 @@
   "devDependencies": {
     "@cpsoinos/eslint-config-typescript": "0.2.5",
     "@cpsoinos/prettier-config": "1.0.0",
-    "@nuxt/module-builder": "^0.3.1",
+    "@nuxt/module-builder": "^0.5.0",
     "@nuxt/test-utils": "3.12.1",
     "@nuxtjs/eslint-config-typescript": "latest",
     "cross-env": "^7.0.3",
