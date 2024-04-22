@@ -11,22 +11,8 @@ Try it on [StackBlitz](https://stackblitz.com/edit/nuxt-svgo-playground?file=nux
 
 ## Install
 
-### Using `npm`
-
 ```sh
-npm install nuxt-svgo --save-dev
-```
-
-### Using `yarn`
-
-```sh
-yarn add nuxt-svgo -D
-```
-
-### Using `pnpm`
-
-```sh
-pnpm add nuxt-svgo -D
+npx nuxi@latest module add nuxt-svgo
 ```
 
 ## Usage
@@ -38,7 +24,7 @@ Use the [default configuration](https://github.com/cpsoinos/nuxt-svgo/blob/b30c6
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  modules: ['nuxt-svgo']
+  modules: ['nuxt-svgo'],
 })
 ```
 
@@ -55,7 +41,7 @@ Then, in any `.vue` file, import your asset and use it as a component:
 </template>
 
 <script setup lang="ts">
-import IconHome from '~/assets/icon-home.svg'
+  import IconHome from '~/assets/icon-home.svg'
 </script>
 ```
 
@@ -80,8 +66,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    autoImportPath: './assets/other-icons/'
-  }
+    autoImportPath: './assets/other-icons/',
+  },
 })
 ```
 
@@ -94,8 +80,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    defaultImport: 'component'
-  }
+    defaultImport: 'component',
+  },
 })
 ```
 
@@ -111,8 +97,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    customComponent: 'YourComponent'
-  }
+    customComponent: 'YourComponent',
+  },
 })
 ```
 
@@ -125,8 +111,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    global: false
-  }
+    global: false,
+  },
 })
 ```
 
@@ -139,8 +125,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    autoImportPath: false
-  }
+    autoImportPath: false,
+  },
 })
 ```
 
@@ -163,8 +149,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    componentPrefix: 'i'
-  }
+    componentPrefix: 'i',
+  },
 })
 ```
 
@@ -214,18 +200,18 @@ export default defineNuxtConfig({
             overrides: {
               // customize default plugin options
               inlineStyles: {
-                onlyMatchedOnce: false
+                onlyMatchedOnce: false,
               },
 
               // or disable plugins
               removeDoctype: false,
-              removeViewBox: false
-            }
-          }
-        }
-      ]
-    }
-  }
+              removeViewBox: false,
+            },
+          },
+        },
+      ],
+    },
+  },
 })
 ```
 
@@ -238,8 +224,8 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   svgo: {
-    svgo: false
-  }
+    svgo: false,
+  },
 })
 ```
 
@@ -264,7 +250,7 @@ for example:
 </template>
 
 <script setup lang="ts">
-import IconHome from '~/assets/icon-home.svg?componentext' // the default
+  import IconHome from '~/assets/icon-home.svg?componentext' // the default
 </script>
 ```
 
@@ -316,8 +302,8 @@ v3 now uses an opinionated default config for svgo by default, to make it work l
 export default defineNuxtConfig({
   // ...
   svgo: {
-    svgoConfig: {}
-  }
+    svgoConfig: {},
+  },
 })
 ```
 
@@ -331,10 +317,10 @@ also since v3 `simpleAutoImport` option is removed and `defaultImport` is change
 </template>
 
 <script setup lang="ts">
-// change this:
-import IconHome from '~/assets/icon-home.svg'
-// to this:
-import IconHome from '~/assets/icon-home.svg?component'
+  // change this:
+  import IconHome from '~/assets/icon-home.svg'
+  // to this:
+  import IconHome from '~/assets/icon-home.svg?component'
 </script>
 ```
 

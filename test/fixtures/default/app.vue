@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import Home from '~/assets/home.svg'
+  import Home from '~/assets/home.svg'
 </script>

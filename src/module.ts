@@ -5,7 +5,7 @@ import {
   extendWebpackConfig,
   createResolver,
   addComponentsDir,
-  addComponent
+  addComponent,
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
@@ -30,9 +30,9 @@ export const defaultSvgoConfig: Config = {
       name: 'preset-default',
       params: {
         overrides: {
-          removeViewBox: false
-        }
-      }
+          removeViewBox: false,
+        },
+      },
     },
     'removeDimensions',
     {
@@ -40,10 +40,10 @@ export const defaultSvgoConfig: Config = {
       params: {
         prefix(_, info) {
           return 'i' + hashCode(info.path)
-        }
-      }
-    }
-  ]
+        },
+      },
+    },
+  ],
 }
 
 export type ModuleOptions = SvgLoaderOptions & {
@@ -58,8 +58,8 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     configKey: 'svgo',
     compatibility: {
       // Add -rc.0 due to issue described in https://github.com/nuxt/framework/issues/6699
-      nuxt: '^3.0.0-rc.0'
-    }
+      nuxt: '^3.0.0-rc.0',
+    },
   },
   defaults: {
     svgo: true,
@@ -68,21 +68,21 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     svgoConfig: undefined,
     global: true,
     customComponent: 'NuxtIcon',
-    componentPrefix: 'svgo'
+    componentPrefix: 'svgo',
   },
   async setup(options) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
 
     addComponent({
       name: 'nuxt-icon',
-      filePath: resolve('./runtime/components/nuxt-icon.vue')
+      filePath: resolve('./runtime/components/nuxt-icon.vue'),
     })
 
     addVitePlugin(
       svgLoader({
         ...options,
-        svgoConfig: options.svgoConfig || defaultSvgoConfig
-      })
+        svgoConfig: options.svgoConfig || defaultSvgoConfig,
+      }),
     )
 
     if (options.autoImportPath) {
@@ -91,7 +91,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
         global: options.global,
         extensions: ['svg'],
         prefix: options.componentPrefix || 'svgo',
-        watch: true
+        watch: true,
       })
     }
 
@@ -108,17 +108,17 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
           {
             loader: 'vue-svg-loader',
             options: {
-              svgo: false
-            }
+              svgo: false,
+            },
           },
           options.svgo && {
             loader: 'svgo-loader',
-            options: options.svgoConfig || defaultSvgoConfig
-          }
-        ].filter(Boolean)
+            options: options.svgoConfig || defaultSvgoConfig,
+          },
+        ].filter(Boolean),
       })
     })
-  }
+  },
 })
 
 export default nuxtSvgo
