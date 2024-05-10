@@ -1,6 +1,6 @@
 {
   "name": "nuxt-svgo",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Nuxt module to load optimized SVG files as Vue components",
   "keywords": [
     "nuxt",
@@ -19,7 +19,8 @@
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "require": "./dist/module.cjs",
+      "types": "./dist/module.d.ts"
     }
   },
   "main": "./dist/module.cjs",

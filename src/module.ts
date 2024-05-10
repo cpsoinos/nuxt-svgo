@@ -9,7 +9,9 @@ import {
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
-import { SvgLoaderOptions, svgLoader } from './loaders/vite'
+import { type SvgLoaderOptions, svgLoader } from './loaders/vite'
+
+export type { SvgLoaderOptions }
 
 /**
  * taken from: https://stackoverflow.com/a/8831937/3542461
