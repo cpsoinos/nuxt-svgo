@@ -3,7 +3,6 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![license][license-src]][license-href]
-[![Twitter: CoreyPsoinos][twitter-src]][twitter-href]
 
 `nuxt-svgo` is a Nuxt module to load optimized SVG files as Vue components.
 
@@ -358,5 +357,3 @@ This project is [MIT](https://github.com/cpsoinos/nuxt-svgo/blob/main/LICENSE) l
 [npm-downloads-href]: https://npmjs.com/package/nuxt-svgo
 [license-src]: https://img.shields.io/npm/l/nuxt-svgo.svg?style=flat-square
 [license-href]: https://github.com/cpsoinos/nuxt-svgo/blob/main/LICENSE
-[twitter-src]: https://img.shields.io/twitter/follow/CoreyPsoinos.svg?style=social
-[twitter-href]: https://twitter.com/CoreyPsoinos
