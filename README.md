@@ -332,7 +332,6 @@ also since v3 `simpleAutoImport` option is removed and `defaultImport` is change
 
 **Corey Psoinos**
 
-- Twitter: [@CoreyPsoinos](https://twitter.com/CoreyPsoinos)
 - Github: [@cpsoinos](https://github.com/cpsoinos)
 
 **Javad Mnjd**
