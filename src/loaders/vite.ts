@@ -48,7 +48,7 @@ export function svgLoader(options?: SvgLoaderOptions) {
     enforce: 'pre' as const,
 
     async load(id: string) {
-      if (!id.match(svgRegex)) {
+      if (!id.match(svgRegex) || id.startsWith('virtual:public')) {
         return
       }
 
