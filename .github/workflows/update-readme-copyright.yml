@@ -1,0 +1,28 @@
+name: Update README Copyright
+
+on:
+  schedule:
+    - cron: '0 0 1 1 *' # Runs at midnight on the first day of January every year
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+
+      - name: Update README
+        run: node scripts/update-readme.mjs
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "Update README with current year"
+          git push
