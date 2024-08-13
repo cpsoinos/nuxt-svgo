@@ -44,8 +44,8 @@ importers:
         specifier: ^0.8.0
         version: 0.8.1(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@4.20.0))(nuxi@3.12.0)(typescript@5.5.4)
       '@nuxt/test-utils':
-        specifier: 3.14.0
-        version: 3.14.0(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))
+        specifier: 3.14.1
+        version: 3.14.1(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))
       '@nuxtjs/eslint-config-typescript':
         specifier: 12.1.0
         version: 12.1.0(eslint@8.57.0)(typescript@5.5.4)
@@ -951,8 +951,8 @@ packages:
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
     hasBin: true
 
-  '@nuxt/test-utils@3.14.0':
-    resolution: {integrity: sha512-8HJOvGChQ70s6RKduKlrNABJXizNCLodBRbgepa4RYA3QFv2KrTxLvlHlhEUwd9r2E55LcQacv9P7Er47Z2GaA==}
+  '@nuxt/test-utils@3.14.1':
+    resolution: {integrity: sha512-D8F18hnOHQSarKnzsLORRXzFPlI9Y5fcQFRKwJgGhnejlIRX6sFvVnyl2SDgCvoV+F2x2czQsdGkwg51iWAshA==}
     engines: {node: '>=18.20.4'}
     peerDependencies:
       '@cucumber/cucumber': ^10.3.1
@@ -5267,6 +5267,10 @@ packages:
     resolution: {integrity: sha512-KeczzHl2sATPQUx1gzo+EnUkmN4VmGBYRRVOZSGvGITE9rGHRDGqft6ONceP3vgXcyJ2XjX5axG5jMWUwNCYLw==}
     engines: {node: '>=14.0.0'}
 
+  unplugin@1.12.1:
+    resolution: {integrity: sha512-aXEH9c5qi3uYZHo0niUtxDlT9ylG/luMW/dZslSCkbtC31wCyFkmM0kyoBBh+Grhn7CL+/kvKLfN61/EdxPxMQ==}
+    engines: {node: '>=14.0.0'}
+
   unquote@1.1.1:
     resolution: {integrity: sha512-vRCqFv6UhXpWxZPyGDh/F3ZpNv8/qo7w6iufLpQg9aKnQ71qM4B5KiI7Mia9COcjEhrO9LueHpMYjYzsWH3OIg==}
 
@@ -6480,7 +6484,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/test-utils@3.14.0(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))':
+  '@nuxt/test-utils@3.14.1(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@nuxt/schema': 3.12.4(rollup@4.20.0)
@@ -6505,7 +6509,7 @@ snapshots:
       std-env: 3.7.0
       ufo: 1.5.4
       unenv: 1.10.0
-      unplugin: 1.12.0
+      unplugin: 1.12.1
       vite: 5.3.5(@types/node@22.1.0)(terser@5.31.3)
       vitest-environment-nuxt: 1.0.0(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))
       vue: 3.4.36(typescript@5.5.4)
@@ -11568,6 +11572,13 @@ snapshots:
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.6.2
 
+  unplugin@1.12.1:
+    dependencies:
+      acorn: 8.12.1
+      chokidar: 3.6.0
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.2
+
   unquote@1.1.1: {}
 
   unstorage@1.10.2(ioredis@5.4.1):
@@ -11732,7 +11743,7 @@ snapshots:
 
   vitest-environment-nuxt@1.0.0(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4)):
     dependencies:
-      '@nuxt/test-utils': 3.14.0(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))
+      '@nuxt/test-utils': 3.14.1(h3@1.12.0)(magicast@0.3.4)(nitropack@2.9.7(magicast@0.3.4))(rollup@4.20.0)(vite@5.3.5(@types/node@22.1.0)(terser@5.31.3))(vitest@2.0.5(@types/node@22.1.0)(terser@5.31.3))(vue-router@4.4.3(vue@3.4.36(typescript@5.5.4)))(vue@3.4.36(typescript@5.5.4))
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
