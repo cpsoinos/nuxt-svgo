@@ -68,7 +68,7 @@
     "eslint": "8.57.1",
     "husky": "9.1.6",
     "lint-staged": "^15.2.2",
-    "nuxt": "3.14.0",
+    "nuxt": "3.14.159",
     "pnpm": "9.12.3",
     "prettier": "3.3.3",
     "semantic-release": "^22.0.0",
