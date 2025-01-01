@@ -38,8 +38,8 @@ importers:
         specifier: 0.2.5
         version: 0.2.5(eslint-plugin-import@2.29.1)(eslint@8.57.1)(typescript@5.5.4)
       '@cpsoinos/prettier-config':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.1.0
+        version: 1.1.0
       '@nuxt/module-builder':
         specifier: ^0.8.0
         version: 0.8.1(@nuxt/kit@3.14.1592(magicast@0.3.5)(rollup@4.26.0))(nuxi@3.15.0)(typescript@5.5.4)(webpack-sources@3.2.3)
@@ -359,8 +359,8 @@ packages:
     peerDependencies:
       typescript: ^4.4.3 || ^5.0.0
 
-  '@cpsoinos/prettier-config@1.0.0':
-    resolution: {integrity: sha512-TGtAVr3LxIOqZLK1Uy8PmNj8T9V8U7gnRIKz9OORBjXHpPPDyW537mXTPMRA+b3ADtGcaZ8EGtquDjTR1+BNeg==}
+  '@cpsoinos/prettier-config@1.1.0':
+    resolution: {integrity: sha512-4Ufy/L3IyeLBpC8ZmSFp7xEzZ1ucZvi+k4QTDst6q9MNYjbhbJyKY1/PSZSrJLL0FBsClbRuSEVTlSsn85dn/A==}
 
   '@esbuild/aix-ppc64@0.19.12':
     resolution: {integrity: sha512-bmoCYyWdEL3wDQIVbcyzRyeKLgk2WtWLTWz1ZIAZF/EGbNOwSA6ew3PftJ1PqMiOOGu0OyFMzG53L0zqIpPeNA==}
@@ -6656,7 +6656,7 @@ snapshots:
       - eslint-plugin-import
       - supports-color
 
-  '@cpsoinos/prettier-config@1.0.0': {}
+  '@cpsoinos/prettier-config@1.1.0': {}
 
   '@esbuild/aix-ppc64@0.19.12':
     optional: true
