@@ -71,7 +71,7 @@
     "nuxt": "3.15.4",
     "pnpm": "9.15.5",
     "prettier": "3.5.1",
-    "semantic-release": "^22.0.0",
+    "semantic-release": "^24.0.0",
     "vitest": "^2.0.0"
   },
   "peerDependencies": {
