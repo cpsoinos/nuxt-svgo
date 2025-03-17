@@ -72,7 +72,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     customComponent: 'NuxtIcon',
     componentPrefix: 'svgo',
   },
-  async setup(options) {
+  async setup(options, nuxt) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
 
     addComponent({
@@ -87,15 +87,39 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
       }),
     )
 
-    if (options.autoImportPath) {
-      addComponentsDir({
+    const autoImportPathsConfigurations = []
+    const layers = nuxt.options._layers || []
+    await Promise.all(
+      layers.map(async (layer) => {
+        const svgoConfig = layer.config.svgo
+        if (svgoConfig && svgoConfig.autoImportPath) {
+          return autoImportPathsConfigurations.push({
+            path: await resolvePath(svgoConfig.autoImportPath),
+            global: options.global ?? svgoConfig.global,
+            prefix: svgoConfig.componentPrefix ?? options.componentPrefix ?? 'svgo',
+          })
+        }
+      }),
+    )
+
+    if (
+      options.autoImportPath &&
+      !autoImportPathsConfigurations.some((config) => config.path === options.autoImportPath)
+    ) {
+      autoImportPathsConfigurations.push({
         path: await resolvePath(options.autoImportPath),
         global: options.global,
-        extensions: ['svg'],
         prefix: options.componentPrefix || 'svgo',
-        watch: true,
       })
     }
+
+    autoImportPathsConfigurations.forEach((autoImportPath) => {
+      addComponentsDir({
+        ...autoImportPath,
+        extensions: ['svg'],
+        watch: true,
+      })
+    })
 
     extendWebpackConfig((config) => {
       // @ts-ignore
