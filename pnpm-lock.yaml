@@ -65,8 +65,8 @@ importers:
         specifier: 3.17.0
         version: 3.17.0(@netlify/blobs@8.2.0)(@parcel/watcher@2.4.1)(@types/node@22.1.0)(db0@0.3.2)(eslint@8.57.1)(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.0)(terser@5.31.3)(typescript@5.5.4)(vite@5.4.14(@types/node@22.1.0)(terser@5.31.3))(yaml@2.7.1)
       pnpm:
-        specifier: 9.15.9
-        version: 9.15.9
+        specifier: 10.10.0
+        version: 10.10.0
       prettier:
         specifier: 3.5.3
         version: 3.5.3
@@ -5600,8 +5600,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@9.15.9:
-    resolution: {integrity: sha512-aARhQYk8ZvrQHAeSMRKOmvuJ74fiaR1p5NQO7iKJiClf1GghgbrlW1hBjDolO95lpQXsfF+UA+zlzDzTfc8lMQ==}
+  pnpm@10.10.0:
+    resolution: {integrity: sha512-1hXbJG/nDyXc/qbY1z3ueCziPiJF48T2+Igkn7VoFJMYY33Kc8LFyO8qTKDVZX+5VnGIv6tH9WbR7mzph4FcOQ==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -9311,11 +9311,11 @@ snapshots:
   '@types/eslint-scope@3.7.7':
     dependencies:
       '@types/eslint': 9.6.0
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
 
   '@types/eslint@9.6.0':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/json-schema': 7.0.15
 
   '@types/estree@1.0.6': {}
@@ -13398,7 +13398,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@9.15.9: {}
+  pnpm@10.10.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
@@ -15226,7 +15226,7 @@ snapshots:
   webpack@5.93.0:
     dependencies:
       '@types/eslint-scope': 3.7.7
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
