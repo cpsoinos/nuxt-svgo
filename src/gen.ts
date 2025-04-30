@@ -30,9 +30,9 @@ declare module '*.svg' {
       return `
 // Default - loads contents as a component (unoptimized, without <${customComponent}/>)
 declare module '*.svg' {
-  import type { DefineComponent } from 'vue';
+  import { DefineComponent, SVGAttributes, ReservedProps } from 'vue';
 
-  const component: DefineComponent;
+  const component: DefineComponent<SVGAttributes & ReservedProps>;
   export default component;
 }
 `
@@ -40,9 +40,9 @@ declare module '*.svg' {
       return `
 // Default - loads optimized svg as a component
 declare module '*.svg' {
-  import type { DefineComponent } from 'vue';
+  import { DefineComponent, SVGAttributes, ReservedProps } from 'vue';
 
-  const component: DefineComponent;
+  const component: DefineComponent<SVGAttributes & ReservedProps>;
   export default component;
 }
 `
@@ -50,12 +50,12 @@ declare module '*.svg' {
       return `
 // Default - loads optimized svg with <${customComponent}/> component
 declare module '*.svg' {
-  import type { DefineComponent } from 'vue';
-  import type { ${customComponent} } from '#components';
+  import { DefineComponent } from 'vue';
+  import { ${customComponent} } from '#components';
 
-  type CustomIconComponent = DefineComponent<Omit<ComponentProps<typeof ${customComponent}>, 'icon'>>;
+  type OmitIcon<T> = DefineComponent<Omit<ComponentProps<T>, 'icon'>>;
 
-  const component: CustomIconComponent;
+  const component: OmitIcon<typeof ${customComponent}>;
   export default component;
 }
 `
@@ -91,28 +91,28 @@ declare module '*.svg?raw_optimized' {
 
 // loads contents as a component (unoptimized, without <${options.customComponent}/>)
 declare module '*.svg?skipsvgo' {
-  import type { DefineComponent } from 'vue';
+  import { DefineComponent, SVGAttributes, ReservedProps } from 'vue';
 
-  const component: DefineComponent;
+  const component: DefineComponent<SVGAttributes & ReservedProps>;
   export default component;
 }
 
 // loads optimized svg as a component
 declare module '*.svg?component' {
-  import type { DefineComponent } from 'vue';
+  import { DefineComponent, SVGAttributes, ReservedProps } from 'vue';
 
-  const component: DefineComponent;
+  const component: DefineComponent<SVGAttributes & ReservedProps>;
   export default component;
 }
 
 // loads optimized svg with <${options.customComponent}/> component
 declare module '*.svg?componentext' {
-  import type { DefineComponent } from 'vue';
-  import type { ${options.customComponent} } from '#components';
+  import { DefineComponent } from 'vue';
+  import { ${options.customComponent} } from '#components';
 
-  type CustomIconComponent = DefineComponent<Omit<ComponentProps<typeof ${options.customComponent}>, 'icon'>>;
+  type OmitIcon<T> = DefineComponent<Omit<ComponentProps<T>, 'icon'>>;
 
-  const component: CustomIconComponent;
+  const component: OmitIcon<typeof ${options.customComponent}>;
   export default component;
 }
 `
