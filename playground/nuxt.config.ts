@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [NuxtSVGO],
   svgo: {
     explicitImportsOnly: false,
+    dts: true,
     svgoConfig: {
       multipass: true,
       plugins: [

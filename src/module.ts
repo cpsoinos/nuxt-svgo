@@ -6,10 +6,12 @@ import {
   createResolver,
   addComponentsDir,
   addComponent,
+  addTemplate,
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
 import { type SvgLoaderOptions, svgLoader } from './loaders/vite'
+import { generateImportQueriesDts } from './gen'
 
 export type { SvgLoaderOptions }
 
@@ -51,6 +53,8 @@ export const defaultSvgoConfig: Config = {
 export type ModuleOptions = SvgLoaderOptions & {
   /** Defaults to `svgo` */
   componentPrefix?: string
+  /** Generate TypeScript declaration for svg import queries (Vite.js only) */
+  dts?: boolean
   global?: boolean
 }
 
@@ -71,8 +75,9 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     global: true,
     customComponent: 'NuxtIcon',
     componentPrefix: 'svgo',
+    dts: false,
   },
-  async setup(options) {
+  async setup(options, nuxt) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
 
     addComponent({
@@ -94,6 +99,26 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
         extensions: ['svg'],
         prefix: options.componentPrefix || 'svgo',
         watch: true,
+      })
+    }
+
+    if (options.dts && ['@nuxt/vite-builder', 'vite'].includes(nuxt.options.builder as string)) {
+      addTemplate({
+        filename: 'types/nuxt-svgo.d.ts',
+        getContents: () => generateImportQueriesDts(options),
+      })
+
+      // We need to override the default svg typing for vite
+      // Moving our generated template before 'vite/client' reference (included in builder-env.d.ts file)
+      // overrides the default import for '*.svg'
+      // https://vite.dev/guide/features#client-types
+      nuxt.hook('prepare:types', ({ references }) => {
+        const builderEnvFilePath = resolve(nuxt.options.buildDir, 'types', 'builder-env.d.ts')
+        const fileIndex = references.findIndex(
+          (ref) => 'path' in ref && ref.path === builderEnvFilePath,
+        )
+
+        references.splice(fileIndex, 0, { path: 'types/nuxt-svgo.d.ts' })
       })
     }
 
