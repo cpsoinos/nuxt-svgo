@@ -259,7 +259,18 @@ for example:
 
 ## Usage with TypeScript
 
-When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix thix, you need to provide a type declaration to tell TypeScript how to handle SVG components. Here's an example, using a `custom.d.ts` file at the application's root:
+When importing a SVG component in TypeScript, you will get a "Cannot find module" error. In order to fix this, you should enable `dts` option in the module config. This will automatically generate a TypeScript declaration file for the SVG imports. Works only from `nuxt-svgo` version `v4.1.0` and above.
+
+```ts
+export default defineNuxtConfig({
+  // ...
+  svgo: {
+    dts: true,
+  },
+})
+```
+
+If you're using module version under `v4.1.0`, you need to provide a type declaration manually to tell TypeScript how to handle SVG components. Here's an example, using a `custom.d.ts` file at the application's root:
 
 ```ts
 // custom.d.ts
