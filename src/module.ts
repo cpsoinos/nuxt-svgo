@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { join } from 'node:path'
+import * as fs from 'node:fs'
 import {
   defineNuxtModule,
   addVitePlugin,
@@ -93,13 +95,39 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     )
 
     if (options.autoImportPath) {
-      addComponentsDir({
-        path: await resolvePath(options.autoImportPath),
-        global: options.global,
-        extensions: ['svg'],
-        prefix: options.componentPrefix || 'svgo',
-        watch: true,
-      })
+      const addIconComponentsDir = (path: string) => {
+        if (fs.existsSync(path)) {
+          addComponentsDir({
+            path,
+            global: options.global,
+            extensions: ['svg'],
+            prefix: options.componentPrefix || 'svgo',
+            watch: true,
+          })
+        }
+      }
+
+      const iconPaths: string[] = []
+
+      try {
+        const iconPath = await resolvePath(options.autoImportPath)
+        iconPaths.push(iconPath)
+      } catch (e) {
+        console.error('Error resolving module path:', e)
+      }
+
+      const appDir = nuxt.options.srcDir || nuxt.options.rootDir
+      iconPaths.push(join(appDir, options.autoImportPath.replace(/^\.\//, '')))
+
+      if (nuxt.options._layers) {
+        for (const layer of nuxt.options._layers) {
+          if (layer.config && layer.config.srcDir) {
+            iconPaths.push(join(layer.config.srcDir, options.autoImportPath.replace(/^\.\//, '')))
+          }
+        }
+      }
+
+      iconPaths.forEach(addIconComponentsDir)
     }
 
     if (options.dts && ['@nuxt/vite-builder', 'vite'].includes(nuxt.options.builder as string)) {
