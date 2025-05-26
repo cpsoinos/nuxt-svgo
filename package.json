@@ -59,7 +59,7 @@
     "svgo": "3.0.2"
   },
   "devDependencies": {
-    "@cpsoinos/eslint-config-typescript": "0.2.5",
+    "@cpsoinos/eslint-config-typescript": "0.2.6",
     "@cpsoinos/prettier-config": "1.1.0",
     "@nuxt/module-builder": "^0.8.0",
     "@nuxt/test-utils": "3.19.1",
