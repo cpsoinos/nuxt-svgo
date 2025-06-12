@@ -96,7 +96,9 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     )
 
     if (options.autoImportPath) {
-      const autoImportPath = typeof options.autoImportPath === 'string' ? resolveFromRoot(options.autoImportPath) : resolvePath('./assets/icons/')
+      const autoImportPath = await (typeof options.autoImportPath === 'string'
+        ? resolveFromRoot(options.autoImportPath)
+        : resolvePath('./assets/icons/'))
       const addIconComponentsDir = (path: string) => {
         if (fs.existsSync(path)) {
           addComponentsDir({
