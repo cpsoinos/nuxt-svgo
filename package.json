@@ -65,7 +65,7 @@
     "@nuxt/test-utils": "3.19.2",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "8.57.1",
+    "eslint": "9.31.0",
     "husky": "9.1.7",
     "lint-staged": "^16.0.0",
     "nuxt": "3.17.7",
