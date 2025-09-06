@@ -1,9 +1,32 @@
 {
+  "root": true,
   "extends": [
     "@nuxtjs/eslint-config-typescript",
     "@cpsoinos/eslint-config-typescript"
   ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "rules": {
     "@typescript-eslint/no-unused-vars": ["off"]
-  }
+  },
+  "globals": {
+    "NuxtPage": "readonly",
+    "NuxtLayout": "readonly",
+    "NuxtLink": "readonly",
+    "NuxtLoadingIndicator": "readonly",
+    "ClientOnly": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+      }
+    }
+  ]
 }
