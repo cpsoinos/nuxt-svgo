@@ -9,11 +9,15 @@ import {
   addComponentsDir,
   addComponent,
   addTemplate,
+  addServerHandler,
 } from '@nuxt/kit'
 import type { NuxtModule } from '@nuxt/schema'
 import type { Config } from 'svgo'
+import { addCustomTab } from '@nuxt/devtools-kit'
+import { joinURL } from 'ufo'
 import { type SvgLoaderOptions, svgLoader } from './loaders/vite'
 import { generateImportQueriesDts } from './gen'
+import { setupDevtools } from './devtools'
 
 export type { SvgLoaderOptions }
 
@@ -55,6 +59,7 @@ export const defaultSvgoConfig: Config = {
 export type ModuleOptions = SvgLoaderOptions & {
   /** Defaults to `svgo` */
   componentPrefix?: string
+  devtools?: boolean
   /** Generate TypeScript declaration for svg import queries (Vite.js only) */
   dts?: boolean
   global?: boolean
@@ -78,6 +83,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     customComponent: 'NuxtIcon',
     componentPrefix: 'svgo',
     dts: false,
+    devtools: true,
   },
   async setup(options, nuxt) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
@@ -107,27 +113,30 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
         }
       }
 
-      const iconPaths: string[] = []
+      const iconPaths: Set<string> = new Set<string>()
 
       try {
         const iconPath = await resolvePath(options.autoImportPath)
-        iconPaths.push(iconPath)
+        iconPaths.add(iconPath)
       } catch (e) {
         console.error('Error resolving module path:', e)
       }
 
       const appDir = nuxt.options.srcDir || nuxt.options.rootDir
-      iconPaths.push(join(appDir, options.autoImportPath.replace(/^\.\//, '')))
+      iconPaths.add(join(appDir, options.autoImportPath.replace(/^\.\//, '')))
 
       if (nuxt.options._layers) {
         for (const layer of nuxt.options._layers) {
           if (layer.config && layer.config.srcDir) {
-            iconPaths.push(join(layer.config.srcDir, options.autoImportPath.replace(/^\.\//, '')))
+            iconPaths.add(join(layer.config.srcDir, options.autoImportPath.replace(/^\.\//, '')))
           }
         }
       }
 
       iconPaths.forEach(addIconComponentsDir)
+      if (options.devtools) {
+        setupDevtools(options, Array.from(iconPaths))
+      }
     }
 
     if (options.dts && ['@nuxt/vite-builder', 'vite'].includes(nuxt.options.builder as string)) {

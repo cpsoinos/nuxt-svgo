@@ -1,0 +1,16 @@
+{
+  "name": "nuxt-svgo-client",
+  "private": true,
+  "scripts": {
+    "build": "nuxi build --preset=static",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
+  },
+  "devDependencies": {
+    "nuxt": "3.8.1"
+  },
+  "dependencies": {
+    "@nuxt/devtools-ui-kit": "^2.6.3"
+  }
+}

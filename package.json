@@ -26,16 +26,19 @@
   "main": "./dist/module.cjs",
   "types": "./dist/module.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "client"
   ],
   "scripts": {
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground && pnpm client:build",
+    "client:build": "nuxt generate client",
+    "client:dev": "nuxt dev client --port 3300",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "lint": "eslint --ext .js,.ts, --fix .",
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build && pnpm client:build",
     "prepare": "husky",
     "semantic-release": "semantic-release",
     "test": "cross-env NUXT_TELEMETRY_DISABLED=1 JITI_ESM_RESOLVE=1 pnpm nuxi prepare test/fixtures/basic && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test",
@@ -54,9 +57,12 @@
     ]
   },
   "dependencies": {
+    "@nuxt/devtools-kit": "^1.0.0",
     "@nuxt/kit": "^3.4.0",
     "mini-svg-data-uri": "^1.4.4",
-    "svgo": "3.0.2"
+    "sirv": "^3.0.1",
+    "svgo": "3.0.2",
+    "ufo": "^1.6.1"
   },
   "devDependencies": {
     "@cpsoinos/eslint-config-typescript": "0.2.5",
