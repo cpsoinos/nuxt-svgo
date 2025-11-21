@@ -29,10 +29,10 @@ importers:
         version: 3.5.24(typescript@5.8.3)
       vue-loader:
         specifier: ^17.0.0
-        version: 17.4.2(@vue/compiler-sfc@3.5.24)(vue@3.5.22(typescript@5.8.3))(webpack@5.93.0)
+        version: 17.4.2(@vue/compiler-sfc@3.5.24)(vue@3.5.24(typescript@5.8.3))(webpack@5.93.0)
       vue-svg-loader:
         specifier: 0.17.0-beta.2
-        version: 0.17.0-beta.2(vue@3.5.22(typescript@5.8.3))
+        version: 0.17.0-beta.2(vue@3.5.24(typescript@5.8.3))
     devDependencies:
       '@cpsoinos/eslint-config-typescript':
         specifier: 0.2.5
@@ -65,8 +65,8 @@ importers:
         specifier: 3.20.1
         version: 3.20.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.4.1)(@vue/compiler-sfc@3.5.24)(db0@0.3.4)(eslint@8.57.1)(ioredis@5.8.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.52.5)(terser@5.31.3)(typescript@5.8.3)(vite@7.2.4(jiti@2.6.1)(terser@5.31.3)(yaml@2.8.1))(yaml@2.8.1)
       pnpm:
-        specifier: 10.20.0
-        version: 10.20.0
+        specifier: 10.23.0
+        version: 10.23.0
       prettier:
         specifier: 3.6.2
         version: 3.6.2
@@ -5350,8 +5350,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@10.20.0:
-    resolution: {integrity: sha512-z5mYIiFi3YWGTQqBAueJLnukzq3rv1ox+cL85I384xepxTufZGTR75BCy6LgKuAqn3wUOitDjNk8kYQPAZK53Q==}
+  pnpm@10.23.0:
+    resolution: {integrity: sha512-IcTlaYACrel+Tv6Li0qJqN48haN5GflX56DzDzj7xbvdBZgP/ikXmy+25uaRJC4JjZRdFgF3LK0P71+2QR4qSw==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -12845,7 +12845,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@10.20.0: {}
+  pnpm@10.23.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
@@ -14379,7 +14379,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-loader@17.4.2(@vue/compiler-sfc@3.5.24)(vue@3.5.22(typescript@5.8.3))(webpack@5.93.0):
+  vue-loader@17.4.2(@vue/compiler-sfc@3.5.24)(vue@3.5.24(typescript@5.8.3))(webpack@5.93.0):
     dependencies:
       chalk: 4.1.2
       hash-sum: 2.0.0
@@ -14387,19 +14387,19 @@ snapshots:
       webpack: 5.93.0
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.24
-      vue: 3.5.22(typescript@5.8.3)
+      vue: 3.5.24(typescript@5.8.3)
 
   vue-router@4.6.3(vue@3.5.24(typescript@5.8.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.24(typescript@5.8.3)
 
-  vue-svg-loader@0.17.0-beta.2(vue@3.5.22(typescript@5.8.3)):
+  vue-svg-loader@0.17.0-beta.2(vue@3.5.24(typescript@5.8.3)):
     dependencies:
       loader-utils: 2.0.4
       semver: 7.6.3
       svgo: 1.3.2
-      vue: 3.5.22(typescript@5.8.3)
+      vue: 3.5.24(typescript@5.8.3)
 
   vue@3.5.22(typescript@5.8.3):
     dependencies:
@@ -14444,7 +14444,7 @@ snapshots:
       '@webassemblyjs/wasm-parser': 1.12.1
       acorn: 8.15.0
       acorn-import-attributes: 1.9.5(acorn@8.15.0)
-      browserslist: 4.25.1
+      browserslist: 4.28.0
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1
       es-module-lexer: 1.7.0
