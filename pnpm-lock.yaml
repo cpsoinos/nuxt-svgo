@@ -65,8 +65,8 @@ importers:
         specifier: 3.20.2
         version: 3.20.2(@netlify/blobs@9.1.2)(@parcel/watcher@2.4.1)(@vue/compiler-sfc@3.5.25)(cac@6.7.14)(db0@0.3.4)(eslint@8.57.1)(ioredis@5.8.2)(magicast@0.5.1)(optionator@0.9.4)(rollup@4.52.5)(terser@5.31.3)(typescript@5.8.3)(vite@7.2.7(jiti@2.6.1)(terser@5.31.3)(yaml@2.8.2))(yaml@2.8.2)
       pnpm:
-        specifier: 10.25.0
-        version: 10.25.0
+        specifier: 10.27.0
+        version: 10.27.0
       prettier:
         specifier: 3.7.4
         version: 3.7.4
@@ -5336,8 +5336,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@10.25.0:
-    resolution: {integrity: sha512-XoJjkCevN8+DIGG8xtY5whljRIjg8rrr54UCink957Ul/80/f/V09emGBlTgmP6FK6isXdXO/hdn0joCCpL1AQ==}
+  pnpm@10.27.0:
+    resolution: {integrity: sha512-ctaZ2haxF5wUup5k3HHJpAmIy9xlwmTLDkidt96RfyDc9NZNhyNiXylpulLUt+KhFwaC2awqXcrqq3MrfhbwSg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -12802,7 +12802,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@10.25.0: {}
+  pnpm@10.27.0: {}
 
   possible-typed-array-names@1.0.0: {}
 
