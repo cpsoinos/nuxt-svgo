@@ -72,7 +72,7 @@
     "pnpm": "10.28.2",
     "prettier": "3.7.4",
     "semantic-release": "^22.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
     "svgo-loader": "^4.0.0",
