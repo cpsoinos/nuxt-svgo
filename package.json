@@ -77,7 +77,8 @@
     "pnpm": "10.30.3",
     "prettier": "3.8.1",
     "semantic-release": "^22.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^2.0.0",
+    "vue-tsc": "^3.2.7"
   },
   "peerDependencies": {
     "svgo-loader": "^4.0.0",
