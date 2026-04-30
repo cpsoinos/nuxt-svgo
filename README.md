@@ -56,7 +56,7 @@ Or, if you use **vite**, in any `.vue` file, simply use your icon's name with `s
 </template>
 ```
 
-It automatically imports your icons from `assets/icons/` folder by default. you can configure this by passing `autoImportPath` in your config:
+It automatically imports your icons from `assets/icons/` folder by default. You can configure this by passing `autoImportPath` in your config:
 
 ```typescript
 // nuxt.config.ts
@@ -69,6 +69,22 @@ export default defineNuxtConfig({
   },
 })
 ```
+
+You can also pass an **array of paths** to auto-import icons from multiple directories:
+
+```typescript
+// nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
+  modules: ['nuxt-svgo'],
+  svgo: {
+    autoImportPath: ['./assets/icons/', './assets/shapes/'],
+  },
+})
+```
+
+All configured paths are scanned in the root app and in every [Nuxt layer](https://nuxt.com/docs/getting-started/layers).
 
 If you want to use auto import but you don't want to use the `nuxt-icon` component (used by default), You can do so by using `defaultImport: 'component'`:
 
