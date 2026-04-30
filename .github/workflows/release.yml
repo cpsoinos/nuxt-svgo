@@ -52,6 +52,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm semantic-release
-
-      - name: Publish to npm
-        run: npm publish --no-git-checks
