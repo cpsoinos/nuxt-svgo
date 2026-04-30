@@ -59,7 +59,7 @@
     ]
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.0",
+    "@nuxt/kit": "^4.4.4",
     "mini-svg-data-uri": "^1.4.4",
     "svgo": "^4.0.1"
   },
@@ -67,17 +67,17 @@
     "@cpsoinos/eslint-config-typescript": "0.2.5",
     "@cpsoinos/prettier-config": "1.1.0",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/test-utils": "3.23.0",
+    "@nuxt/test-utils": "^4.0.3",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "cross-env": "^7.0.3",
     "eslint": "8.57.1",
     "husky": "9.1.7",
     "lint-staged": "^16.0.0",
-    "nuxt": "3.21.4",
+    "nuxt": "^4.4.4",
     "pnpm": "10.33.2",
     "prettier": "3.8.3",
     "semantic-release": "^22.0.0",
-    "vitest": "^2.0.0",
+    "vitest": "^4.0.0",
     "vue-tsc": "^3.2.7"
   },
   "peerDependencies": {

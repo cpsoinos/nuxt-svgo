@@ -58,8 +58,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     name: 'nuxt-svgo',
     configKey: 'svgo',
     compatibility: {
-      // Add -rc.0 due to issue described in https://github.com/nuxt/framework/issues/6699
-      nuxt: '>=3.0.0-rc.0',
+      nuxt: '^3.0.0 || ^4.0.0',
     },
   },
   defaults: {
