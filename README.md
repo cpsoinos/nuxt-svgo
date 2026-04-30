@@ -204,7 +204,6 @@ export default defineNuxtConfig({
 
               // or disable plugins
               removeDoctype: false,
-              removeViewBox: false,
             },
           },
         },
@@ -213,6 +212,12 @@ export default defineNuxtConfig({
   },
 })
 ```
+
+> **Note:** In SVGO v4, `removeViewBox` is no longer part of `preset-default` (it is disabled by default). You no longer need to override it to preserve your SVG's `viewBox`. If you do need to explicitly enable `removeViewBox`, add it as a top-level plugin:
+>
+> ```typescript
+> plugins: ['preset-default', 'removeViewBox']
+> ```
 
 Disable SVGO entirely:
 
