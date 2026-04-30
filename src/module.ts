@@ -110,7 +110,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
           const iconPath = await resolvePath(autoPath)
           iconPaths.push(iconPath)
         } catch (e) {
-          console.error('Error resolving module path:', e)
+          console.error(`Error resolving module path "${autoPath}":`, e)
         }
 
         const appDir = nuxt.options.srcDir || nuxt.options.rootDir
