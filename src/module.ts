@@ -64,7 +64,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   defaults: {
     svgo: true,
     defaultImport: 'componentext',
-    autoImportPath: './assets/icons/',
+    autoImportPath: true,
     svgoConfig: undefined,
     global: true,
     customComponent: 'NuxtIcon',
@@ -73,6 +73,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   },
   async setup(options, nuxt) {
     const { resolvePath, resolve } = createResolver(import.meta.url)
+    const { resolvePath: resolveFromRoot } = createResolver(nuxt.options.rootDir)
 
     addComponent({
       name: 'nuxt-icon',
@@ -87,6 +88,9 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
     )
 
     if (options.autoImportPath) {
+      const autoImportPath = await (typeof options.autoImportPath === 'string'
+        ? resolveFromRoot(options.autoImportPath)
+        : resolvePath('./assets/icons/'))
       const addIconComponentsDir = (path: string) => {
         if (fs.existsSync(path)) {
           addComponentsDir({
@@ -102,19 +106,19 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
       const iconPaths: string[] = []
 
       try {
-        const iconPath = await resolvePath(options.autoImportPath)
+        const iconPath = await resolvePath(autoImportPath)
         iconPaths.push(iconPath)
       } catch (e) {
         console.error('Error resolving module path:', e)
       }
 
       const appDir = nuxt.options.srcDir || nuxt.options.rootDir
-      iconPaths.push(join(appDir, options.autoImportPath.replace(/^\.\//, '')))
+      iconPaths.push(join(appDir, autoImportPath.replace(/^\.\//, '')))
 
       if (nuxt.options._layers) {
         for (const layer of nuxt.options._layers) {
           if (layer.config && layer.config.srcDir) {
-            iconPaths.push(join(layer.config.srcDir, options.autoImportPath.replace(/^\.\//, '')))
+            iconPaths.push(join(layer.config.srcDir, autoImportPath.replace(/^\.\//, '')))
           }
         }
       }
