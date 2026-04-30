@@ -68,7 +68,7 @@
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "^4.0.3",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "eslint": "10.2.1",
     "husky": "9.1.7",
     "lint-staged": "^16.0.0",
