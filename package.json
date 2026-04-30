@@ -19,12 +19,17 @@
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/module.d.ts"
+      "types": "./dist/module.d.mts"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/module.d.ts",
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/module.d.mts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -61,7 +66,7 @@
   "devDependencies": {
     "@cpsoinos/eslint-config-typescript": "0.2.5",
     "@cpsoinos/prettier-config": "1.1.0",
-    "@nuxt/module-builder": "^0.8.0",
+    "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "3.23.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "cross-env": "^7.0.3",
