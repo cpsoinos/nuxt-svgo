@@ -29,10 +29,10 @@ importers:
         version: 3.5.33(typescript@5.8.3)
       vue-loader:
         specifier: ^17.0.0
-        version: 17.4.2(@vue/compiler-sfc@3.5.33)(vue@3.5.29(typescript@5.8.3))(webpack@5.93.0(esbuild@0.28.0))
+        version: 17.4.2(@vue/compiler-sfc@3.5.33)(vue@3.5.33(typescript@5.8.3))(webpack@5.93.0(esbuild@0.28.0))
       vue-svg-loader:
         specifier: 0.17.0-beta.2
-        version: 0.17.0-beta.2(vue@3.5.29(typescript@5.8.3))
+        version: 0.17.0-beta.2(vue@3.5.33(typescript@5.8.3))
     devDependencies:
       '@cpsoinos/eslint-config-typescript':
         specifier: 0.2.5
@@ -65,8 +65,8 @@ importers:
         specifier: 3.21.4
         version: 3.21.4(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.6)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@8.57.1)(ioredis@5.10.1)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.2))(rollup@4.60.2)(terser@5.31.3)(typescript@5.8.3)(vite@7.3.2(jiti@2.6.1)(terser@5.31.3)(yaml@2.8.3))(vue-tsc@3.2.7(typescript@5.8.3))(yaml@2.8.3)
       pnpm:
-        specifier: 10.30.3
-        version: 10.30.3
+        specifier: 10.33.2
+        version: 10.33.2
       prettier:
         specifier: 3.8.3
         version: 3.8.3
@@ -5507,8 +5507,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@10.30.3:
-    resolution: {integrity: sha512-yWHR4KLY41TsqlFmuCJRZmi39Ey1vZUSLVkN2Bki9gb1RzttI+xKW+Bef80Y6EiNR9l4u+mBhy8RRdBumnQAFw==}
+  pnpm@10.33.2:
+    resolution: {integrity: sha512-qQ+vb+6rca1sblf5Tg/hoS9dzCLNdU20CulZPraj4LaxLjVAIYuzeuCDQEsfLObbKkEh6XmCm0r/lLmfSdoc+A==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -13221,7 +13221,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@10.30.3: {}
+  pnpm@10.33.2: {}
 
   possible-typed-array-names@1.0.0: {}
 
@@ -14348,7 +14348,7 @@ snapshots:
 
   terser-webpack-plugin@5.3.10(esbuild@0.28.0)(webpack@5.93.0(esbuild@0.28.0)):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.29
+      '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
@@ -14930,7 +14930,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-loader@17.4.2(@vue/compiler-sfc@3.5.33)(vue@3.5.29(typescript@5.8.3))(webpack@5.93.0(esbuild@0.28.0)):
+  vue-loader@17.4.2(@vue/compiler-sfc@3.5.33)(vue@3.5.33(typescript@5.8.3))(webpack@5.93.0(esbuild@0.28.0)):
     dependencies:
       chalk: 4.1.2
       hash-sum: 2.0.0
@@ -14938,7 +14938,7 @@ snapshots:
       webpack: 5.93.0(esbuild@0.28.0)
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.33
-      vue: 3.5.29(typescript@5.8.3)
+      vue: 3.5.33(typescript@5.8.3)
 
   vue-router@4.6.4(vue@3.5.33(typescript@5.8.3)):
     dependencies:
@@ -14952,12 +14952,12 @@ snapshots:
       esbuild: 0.28.0
       vue: 3.5.33(typescript@5.8.3)
 
-  vue-svg-loader@0.17.0-beta.2(vue@3.5.29(typescript@5.8.3)):
+  vue-svg-loader@0.17.0-beta.2(vue@3.5.33(typescript@5.8.3)):
     dependencies:
       loader-utils: 2.0.4
       semver: 7.6.3
       svgo: 1.3.2
-      vue: 3.5.29(typescript@5.8.3)
+      vue: 3.5.33(typescript@5.8.3)
 
   vue-tsc@3.2.7(typescript@5.8.3):
     dependencies:
@@ -15008,7 +15008,7 @@ snapshots:
       '@webassemblyjs/wasm-parser': 1.12.1
       acorn: 8.16.0
       acorn-import-attributes: 1.9.5(acorn@8.16.0)
-      browserslist: 4.28.1
+      browserslist: 4.28.2
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1
       es-module-lexer: 1.7.0
