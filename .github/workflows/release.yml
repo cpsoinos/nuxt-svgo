@@ -50,5 +50,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release
+
+      - name: Publish to npm
+        run: pnpm publish --provenance --no-git-checks
