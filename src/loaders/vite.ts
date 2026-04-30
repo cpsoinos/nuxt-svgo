@@ -4,7 +4,8 @@
 import { readFile } from 'node:fs/promises'
 import { extname, basename } from 'node:path'
 import { compileTemplate } from 'vue/compiler-sfc'
-import { optimize as optimizeSvg, Config } from 'svgo'
+import type { Config } from 'svgo'
+import { optimize as optimizeSvg } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {

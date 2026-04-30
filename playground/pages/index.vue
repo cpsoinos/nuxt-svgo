@@ -4,7 +4,7 @@
     <Home />
     <svgo-home style="color: green; font-size: 40px" />
     sweet
-    <svgo-home filled :fontControlled="false" />
+    <svgo-home filled :font-controlled="false" />
   </div>
   <div>
     url encoded svg:

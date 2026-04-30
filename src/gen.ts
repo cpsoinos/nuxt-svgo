@@ -1,4 +1,4 @@
-import { ModuleOptions } from './module'
+import type { ModuleOptions } from './module'
 
 function resolveDefaultImport({ defaultImport, customComponent }: ModuleOptions) {
   switch (defaultImport) {
