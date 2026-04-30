@@ -19,7 +19,9 @@ export default defineNuxtConfig({
               },
 
               // or disable plugins
-              removeViewBox: false,
+              removeDoctype: false,
+              // Note: removeViewBox is no longer part of preset-default in SVGO v4.
+              // viewBox is preserved by default — no override needed.
             },
           },
         },
