@@ -334,6 +334,26 @@ also since v3 `simpleAutoImport` option is removed and `defaultImport` is change
 </script>
 ```
 
+## Migrating from v4.x to v5.x
+
+nuxt-svgo v5 is **ESM-only**. The CommonJS (`require()`) export has been removed.
+
+If you were loading the module via `require`:
+
+```js
+// ❌ No longer works
+const nuxtSvgo = require('nuxt-svgo')
+```
+
+Migrate to ESM:
+
+```js
+// ✅ Use ESM import
+import nuxtSvgo from 'nuxt-svgo'
+```
+
+For Nuxt apps (the primary audience), no changes are required — Nuxt's module loading pipeline uses ESM natively.
+
 ## Development
 
 - Run `pnpm dev:prepare` to generate type stubs.

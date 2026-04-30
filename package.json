@@ -18,13 +18,18 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/module.d.ts"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/module.d.ts",
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -32,10 +37,10 @@
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "lint": "eslint --ext .js,.ts, --fix .",
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build build",
     "prepare": "husky",
     "semantic-release": "semantic-release",
     "test": "cross-env NUXT_TELEMETRY_DISABLED=1 JITI_ESM_RESOLVE=1 pnpm nuxi prepare test/fixtures/basic && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test",
@@ -61,7 +66,7 @@
   "devDependencies": {
     "@cpsoinos/eslint-config-typescript": "0.2.5",
     "@cpsoinos/prettier-config": "1.1.0",
-    "@nuxt/module-builder": "^0.8.0",
+    "@nuxt/module-builder": "^1.0.2",
     "@nuxt/test-utils": "3.23.0",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "cross-env": "^7.0.3",
@@ -72,7 +77,8 @@
     "pnpm": "10.30.3",
     "prettier": "3.8.1",
     "semantic-release": "^22.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^2.0.0",
+    "vue-tsc": "^3.2.7"
   },
   "peerDependencies": {
     "svgo-loader": "^4.0.0",
