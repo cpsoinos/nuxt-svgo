@@ -18,15 +18,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "types": "./dist/module.d.mts"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     }
   },
   "main": "./dist/module.mjs",
   "typesVersions": {
     "*": {
       ".": [
-        "./dist/module.d.mts"
+        "./dist/types.d.mts"
       ]
     }
   },
@@ -37,10 +37,10 @@
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxi prepare playground",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "lint": "eslint --ext .js,.ts, --fix .",
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build build",
     "prepare": "husky",
     "semantic-release": "semantic-release",
     "test": "cross-env NUXT_TELEMETRY_DISABLED=1 JITI_ESM_RESOLVE=1 pnpm nuxi prepare test/fixtures/basic && cross-env JITI_ESM_RESOLVE=1 vitest run --dir test",
