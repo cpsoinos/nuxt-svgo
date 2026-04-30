@@ -13,7 +13,7 @@ importers:
   .:
     dependencies:
       '@nuxt/kit':
-        specifier: ^4.0.0
+        specifier: ^4.4.4
         version: 4.4.4(magicast@0.5.2)
       mini-svg-data-uri:
         specifier: ^1.4.4
@@ -12045,7 +12045,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.6.3
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
 
   normalize-path@3.0.0: {}
