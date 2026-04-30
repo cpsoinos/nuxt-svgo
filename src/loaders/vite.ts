@@ -9,7 +9,7 @@ import { optimize as optimizeSvg } from 'svgo'
 import urlEncodeSvg from 'mini-svg-data-uri'
 
 export interface SvgLoaderOptions {
-  autoImportPath?: string | false
+  autoImportPath?: string | string[] | false
   /** The name of component in CapitalCase that will be used in `componentext` import type. defaults to `NuxtIcon` */
   customComponent: string
   defaultImport?:
@@ -38,7 +38,11 @@ export function svgLoader(options?: SvgLoaderOptions) {
         .join('')
     : customComponent
 
-  const autoImportPathNormalized = autoImportPath && autoImportPath.replaceAll(/^\.*(?=[/\\])/g, '')
+  const autoImportPaths: string[] = autoImportPath
+    ? (Array.isArray(autoImportPath) ? autoImportPath : [autoImportPath]).map((p) =>
+        p.replaceAll(/^\.*(?=[/\\])/g, ''),
+      )
+    : []
 
   const svgRegex = /\.svg(\?(url_encode|raw|raw_optimized|component|skipsvgo|componentext))?$/
   const explicitImportRegex =
@@ -58,11 +62,9 @@ export function svgLoader(options?: SvgLoaderOptions) {
       if (explicitImportsOnly) {
         const isExplicitlyQueried = id.match(explicitImportRegex)
         if (!isExplicitlyQueried) {
-          if (autoImportPathNormalized) {
-            if (!path.includes(autoImportPathNormalized)) {
-              return
-            }
-          } else {
+          const isInAutoImportPath =
+            autoImportPaths.length > 0 && autoImportPaths.some((p) => path.includes(p))
+          if (!isInAutoImportPath) {
             return
           }
         }

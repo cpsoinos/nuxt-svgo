@@ -99,27 +99,33 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
         }
       }
 
-      const iconPaths: string[] = []
+      const autoPaths = Array.isArray(options.autoImportPath)
+        ? options.autoImportPath
+        : [options.autoImportPath]
 
-      try {
-        const iconPath = await resolvePath(options.autoImportPath)
-        iconPaths.push(iconPath)
-      } catch (e) {
-        console.error('Error resolving module path:', e)
-      }
+      for (const autoPath of autoPaths) {
+        const iconPaths: string[] = []
 
-      const appDir = nuxt.options.srcDir || nuxt.options.rootDir
-      iconPaths.push(join(appDir, options.autoImportPath.replace(/^\.\//, '')))
+        try {
+          const iconPath = await resolvePath(autoPath)
+          iconPaths.push(iconPath)
+        } catch (e) {
+          console.error('Error resolving module path:', e)
+        }
 
-      if (nuxt.options._layers) {
-        for (const layer of nuxt.options._layers) {
-          if (layer.config && layer.config.srcDir) {
-            iconPaths.push(join(layer.config.srcDir, options.autoImportPath.replace(/^\.\//, '')))
+        const appDir = nuxt.options.srcDir || nuxt.options.rootDir
+        iconPaths.push(join(appDir, autoPath.replace(/^\.\//, '')))
+
+        if (nuxt.options._layers) {
+          for (const layer of nuxt.options._layers) {
+            if (layer.config && layer.config.srcDir) {
+              iconPaths.push(join(layer.config.srcDir, autoPath.replace(/^\.\//, '')))
+            }
           }
         }
-      }
 
-      iconPaths.forEach(addIconComponentsDir)
+        iconPaths.forEach(addIconComponentsDir)
+      }
     }
 
     if (options.dts && ['@nuxt/vite-builder', 'vite'].includes(nuxt.options.builder as string)) {
