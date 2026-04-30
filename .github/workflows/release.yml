@@ -6,6 +6,9 @@ on:
 
 permissions:
   id-token: write # Required for OIDC
+  contents: write # Required for semantic-release to push version tags
+  issues: write # Required for semantic-release to create failure issues
+  pull-requests: write # Required for semantic-release to comment on PRs
 
 jobs:
   release:
