@@ -32,14 +32,7 @@ function hashCode(str: string) {
 
 export const defaultSvgoConfig: Config = {
   plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          removeViewBox: false,
-        },
-      },
-    },
+    'preset-default',
     'removeDimensions',
     {
       name: 'prefixIds',

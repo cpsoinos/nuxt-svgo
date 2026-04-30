@@ -34,14 +34,15 @@ describe('options override test', async () => {
     } as NuxtConfig,
   })
 
-  it('renders the svg removing the viewBox', async () => {
+  it('renders the svg with viewBox and with dimensions (custom config, no removeDimensions)', async () => {
     // Get response to a server-rendered page with `$fetch`.
     const html = await $fetch('/')
 
     writeFileSync('./test.log', html, { encoding: 'utf-8' })
-    // default config of module removes dimensions and adds viewbox
+    // Custom config uses preset-default only (no removeDimensions), so dimensions are preserved.
+    // In SVGO v4, removeViewBox is no longer in preset-default, so viewBox is also preserved.
     expect(html).toContain(
-      '<svg width="24" height="24"><path d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z"></path></svg>',
+      '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732z"></path></svg>',
     )
   })
 })
