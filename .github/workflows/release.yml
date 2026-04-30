@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 20
-          registry-url: 'https://registry.npmjs.org'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4.2.0
@@ -54,6 +53,6 @@ jobs:
         run: pnpm semantic-release
 
       - name: Publish to npm
-        run: npm publish --provenance --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ''
+        run: |
+          echo '//registry.npmjs.org/:_authType=web' > ~/.npmrc
+          npm publish --provenance --no-git-checks
