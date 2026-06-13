@@ -71,7 +71,7 @@
     "cross-env": "^10.0.0",
     "eslint": "10.5.0",
     "husky": "9.1.7",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^17.0.0",
     "nuxt": "^4.4.4",
     "pnpm": "10.34.3",
     "prettier": "3.8.4",
