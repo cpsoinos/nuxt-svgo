@@ -74,7 +74,7 @@
     "lint-staged": "^17.0.0",
     "nuxt": "^4.4.4",
     "pnpm": "10.34.4",
-    "prettier": "3.9.0",
+    "prettier": "3.9.1",
     "semantic-release": "^25.0.0",
     "vitest": "^4.0.0",
     "vue-tsc": "^3.2.7"
