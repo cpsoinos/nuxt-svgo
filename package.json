@@ -73,7 +73,7 @@
     "husky": "9.1.7",
     "lint-staged": "^17.0.0",
     "nuxt": "^4.4.4",
-    "pnpm": "10.34.5",
+    "pnpm": "11.15.1",
     "prettier": "3.9.6",
     "semantic-release": "^25.0.0",
     "vitest": "^4.0.0",
@@ -96,14 +96,8 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@11.15.1",
   "publishConfig": {
     "access": "public"
-  },
-  "pnpm": {
-    "overrides": {
-      "json5@<1.0.2": ">=1.0.2",
-      "nth-check@<2.0.1": ">=2.0.1"
-    }
   }
 }

@@ -63,7 +63,7 @@ const nuxtSvgo: NuxtModule<ModuleOptions> = defineNuxtModule({
   },
   defaults: {
     svgo: true,
-    defaultImport: 'componentext',
+    defaultImport: 'componentext' as const,
     autoImportPath: './assets/icons/',
     svgoConfig: undefined,
     global: true,
