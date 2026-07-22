@@ -1,0 +1,7 @@
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
+  unrs-resolver: true
+overrides:
+  json5@<1.0.2: ">=1.0.2"
+  nth-check@<2.0.1: ">=2.0.1"

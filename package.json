@@ -99,11 +99,5 @@
   "packageManager": "pnpm@11.15.1",
   "publishConfig": {
     "access": "public"
-  },
-  "pnpm": {
-    "overrides": {
-      "json5@<1.0.2": ">=1.0.2",
-      "nth-check@<2.0.1": ">=2.0.1"
-    }
   }
 }
