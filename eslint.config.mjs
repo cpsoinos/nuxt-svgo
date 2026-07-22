@@ -1,6 +1,6 @@
 import { createConfigForNuxt } from '@nuxt/eslint-config'
 
-export default createConfigForNuxt()
+export default createConfigForNuxt({ features: { typescript: true } })
   .prepend({
     ignores: ['dist', 'node_modules', 'playground', '**/*.d.ts'],
   })
