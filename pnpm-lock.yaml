@@ -29,7 +29,7 @@ importers:
         version: 3.5.43(typescript@5.9.3)
       vue-loader:
         specifier: ^17.0.0
-        version: 17.4.2(@vue/compiler-sfc@3.5.43)(vue@3.5.43(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3))
+        version: 17.4.2(@vue/compiler-sfc@3.5.44)(vue@3.5.43(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3))
       vue-svg-loader:
         specifier: 0.17.0-beta.2
         version: 0.17.0-beta.2(vue@3.5.43(typescript@5.9.3))
@@ -39,7 +39,7 @@ importers:
         version: 1.1.0
       '@nuxt/eslint-config':
         specifier: ^1.15.2
-        version: 1.17.0(@typescript-eslint/utils@8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(@vue/compiler-sfc@3.5.43)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)
+        version: 1.17.0(@typescript-eslint/utils@8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(@vue/compiler-sfc@3.5.44)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)
       '@nuxt/module-builder':
         specifier: ^1.0.2
         version: 1.0.4(@nuxt/cli@4.0.1(@nuxt/schema@4.6.4)(jiti@2.7.0)(oxc-parser@0.140.0)(rolldown@1.2.16)(vite@8.3.5(@types/node@26.1.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1)))(@volar/typescript@2.4.30(typescript@5.9.3))(@vue/compiler-core@3.5.44)(@vue/language-core@3.3.14)(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.67.4)(typescript@5.9.3)(vite@8.3.5(@types/node@26.1.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))(vue-tsc@3.3.14(typescript@5.9.3))(vue@3.5.43(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3))
@@ -62,8 +62,8 @@ importers:
         specifier: ^4.4.4
         version: 4.6.4(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@oxc-project/types@0.156.0)(@types/node@26.1.1)(@vue/compiler-sfc@3.5.44)(acorn@8.18.0)(confbox@0.3.1)(db0@0.3.4)(dotenv@17.4.2)(esbuild@0.28.2)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(giget@3.3.0)(ioredis@5.11.1(supports-color@10.2.2))(lightningcss@1.33.0)(meow@13.2.0)(mlly@1.8.2)(optionator@0.9.4)(oxc-parser@0.140.0)(rolldown@1.2.16)(rollup-plugin-visualizer@7.1.1(rolldown@1.2.16)(rollup@4.67.4))(rollup@4.67.4)(srvx@1.0.5)(supports-color@10.2.2)(terser@5.49.2)(typescript@5.9.3)(vite@8.3.5(@types/node@26.1.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))(vue-tsc@3.3.14(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3))(yaml@2.9.1)
       pnpm:
-        specifier: 11.28.11
-        version: 11.28.11
+        specifier: 11.28.12
+        version: 11.28.12
       prettier:
         specifier: 3.9.10
         version: 3.9.10
@@ -4933,8 +4933,8 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
-  pnpm@11.28.11:
-    resolution: {integrity: sha512-dAGE0Q+B9dWxZb6IVg7numJAbEE0iWq8J6WAEJ7sL0fB5B2RJRyUTCyrq8scIkYXmeu3LeLsYlryAwsONsc1ow==}
+  pnpm@11.28.12:
+    resolution: {integrity: sha512-lIMzh+NdUD6K0QEEF83rgsEg5+abr98KnbBpBRW+rnFZJ0Vx5pK5arwqCF01Zv7FQ4Gv2Xj2X2SoU2Lf1+EI9w==}
     engines: {node: '>=22.13'}
     hasBin: true
 
@@ -7505,7 +7505,7 @@ snapshots:
       - utf-8-validate
       - vue
 
-  '@nuxt/eslint-config@1.17.0(@typescript-eslint/utils@8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(@vue/compiler-sfc@3.5.43)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)':
+  '@nuxt/eslint-config@1.17.0(@typescript-eslint/utils@8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(@vue/compiler-sfc@3.5.44)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)':
     dependencies:
       '@antfu/install-pkg': 2.0.1
       '@clack/prompts': 1.7.0
@@ -7524,7 +7524,7 @@ snapshots:
       eslint-plugin-regexp: 3.1.1(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-unicorn: 73.0.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))
       eslint-plugin-vue: 10.10.0(@stylistic/eslint-plugin@5.10.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2)))(@typescript-eslint/parser@8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3))(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(vue-eslint-parser@10.4.1(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2))
-      eslint-processor-vue-blocks: 2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))
+      eslint-processor-vue-blocks: 2.0.0(@vue/compiler-sfc@3.5.44)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))
       globals: 17.10.0
       local-pkg: 1.2.1
       pathe: 2.0.3
@@ -10274,9 +10274,9 @@ snapshots:
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))
       '@typescript-eslint/parser': 8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@5.9.3)
 
-  eslint-processor-vue-blocks@2.0.0(@vue/compiler-sfc@3.5.43)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2)):
+  eslint-processor-vue-blocks@2.0.0(@vue/compiler-sfc@3.5.44)(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2)):
     dependencies:
-      '@vue/compiler-sfc': 3.5.43
+      '@vue/compiler-sfc': 3.5.44
       eslint: 10.14.0(jiti@2.7.0)(supports-color@10.2.2)
 
   eslint-scope@5.1.1:
@@ -12045,7 +12045,7 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  pnpm@11.28.11: {}
+  pnpm@11.28.12: {}
 
   possible-typed-array-names@1.1.0: {}
 
@@ -13856,14 +13856,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-loader@17.4.2(@vue/compiler-sfc@3.5.43)(vue@3.5.43(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3)):
+  vue-loader@17.4.2(@vue/compiler-sfc@3.5.44)(vue@3.5.43(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3)):
     dependencies:
       chalk: 4.1.2
       hash-sum: 2.0.0
       watchpack: 2.5.2
       webpack: 5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3)
     optionalDependencies:
-      '@vue/compiler-sfc': 3.5.43
+      '@vue/compiler-sfc': 3.5.44
       vue: 3.5.43(typescript@5.9.3)
 
   vue-router@5.4.0(@vue/compiler-sfc@3.5.44)(esbuild@0.28.2)(rolldown@1.2.16)(rollup@4.67.4)(vite@8.3.5(@types/node@26.1.1)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.49.2)(yaml@2.9.1))(vue@3.5.44(typescript@5.9.3))(webpack@5.108.4(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.32)(uglify-js@3.19.3)):
